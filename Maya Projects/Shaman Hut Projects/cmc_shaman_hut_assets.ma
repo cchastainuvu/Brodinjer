@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: cmc_shaman_hut_assets.ma
-//Last modified: Mon, Aug 31, 2020 10:48:43 PM
+//Last modified: Mon, Aug 31, 2020 10:49:20 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -15,8 +15,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "AB1B22B7-48E6-B3EA-0F1B-B9B4F5BFD1E4";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 71.501588958024342 49.401509574148463 128.8587124662277 ;
-	setAttr ".r" -type "double3" -8.1383530906957482 19448.99999999662 -1.0063127173792213e-16 ;
+	setAttr ".t" -type "double3" 29.204929818409511 86.036818287385842 119.84861703430255 ;
+	setAttr ".r" -type "double3" -21.938353090704329 19432.99999999646 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "12641183-4DD3-133C-BDFF-459C31894E79";
 	setAttr -k off ".v" no;
