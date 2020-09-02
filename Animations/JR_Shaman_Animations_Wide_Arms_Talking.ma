@@ -1,11 +1,13 @@
 //Maya ASCII 2018 scene
 //Name: JR_Shaman_Animations_Wide_Arms_Talking.ma
-//Last modified: Tue, Sep 01, 2020 10:16:10 PM
+//Last modified: Wed, Sep 02, 2020 11:46:49 AM
 //Codeset: 1252
-file -rdi 1 -ns "Shaman_Rig_v4_0" -rfn "Shaman_Rig_v4_0RN" -op "v=0;" -typ "mayaAscii"
-		 "D:/UVU/UVU_FALL_2020/Senior Project/Shaman_Rig_v4.0.ma";
-file -r -ns "Shaman_Rig_v4_0" -dr 1 -rfn "Shaman_Rig_v4_0RN" -op "v=0;" -typ "mayaAscii"
-		 "D:/UVU/UVU_FALL_2020/Senior Project/Shaman_Rig_v4.0.ma";
+file -rdi 1 -ns "Shaman_Rig_v5__1_" -rfn "Shaman_Rig_v5__1_RN" -op "v=0;" -typ
+		 "mayaAscii" "D:/UVU/UVU_FALL_2020/Senior Project/Shaman_Rig_v5 (1).ma";
+file -rdi 2 -ns "Stewart_Rig" -dr 1 -rfn "Shaman_Rig_v5__1_:Stewart_RigRN" 
+		-op "v=0;" -typ "mayaAscii" "E:/School/College/Spring2020/AdvancedRigging/DGM3660_AdvancedRigging/Rigs/Stewart_Rig.ma";
+file -r -ns "Shaman_Rig_v5__1_" -dr 1 -rfn "Shaman_Rig_v5__1_RN" -op "v=0;" -typ
+		 "mayaAscii" "D:/UVU/UVU_FALL_2020/Senior Project/Shaman_Rig_v5 (1).ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires "stereoCamera" "10.0";
@@ -19,13 +21,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "7F2A25BB-4D85-FF8B-78E0-73BC13985C93";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -3.9775751726220161 3.5574975263445623 6.044712018090002 ;
-	setAttr ".r" -type "double3" -7.5383527304425382 -1112.9999999993954 4.7404708162608008e-16 ;
+	setAttr ".t" -type "double3" -1.0085040920499564 5.3336174223494872 9.5396844368647393 ;
+	setAttr ".r" -type "double3" -16.538352730443169 -1082.9999999993909 6.9670114127031638e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "4D5E0120-4A7C-8E69-8359-7A83225AABE0";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 6.3507171405041039;
+	setAttr ".coi" 9.1663596168938533;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -78,20 +80,20 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "045FDA87-464F-1905-E924-698F3034D30F";
-	setAttr -s 4 ".lnk";
-	setAttr -s 4 ".slnk";
+	rename -uid "53AC63E4-407A-8FED-7B77-D9A164A190F7";
+	setAttr -s 6 ".lnk";
+	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "DBD8A330-46A7-3607-4E90-0A805608E3E5";
-	setAttr ".bsdt[0].bscd" -type "Int32Array" 2 1 0 ;
+	rename -uid "03FAFEED-4348-16AC-E430-60963EAB7AD5";
+	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 1 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "633B9373-4B3E-9606-13B7-D0911D4E4AB2";
+	rename -uid "E163EC2B-4BC3-160F-F7C4-D5B79FB2B625";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "2F928B82-424E-EA51-A932-9AAC3682BD25";
+	rename -uid "AF3E89AD-4446-4B78-CB0A-958B047BA530";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "5E6CDF56-4858-4B7C-817F-29899966A6A4";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "A41017E8-4A79-D60F-8C41-DAA994C46ABA";
+	rename -uid "8FA5163E-449D-C114-77E8-A6854A603EDD";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "B75D1647-4446-DF91-0DC6-B1ACB8E7391E";
 	setAttr ".g" yes;
@@ -4695,398 +4697,6 @@ createNode animCurveTA -n "Spine_01_Ctrl_rotateY";
 	setAttr -s 3 ".ktv[0:2]"  1 3.0000000000000004 31 -3.0000000000000004
 		 61 3.0000000000000004;
 	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode reference -n "Shaman_Rig_v4_0RN";
-	rename -uid "2557E945-4708-5128-B40C-1AB3CEC9BE7C";
-	setAttr -s 9 ".phl";
-	setAttr ".phl[1]" 0;
-	setAttr ".phl[2]" 0;
-	setAttr ".phl[3]" 0;
-	setAttr ".phl[4]" 0;
-	setAttr ".phl[5]" 0;
-	setAttr ".phl[6]" 0;
-	setAttr ".phl[7]" 0;
-	setAttr ".phl[8]" 0;
-	setAttr ".phl[9]" 0;
-	setAttr ".ed" -type "dataReferenceEdits" 
-		"Shaman_Rig_v4_0RN"
-		"Shaman_Rig_v4_0RN" 0
-		"Shaman_Rig_v4_0RN" 183
-		2 "|Shaman_Rig_v4_0:Shaman_Rig" "visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Necklace_Hair_System|Shaman_Rig_v4_0:Necklace_Spline_IK_Handle" 
-		"translate" " -type \"double3\" -0.029077292032600219 1.83063893205931638 1.34253549753151424"
-		
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Necklace_Hair_System|Shaman_Rig_v4_0:Necklace_Spline_IK_Handle" 
-		"rotate" " -type \"double3\" 100.36450517266690952 0.71736156978014043 0.86045706531531319"
-		
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Necklace_Hair_System|Shaman_Rig_v4_0:RigidBody|Shaman_Rig_v4_0:Sash_RigidBody|Shaman_Rig_v4_0:Sash_RigidBodyShape" 
-		"cacheWidth" " 77"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Clavicle_RK_Ctrl_Grp|Shaman_Rig_v4_0:R_Clavicle_RK_Ctrl" 
-		"translate" " -type \"double3\" -0.01792677063451906 -0.00021380882611315429 -0.0075543816411937611"
-		
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Clavicle_RK_Ctrl_Grp|Shaman_Rig_v4_0:R_Clavicle_RK_Ctrl" 
-		"rotate" " -type \"double3\" 40.06157163406401622 -22.84920945556468652 0.68332232250220248"
-		
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Waist_Ctrl_Grp|Shaman_Rig_v4_0:Waist_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Transform_Ctrl_Grp|Shaman_Rig_v4_0:Transform_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_01_Ctrl_Grp|Shaman_Rig_v4_0:Spine_01_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_01_Ctrl_Grp|Shaman_Rig_v4_0:Spine_01_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_01_Ctrl_Grp|Shaman_Rig_v4_0:Spine_01_Ctrl" 
-		"translateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_01_Ctrl_Grp|Shaman_Rig_v4_0:Spine_01_Ctrl" 
-		"translateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_01_Ctrl_Grp|Shaman_Rig_v4_0:Spine_01_Ctrl" 
-		"translateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_01_Ctrl_Grp|Shaman_Rig_v4_0:Spine_01_Ctrl" 
-		"rotate" " -type \"double3\" 4.28987790985880668 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_01_Ctrl_Grp|Shaman_Rig_v4_0:Spine_01_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_01_Ctrl_Grp|Shaman_Rig_v4_0:Spine_01_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"visibility" " -av 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"translateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"translateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"translateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"rotate" " -type \"double3\" 15.49458496405430985 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"rotateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"rotateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"Translate" " -av -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_02_Ctrl_Grp|Shaman_Rig_v4_0:Spine_02_Ctrl" 
-		"Rotate" " -av -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"rotate" " -type \"double3\" 17.34675445237107994 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"rotateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"rotateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"scaleX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"scaleY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"scaleZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_03_Ctrl_Grp|Shaman_Rig_v4_0:Spine_03_Ctrl" 
-		"Breath" " -k 1 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_04_Ctrl_Grp|Shaman_Rig_v4_0:Spine_04_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_04_Ctrl_Grp|Shaman_Rig_v4_0:Spine_04_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_04_Ctrl_Grp|Shaman_Rig_v4_0:Spine_04_Ctrl" 
-		"rotate" " -type \"double3\" 9.68342494101720774 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_04_Ctrl_Grp|Shaman_Rig_v4_0:Spine_04_Ctrl" 
-		"rotateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_04_Ctrl_Grp|Shaman_Rig_v4_0:Spine_04_Ctrl" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_04_Ctrl_Grp|Shaman_Rig_v4_0:Spine_04_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Spine_04_Ctrl_Grp|Shaman_Rig_v4_0:Spine_04_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_04_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_04_02_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_04_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_04_02_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_04_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_04_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_04_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_04_02_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_04_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_04_02_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_04_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_04_01_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_04_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_04_01_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_04_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_04_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_04_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_04_01_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_04_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_04_01_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_03_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_03_02_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_03_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_03_02_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_03_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_03_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_03_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_03_02_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_03_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_03_02_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_03_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_03_01_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_03_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_03_01_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_03_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_03_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_03_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_03_01_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_03_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_03_01_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_02_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_02_02_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_02_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_02_02_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_02_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_02_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_02_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_02_02_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_02_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_02_02_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_02_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_02_01_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_02_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_02_01_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_02_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_02_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_02_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_02_01_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_02_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_02_01_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_01_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_01_02_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_01_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_01_02_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_01_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_01_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_01_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_01_02_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_01_02_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_01_02_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_01_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_01_01_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_01_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_01_01_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_01_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_01_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_01_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_01_01_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:R_Hand|Shaman_Rig_v4_0:R_Finger_01_01_Ctrl_Grp|Shaman_Rig_v4_0:R_Finger_01_01_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:L_Hand|Shaman_Rig_v4_0:L_Finger_04_02_Ctrl_Grp|Shaman_Rig_v4_0:L_Finger_04_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 -38.32653779364491697 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:L_Hand|Shaman_Rig_v4_0:L_Finger_04_01_Ctrl_Grp|Shaman_Rig_v4_0:L_Finger_04_01_Ctrl" 
-		"rotate" " -type \"double3\" 9.02043151283104372 -11.39287287618067523 9.35901999885738434"
-		
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:L_Hand|Shaman_Rig_v4_0:L_Finger_03_02_Ctrl_Grp|Shaman_Rig_v4_0:L_Finger_03_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 34.72411374793441041"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:L_Hand|Shaman_Rig_v4_0:L_Finger_03_01_Ctrl_Grp|Shaman_Rig_v4_0:L_Finger_03_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 9.59905396282777268"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:L_Hand|Shaman_Rig_v4_0:L_Finger_02_01_Ctrl_Grp|Shaman_Rig_v4_0:L_Finger_02_01_Ctrl" 
-		"rotate" " -type \"double3\" -16.27561316277676084 -6.51137221783760101 22.78121402594794986"
-		
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:L_Hand|Shaman_Rig_v4_0:L_Finger_01_01_Ctrl_Grp|Shaman_Rig_v4_0:L_Finger_01_01_Ctrl" 
-		"rotate" " -type \"double3\" 14.61877748001052879 26.90552436846114759 29.95891621434413921"
-		
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:L_Hand|Shaman_Rig_v4_0:L_Wrist_RK_Ctrl_Grp|Shaman_Rig_v4_0:L_Wrist_RK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Neck_01_RK_Ctrl_Grp|Shaman_Rig_v4_0:Neck_01_RK_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Neck_01_RK_Ctrl_Grp|Shaman_Rig_v4_0:Neck_01_RK_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Neck_01_RK_Ctrl_Grp|Shaman_Rig_v4_0:Neck_01_RK_Ctrl" 
-		"rotate" " -type \"double3\" -4.41535696806206257 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Neck_01_RK_Ctrl_Grp|Shaman_Rig_v4_0:Neck_01_RK_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Neck_01_RK_Ctrl_Grp|Shaman_Rig_v4_0:Neck_01_RK_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"visibility" " -av 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"translateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"translateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"translateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"rotateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"rotateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"Translate" " -av -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_01_FK_Ctrl" 
-		"Rotate" " -av -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"visibility" " -av 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"translateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"translateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"translateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"rotateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"rotateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"Translate" " -av -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_02_FK_Ctrl" 
-		"Rotate" " -av -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"visibility" " -av 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"translateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"translateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"translateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"rotateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"rotateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"Translate" " -av -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:L_Arm_01_FK_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:L_Arm_03_FK_Ctrl" 
-		"Rotate" " -av -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_01_FK_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_01_FK_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_01_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_01_FK_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_01_FK_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl" 
-		"rotateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_02_FK_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_03_FK_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_03_FK_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_03_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_03_FK_Ctrl" 
-		"Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:FK_Controls|Shaman_Rig_v4_0:R_Arm_01_FK_Grp|Shaman_Rig_v4_0:R_Arm_03_FK_Ctrl_Grp|Shaman_Rig_v4_0:R_Arm_03_FK_Ctrl" 
-		"Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:IK_Controls|Shaman_Rig_v4_0:R_Leg_01_IK_Grp|Shaman_Rig_v4_0:R_Leg_01_IK_Handle_Ctrl_Grp|Shaman_Rig_v4_0:R_Leg_01_IK_Handle_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:IK_Controls|Shaman_Rig_v4_0:R_Leg_01_IK_Grp|Shaman_Rig_v4_0:R_Leg_01_IK_Handle_Ctrl_Grp|Shaman_Rig_v4_0:R_Leg_01_IK_Handle_Ctrl" 
-		"translate" " -type \"double3\" 0 0.232854586674755 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:IK_Controls|Shaman_Rig_v4_0:R_Leg_01_IK_Grp|Shaman_Rig_v4_0:R_Leg_01_IK_Handle_Ctrl_Grp|Shaman_Rig_v4_0:R_Leg_01_IK_Handle_Ctrl" 
-		"translateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:IK_Controls|Shaman_Rig_v4_0:R_Leg_01_IK_Grp|Shaman_Rig_v4_0:R_Leg_01_IK_Handle_Ctrl_Grp|Shaman_Rig_v4_0:R_Leg_01_IK_Handle_Ctrl" 
-		"translateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:IK_Controls|Shaman_Rig_v4_0:R_Leg_01_IK_Grp|Shaman_Rig_v4_0:R_Leg_01_IK_Handle_Ctrl_Grp|Shaman_Rig_v4_0:R_Leg_01_IK_Handle_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:IK_Controls|Shaman_Rig_v4_0:L_Leg_01_IK_Grp|Shaman_Rig_v4_0:L_Leg_01_IK_Handle_Ctrl_Grp|Shaman_Rig_v4_0:L_Leg_01_IK_Handle_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:IK_Controls|Shaman_Rig_v4_0:L_Leg_01_IK_Grp|Shaman_Rig_v4_0:L_Leg_01_IK_Handle_Ctrl_Grp|Shaman_Rig_v4_0:L_Leg_01_IK_Handle_Ctrl" 
-		"translate" " -type \"double3\" 0 0.232854586674755 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:IK_Controls|Shaman_Rig_v4_0:L_Leg_01_IK_Grp|Shaman_Rig_v4_0:L_Leg_01_IK_Handle_Ctrl_Grp|Shaman_Rig_v4_0:L_Leg_01_IK_Handle_Ctrl" 
-		"translateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:IK_Controls|Shaman_Rig_v4_0:L_Leg_01_IK_Grp|Shaman_Rig_v4_0:L_Leg_01_IK_Handle_Ctrl_Grp|Shaman_Rig_v4_0:L_Leg_01_IK_Handle_Ctrl" 
-		"translateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:IK_Controls|Shaman_Rig_v4_0:L_Leg_01_IK_Grp|Shaman_Rig_v4_0:L_Leg_01_IK_Handle_Ctrl_Grp|Shaman_Rig_v4_0:L_Leg_01_IK_Handle_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Switch|Shaman_Rig_v4_0:L_Leg_01_Switch" 
-		"IKFK_Switch" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Switch|Shaman_Rig_v4_0:R_Leg_01_Switch" 
-		"IKFK_Switch" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"visibility" " 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"translate" " -type \"double3\" 2.44100343597654001 1.81838397998013002 0.015158447721823504"
-		
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"rotate" " -type \"double3\" 3.46410363484547368 20.35741328915091586 -1.89636811163569741"
-		
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"rotateX" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"rotateY" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"L_Hand_Rotate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"L_Hand_Translate" " -k 1 1"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"R_Hand_Rotate" " -k 1 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"R_Hand_Translate" " -k 1 0"
-		2 "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:Cane_Ctrl_Grp|Shaman_Rig_v4_0:Cane_Ctrl" 
-		"Scale" " -k 1 0"
-		5 4 "Shaman_Rig_v4_0RN" "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl.translateX" 
-		"Shaman_Rig_v4_0RN.placeHolderList[1]" ""
-		5 4 "Shaman_Rig_v4_0RN" "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl.translateY" 
-		"Shaman_Rig_v4_0RN.placeHolderList[2]" ""
-		5 4 "Shaman_Rig_v4_0RN" "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl.translateZ" 
-		"Shaman_Rig_v4_0RN.placeHolderList[3]" ""
-		5 4 "Shaman_Rig_v4_0RN" "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl.rotateX" 
-		"Shaman_Rig_v4_0RN.placeHolderList[4]" ""
-		5 4 "Shaman_Rig_v4_0RN" "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl.rotateY" 
-		"Shaman_Rig_v4_0RN.placeHolderList[5]" ""
-		5 4 "Shaman_Rig_v4_0RN" "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl.rotateZ" 
-		"Shaman_Rig_v4_0RN.placeHolderList[6]" ""
-		5 4 "Shaman_Rig_v4_0RN" "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl.Translate" 
-		"Shaman_Rig_v4_0RN.placeHolderList[7]" ""
-		5 4 "Shaman_Rig_v4_0RN" "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl.Rotate" 
-		"Shaman_Rig_v4_0RN.placeHolderList[8]" ""
-		5 4 "Shaman_Rig_v4_0RN" "|Shaman_Rig_v4_0:Shaman_Rig|Shaman_Rig_v4_0:Scale|Shaman_Rig_v4_0:Controls|Shaman_Rig_v4_0:RK_Controls|Shaman_Rig_v4_0:Facial_Controls|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl_Grp|Shaman_Rig_v4_0:Head_Rotate_RK_Ctrl.visibility" 
-		"Shaman_Rig_v4_0RN.placeHolderList[9]" "";
-	setAttr ".ptag" -type "string" "";
-lockNode -l 1 ;
 createNode animCurveTA -n "Head_Rotate_RK_Ctrl_rotateX1";
 	rename -uid "95CCF933-411E-4527-E3CC-FE8A05F4C6E1";
 	setAttr ".tan" 9;
@@ -5133,6 +4743,20 @@ createNode animCurveTU -n "Head_Rotate_RK_Ctrl_Rotate1";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
 	setAttr ".ktv[0]"  1 1;
+createNode reference -n "Shaman_Rig_v5__1_RN";
+	rename -uid "4D288959-4C0C-157C-3701-81A7EEEF4A05";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Shaman_Rig_v5__1_RN"
+		"Shaman_Rig_v5__1_RN" 0
+		"Shaman_Rig_v5__1_RN" 3
+		2 "|Shaman_Rig_v5__1_:Shaman_Rig|Shaman_Rig_v5__1_:Controls|Shaman_Rig_v5__1_:FK_Controls|Shaman_Rig_v5__1_:L_Arm_01_FK_Grp|Shaman_Rig_v5__1_:L_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v5__1_:L_Arm_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Shaman_Rig_v5__1_:Shaman_Rig|Shaman_Rig_v5__1_:Controls|Shaman_Rig_v5__1_:FK_Controls|Shaman_Rig_v5__1_:R_Arm_01_FK_Grp|Shaman_Rig_v5__1_:R_Arm_01_FK_Ctrl_Grp|Shaman_Rig_v5__1_:R_Arm_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 -6.54338178785969404 0"
+		2 "|Shaman_Rig_v5__1_:Shaman_Rig|Shaman_Rig_v5__1_:Necklace_Hair_System|Shaman_Rig_v5__1_:Necklace_Spline_IK_Handle" 
+		"translate" " -type \"double3\" 0 3.64451432228088379 2.10888588428497314";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -5166,15 +4790,6 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 2 ".sol";
-connectAttr "Head_Rotate_RK_Ctrl_translateX1.o" "Shaman_Rig_v4_0RN.phl[1]";
-connectAttr "Head_Rotate_RK_Ctrl_translateY1.o" "Shaman_Rig_v4_0RN.phl[2]";
-connectAttr "Head_Rotate_RK_Ctrl_translateZ1.o" "Shaman_Rig_v4_0RN.phl[3]";
-connectAttr "Head_Rotate_RK_Ctrl_rotateX1.o" "Shaman_Rig_v4_0RN.phl[4]";
-connectAttr "Head_Rotate_RK_Ctrl_rotateY1.o" "Shaman_Rig_v4_0RN.phl[5]";
-connectAttr "Head_Rotate_RK_Ctrl_rotateZ1.o" "Shaman_Rig_v4_0RN.phl[6]";
-connectAttr "Head_Rotate_RK_Ctrl_Translate1.o" "Shaman_Rig_v4_0RN.phl[7]";
-connectAttr "Head_Rotate_RK_Ctrl_Rotate1.o" "Shaman_Rig_v4_0RN.phl[8]";
-connectAttr "Head_Rotate_RK_Ctrl_visibility1.o" "Shaman_Rig_v4_0RN.phl[9]";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
