@@ -1,12 +1,13 @@
 //Maya ASCII 2018 scene
 //Name: JR_Malik_Jump_Blocking.ma
-//Last modified: Wed, Sep 09, 2020 07:49:02 PM
+//Last modified: Fri, Oct 02, 2020 11:10:17 AM
 //Codeset: 1252
 file -rdi 1 -ns "Malik_Rig_v2" -rfn "Malik_Rig_v2RN" -op "v=0;" -typ "mayaAscii"
 		 "D:/UVU/UVU_FALL_2020/Senior Project/Malik_Rig_v2.ma";
 file -r -ns "Malik_Rig_v2" -dr 1 -rfn "Malik_Rig_v2RN" -op "v=0;" -typ "mayaAscii"
 		 "D:/UVU/UVU_FALL_2020/Senior Project/Malik_Rig_v2.ma";
 requires maya "2018";
+requires "mtoa" "4.0.2.1";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
@@ -17,13 +18,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "418F24A1-4CAE-6B53-50A4-83BAF83F4B15";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -430.43077554997319 72.861999983196029 596.91324599194968 ;
-	setAttr ".r" -type "double3" 3.8616472703689468 -38.199999999988322 2.5295275681582596e-16 ;
+	setAttr ".t" -type "double3" -816.23131356915735 263.50895320446 290.48692607096046 ;
+	setAttr ".r" -type "double3" -6.3383527296292463 -70.199999999984684 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "40998DC9-4D78-A40E-C603-FD9CF5168115";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 711.01269502002322;
+	setAttr ".coi" 861.77824149042749;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -76,19 +77,19 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "D1A1D5A8-4971-99F0-815C-F08F939D2E64";
+	rename -uid "217F16A4-45E5-95C6-6DF4-129C7E0B3054";
 	setAttr -s 57 ".lnk";
 	setAttr -s 57 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "20DB8576-4168-7FA8-94B5-A8BA6DFC9F82";
+	rename -uid "7247018B-4CD3-6369-79AF-B9B59632D522";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D307256A-4C0B-CE84-6405-A1B0F844B220";
+	rename -uid "4CCDEF52-4E3E-5AED-DDD9-9182DDE83571";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "00F3CA6A-4A13-8C0C-F754-EC854E697C97";
+	rename -uid "46AD7046-4596-F95C-3031-62822FA8DDD4";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "48778B0C-42A7-C938-C31E-A2AF44B507FA";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "090CB088-4F77-4282-D88E-13B2BA6AD344";
+	rename -uid "A6CD0A8E-4807-2FBC-DBBA-6B8E151AA34E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "0CFF4F8D-469F-23A5-B1F2-F38486CF1E8C";
 	setAttr ".g" yes;
@@ -1169,7 +1170,7 @@ createNode reference -n "Malik_Rig_v2RN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Malik_Rig_v2RN"
 		"Malik_Rig_v2RN" 0
-		"Malik_Rig_v2RN" 1378
+		"Malik_Rig_v2RN" 2407
 		1 |Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch 
 		"blendParentTranslate" "blendParentTranslate" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
 		
@@ -1181,17 +1182,129 @@ createNode reference -n "Malik_Rig_v2RN";
 		1 |Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch 
 		"blendParent1" "blendParent1" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
-		"blendParentTranslate" " -k 1"
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
+		"translate" " -type \"double3\" 51.69101314509052969 89.45559459236248756 7.90388497750017294"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
+		"rotate" " -type \"double3\" 83.4872378665822481 -7.75770383369485561 -71.76393976962329191"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
+		"IKFK_Switch" " -av -k 1 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch" 
+		"blendParentTranslate" " -av -k 1 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
-		"blendParentTranslate" " -k 1"
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
+		"translate" " -type \"double3\" -49.92117398145118301 92.00698910636060646 7.49892798630533974"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
+		"rotate" " -type \"double3\" -96.51275712847468924 7.75770379688554002 72.35928633177009317"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
+		"IKFK_Switch" " -av -k 1 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch" 
+		"blendParentTranslate" " -av -k 1 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
-		"blendParent1" " -k 1"
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
+		"translate" " -type \"double3\" 20.61221168920441471 34.40046112246837851 -3.28292675833966641"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
+		"rotate" " -type \"double3\" -89.70769560630186845 4.27668652917939873 -86.41777494288677985"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
+		"IKFK_Switch" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch" 
+		"blendParent1" " -av -k 1 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
-		"blendParent1" " -k 1"
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
+		"translate" " -type \"double3\" -20.61224076940477445 34.40044467807136641 -3.28293170920609878"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
+		"rotate" " -type \"double3\" 90.29230751021239598 -4.27668652917990588 86.41777494288676564"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
+		"IKFK_Switch" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch" 
+		"blendParent1" " -av -k 1 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Arm_01_IK_Grp|Malik_Rig_v2:R_Arm_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_IK_Base_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Base_Ctrl" 
+		"Rotate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl" 
-		"translate" " -type \"double3\" 0.29481112241298807 -24.96503298798830883 -0.55084991336197853"
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl" 
+		"translate" " -type \"double3\" 0.62983803284398299 -16.54276724269110943 -0.59381893131271846"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl" 
 		"translateX" " -av"
@@ -1208,14 +1321,120 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl" 
 		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Ball_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl" 
 		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:R_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl" 
+		"visibility" " -av 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl" 
 		"translate" " -type \"double3\" 0 -7.61005215501233767 -18.6143096563663093"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl" 
@@ -1224,6 +1443,38 @@ createNode reference -n "Malik_Rig_v2RN";
 		"translateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl" 
 		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:R_Leg_01_IK_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:R_Leg_01_IK_PV_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Base_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl" 
+		"visibility" " -av 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl" 
 		"translate" " -type \"double3\" 0.10447145050214386 -21.18814899467452051 8.90600933502106784"
 		
@@ -1242,6 +1493,120 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Ball_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_Handle_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_RSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_LSide_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Heel_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_Toe_Ctrl|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl_Grp|Malik_Rig_v2:L_Foot_Reverse_IK_ToeTap_01_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl" 
+		"visibility" " -av 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl" 
@@ -1250,8 +1615,26 @@ createNode reference -n "Malik_Rig_v2RN";
 		"translateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl" 
 		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:IK_Controls|Malik_Rig_v2:L_Leg_01_IK_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Offset_Grp|Malik_Rig_v2:L_Leg_01_IK_PV_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl" 
-		"rotate" " -type \"double3\" -2.62099730282438026 -21.69524226389203037 -1.99902756961961559"
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 22.48860779446696867 -27.74747250382502628 -2.37507586285786942"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl" 
 		"rotateX" " -av"
@@ -1259,12 +1642,66 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_01_FK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_02_FK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:L_Arm_01_FK_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:L_Arm_03_FK_Ctrl" 
+		"Rotate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl" 
-		"rotate" " -type \"double3\" -2.68532600447051228 -22.28380247737704067 -2.04184970815093036"
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 22.41698823365903337 -28.33568350717901296 -1.71366520771185549"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl" 
 		"rotateX" " -av"
@@ -1272,10 +1709,56 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_01_FK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_02_FK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:FK_Controls|Malik_Rig_v2:R_Arm_01_FK_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl_Grp|Malik_Rig_v2:R_Arm_03_FK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Root_RK_Ctrl_Grp|Malik_Rig_v2:Root_RK_Ctrl" 
+		"visibility" " -av 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Root_RK_Ctrl_Grp|Malik_Rig_v2:Root_RK_Ctrl" 
 		"translate" " -type \"double3\" 0 -3 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Root_RK_Ctrl_Grp|Malik_Rig_v2:Root_RK_Ctrl" 
@@ -1287,15 +1770,91 @@ createNode reference -n "Malik_Rig_v2RN";
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Root_RK_Ctrl_Grp|Malik_Rig_v2:Root_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 -14.78902709526034265 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Root_RK_Ctrl_Grp|Malik_Rig_v2:Root_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Root_RK_Ctrl_Grp|Malik_Rig_v2:Root_RK_Ctrl" 
 		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Root_RK_Ctrl_Grp|Malik_Rig_v2:Root_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Root_RK_Ctrl_Grp|Malik_Rig_v2:Root_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Root_RK_Ctrl_Grp|Malik_Rig_v2:Root_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
+		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Waist_RK_Ctrl_Grp|Malik_Rig_v2:Waist_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hip_RK_Ctrl_Grp|Malik_Rig_v2:R_Hip_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
 		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hip_RK_Ctrl_Grp|Malik_Rig_v2:L_Hip_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_01_RK_Ctrl_Grp|Malik_Rig_v2:Spine_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_01_RK_Ctrl_Grp|Malik_Rig_v2:Spine_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_01_RK_Ctrl_Grp|Malik_Rig_v2:Spine_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_01_RK_Ctrl_Grp|Malik_Rig_v2:Spine_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_01_RK_Ctrl_Grp|Malik_Rig_v2:Spine_01_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_01_RK_Ctrl_Grp|Malik_Rig_v2:Spine_01_RK_Ctrl" 
 		"rotate" " -type \"double3\" -0.10747817124855681 1.2901632288366387 -4.90670297514858778"
 		
@@ -1305,6 +1864,20 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_01_RK_Ctrl_Grp|Malik_Rig_v2:Spine_01_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_01_RK_Ctrl_Grp|Malik_Rig_v2:Spine_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_01_RK_Ctrl_Grp|Malik_Rig_v2:Spine_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_02_RK_Ctrl_Grp|Malik_Rig_v2:Spine_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_02_RK_Ctrl_Grp|Malik_Rig_v2:Spine_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_02_RK_Ctrl_Grp|Malik_Rig_v2:Spine_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_02_RK_Ctrl_Grp|Malik_Rig_v2:Spine_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_02_RK_Ctrl_Grp|Malik_Rig_v2:Spine_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_02_RK_Ctrl_Grp|Malik_Rig_v2:Spine_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" -5.86356066195204217 0 8"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_02_RK_Ctrl_Grp|Malik_Rig_v2:Spine_02_RK_Ctrl" 
@@ -1313,6 +1886,10 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_02_RK_Ctrl_Grp|Malik_Rig_v2:Spine_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_02_RK_Ctrl_Grp|Malik_Rig_v2:Spine_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_02_RK_Ctrl_Grp|Malik_Rig_v2:Spine_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_03_RK_Ctrl_Grp|Malik_Rig_v2:Spine_03_RK_Ctrl" 
 		"visibility" " -av 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_03_RK_Ctrl_Grp|Malik_Rig_v2:Spine_03_RK_Ctrl" 
@@ -1324,7 +1901,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_03_RK_Ctrl_Grp|Malik_Rig_v2:Spine_03_RK_Ctrl" 
 		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_03_RK_Ctrl_Grp|Malik_Rig_v2:Spine_03_RK_Ctrl" 
-		"rotate" " -type \"double3\" -4.11663423279105345 0.53748218876934539 6.00000000000000089"
+		"rotate" " -type \"double3\" -4.13745031882702019 0.32594682949628206 8.16114218376678835"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_03_RK_Ctrl_Grp|Malik_Rig_v2:Spine_03_RK_Ctrl" 
 		"rotateX" " -av"
@@ -1355,7 +1932,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_04_RK_Ctrl_Grp|Malik_Rig_v2:Spine_04_RK_Ctrl" 
 		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_04_RK_Ctrl_Grp|Malik_Rig_v2:Spine_04_RK_Ctrl" 
-		"rotate" " -type \"double3\" 8.49103918225111975 -0.31576447916832673 1.89533245783058968"
+		"rotate" " -type \"double3\" 8.48976563317796895 -0.31785758885569754 2.72335647177314089"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_04_RK_Ctrl_Grp|Malik_Rig_v2:Spine_04_RK_Ctrl" 
 		"rotateX" " -av"
@@ -1388,7 +1965,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_05_RK_Ctrl_Grp|Malik_Rig_v2:Spine_05_RK_Ctrl" 
 		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_05_RK_Ctrl_Grp|Malik_Rig_v2:Spine_05_RK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 4.38365709720187002"
+		"rotate" " -type \"double3\" 0 0 5.554969113355118"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_05_RK_Ctrl_Grp|Malik_Rig_v2:Spine_05_RK_Ctrl" 
 		"rotateX" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_05_RK_Ctrl_Grp|Malik_Rig_v2:Spine_05_RK_Ctrl" 
@@ -1400,25 +1977,587 @@ createNode reference -n "Malik_Rig_v2RN";
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Spine_05_RK_Ctrl_Grp|Malik_Rig_v2:Spine_05_RK_Ctrl" 
 		"Rotate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 -9.90465809374241779"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
+		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Neck_RK_Ctrl_Grp|Malik_Rig_v2:Neck_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 -6.37251146742951935"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:L_Clavicle_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 -6.37251146742951935"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Clavicle_RK_Ctrl_Grp|Malik_Rig_v2:R_Clavicle_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 19.52393459744386206"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:PonyTail_Base_RK_Ctrl_Grp|Malik_Rig_v2:PonyTail_Base_RK_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:R_Eyelid_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Ear_RK_Ctrl_Grp|Malik_Rig_v2:R_Ear_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Brow_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:R_Cheek_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Right_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Right_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eyelid_RK_Ctrl_Grp|Malik_Rig_v2:L_Eyelid_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Ear_RK_Ctrl_Grp|Malik_Rig_v2:L_Ear_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Brow_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Brow_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Cheek_RK_Ctrl_Grp|Malik_Rig_v2:L_Cheek_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Left_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Left_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Bangs_Base_RK_Ctrl_Grp|Malik_Rig_v2:Bangs_Base_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Top_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Top_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Lip_Bottom_RK_Ctrl_Grp|Malik_Rig_v2:Lip_Bottom_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 7.62536242403001019"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:Head_Rotate_RK_Ctrl_Grp|Malik_Rig_v2:Head_Rotate_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:R_Eye_RK_Ctrl_Grp|Malik_Rig_v2:R_Eye_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Head_Controls|Malik_Rig_v2:L_Eye_RK_Ctrl_Grp|Malik_Rig_v2:L_Eye_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:L_Wrist_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" 18.1759977755305222 -16.21490731176228905 56.11331250768952117"
 		
@@ -1428,46 +2567,240 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 38.1933367213499082"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_01|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_01_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 46.66665295651525724"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 46.66665295651525724"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 46.66665295651525724"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_02|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_02_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 44.55038915420411172"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 44.55038915420411172"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 44.55038915420411172"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_03|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_03_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 66.16794042448043456"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 66.16794042448043456"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 66.16794042448043456"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_04|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_04_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl" 
 		"rotate" " -type \"double3\" -11.89585385741270684 0 55.100582251189131"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl" 
@@ -1476,6 +2809,20 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" -11.89585385741270684 0 55.100582251189131"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl" 
@@ -1484,6 +2831,20 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl" 
 		"rotate" " -type \"double3\" -11.89585385741270684 0 55.100582251189131"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl" 
@@ -1492,6 +2853,20 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:L_Hand|Malik_Rig_v2:L_Finger_05|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:L_Finger_05_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl" 
 		"rotate" " -type \"double3\" -16.08119337712800956 0 53.54109573748525719"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl" 
@@ -1500,50 +2875,254 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 53.54109573748525719"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 53.54109573748525719"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_05|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_05_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 61.8451581750830286"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 61.8451581750830286"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 61.8451581750830286"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_04|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_04_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 36.73780795486674577"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 62.13741833162838901"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 62.13741833162838901"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_03|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_03_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 45.33415037026031769"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 45.33415037026031769"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 45.33415037026031769"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_02|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_02_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl" 
+		"visibility" " -av 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl" 
@@ -1561,6 +3140,20 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_01_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl" 
 		"rotate" " -type \"double3\" 15.95707904285331402 -3.48181855872532742 33.36591385008072308"
 		
@@ -1570,202 +3163,727 @@ createNode reference -n "Malik_Rig_v2RN";
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_02_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
+		"translateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 37.08582199411204527"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Finger_01|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl_Grp|Malik_Rig_v2:R_Finger_01_03_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:R_Hand|Malik_Rig_v2:R_Wrist_RK_Ctrl_Grp|Malik_Rig_v2:R_Wrist_RK_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Transform_Ctrl_Grp|Malik_Rig_v2:Transform_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Transform_Ctrl_Grp|Malik_Rig_v2:Transform_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Transform_Ctrl_Grp|Malik_Rig_v2:Transform_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Transform_Ctrl_Grp|Malik_Rig_v2:Transform_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Transform_Ctrl_Grp|Malik_Rig_v2:Transform_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Transform_Ctrl_Grp|Malik_Rig_v2:Transform_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Transform_Ctrl_Grp|Malik_Rig_v2:Transform_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Transform_Ctrl_Grp|Malik_Rig_v2:Transform_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:RK_Controls|Malik_Rig_v2:Transform_Ctrl_Grp|Malik_Rig_v2:Transform_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
+		"rotate" " -type \"double3\" -0.15594453978262851 -0.05688436118768754 0.39907629558514462"
+		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
 		"rotateX" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
 		"rotateZ" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_08_Controls|Malik_Rig_v2:Pony_08_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_08_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
+		"rotate" " -type \"double3\" -0.35309718789221156 -0.009529513614153157 0.20258718027579969"
+		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
 		"rotateX" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
 		"rotateY" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		"rotate" " -type \"double3\" -3.00621243123430082 0.09352895219387361 3.7761865557822305"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
+		"rotate" " -type \"double3\" 0.17013940323705587 0.033054066397813643 0.36965400561668194"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_07_Controls|Malik_Rig_v2:Pony_07_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_07_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
+		"rotate" " -type \"double3\" 3.36015640526146386 -0.21709275390645541 3.45342726173143344"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
+		"rotate" " -type \"double3\" -0.24642431154329814 0.20509411644129691 0.38611762475600714"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_06_Controls|Malik_Rig_v2:Pony_06_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_06_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
+		"rotate" " -type \"double3\" 0.13968122814667885 -0.077882338125348061 4.82692937019366752"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
+		"rotate" " -type \"double3\" -0.25597028219392054 -0.20109917229552199 0.30675557895143701"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_05_Controls|Malik_Rig_v2:Pony_05_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_05_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
+		"rotate" " -type \"double3\" -1.49180120641647962 0.094712940685874603 4.59068140945371717"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
+		"rotate" " -type \"double3\" 0.36201377555061653 0.18374165150783034 0.17387591199867988"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_04_Controls|Malik_Rig_v2:Pony_04_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_04_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
+		"rotate" " -type \"double3\" 4.6445162616690201 -0.11780097122867343 1.31170332258018485"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
+		"rotate" " -type \"double3\" 0.1047659542421578 0.33428727474305769 0.37036119264306783"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_03_Controls|Malik_Rig_v2:Pony_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_03_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"Translate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		"rotate" " -type \"double3\" 2.89148276556526751 -0.23118388473224161 3.85439765812545554"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"rotate" " -type \"double3\" -0.19073516377902405 0.19257146510739839 0.33124773038977856"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"rotate" " -type \"double3\" -2.39065458956507815 0.058631230049309827 4.19498520630283789"
+		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_02_Controls|Malik_Rig_v2:Pony_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_02_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
 		"rotateZ" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_01_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
 		"rotateZ" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_03_Controls|Malik_Rig_v2:Bang_03_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_03_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
 		"rotateX" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
 		"rotateY" " -av"
-		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Ponytail_Controls|Malik_Rig_v2:Pony_01_Control|Malik_Rig_v2:Pony_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Pony_01_Spline_02_Ctrl" 
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_02_Controls|Malik_Rig_v2:Bang_02_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_02_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_01_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_01_Ctrl" 
+		"Rotate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"Translate" " -av -k 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Bang_Controls|Malik_Rig_v2:Bang_01_Controls|Malik_Rig_v2:Bang_01_Spline_02_Ctrl_Grp|Malik_Rig_v2:Bang_01_Spline_02_Ctrl" 
+		"Rotate" " -av -k 1 1"
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Bang_Splines|Malik_Rig_v2:Bang_03_Spline|Malik_Rig_v2:Bang_03_IK_Handle" 
-		"translate" " -type \"double3\" -7.22125069865147307 208.8761960411481482 18.39971175679579218"
+		"translate" " -type \"double3\" -7.61368375038371958 207.67770109503342724 22.80776725876174638"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Bang_Splines|Malik_Rig_v2:Bang_03_Spline|Malik_Rig_v2:Bang_03_IK_Handle" 
-		"rotate" " -type \"double3\" 66.63461175698787997 34.20381391342382926 53.18864653380845198"
+		"rotate" " -type \"double3\" 76.16977181448945089 27.98915689836351817 55.86199327122353253"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Bang_Splines|Malik_Rig_v2:Bang_02_Spline|Malik_Rig_v2:Bang_02_IK_Handle" 
-		"translate" " -type \"double3\" 0.16700841108513798 211.28150304424812589 15.58471982081720242"
+		"translate" " -type \"double3\" -0.22542838670778587 210.43526790874619792 20.336842718603517"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Bang_Splines|Malik_Rig_v2:Bang_02_Spline|Malik_Rig_v2:Bang_02_IK_Handle" 
-		"rotate" " -type \"double3\" -7.99990165005649967 43.29179025301061756 -5.50457436814558232"
+		"rotate" " -type \"double3\" 3.06636026947132789 43.5442955785676844 1.72244604821158287"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Bang_Splines|Malik_Rig_v2:Bang_01_Spline|Malik_Rig_v2:Bang_01_IK_Handle" 
-		"translate" " -type \"double3\" 5.79870225111166082 210.05863317120196143 14.5944778164227813"
+		"translate" " -type \"double3\" 5.4062654533219181 209.35461230564567359 19.19308862739503851"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Bang_Splines|Malik_Rig_v2:Bang_01_Spline|Malik_Rig_v2:Bang_01_IK_Handle" 
-		"rotate" " -type \"double3\" 60.76778656645507937 18.06900924677482223 28.99688908276275612"
+		"rotate" " -type \"double3\" 69.22350210357087974 14.25667365409678311 30.91458844234245262"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_08_Spline|Malik_Rig_v2:Pony_08_IK_Handle" 
-		"translate" " -type \"double3\" -2.32792042573748592 198.22263463604025446 -8.53173573414568231"
+		"translate" " -type \"double3\" -2.66212325101039493 198.21535252713121622 -4.19366262063182837"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_08_Spline|Malik_Rig_v2:Pony_08_IK_Handle" 
-		"rotate" " -type \"double3\" -20.66438979798305198 74.63810924463182062 -19.98547846602835776"
+		"rotate" " -type \"double3\" -49.83963157314606462 67.67458829170080037 -47.53323608753817098"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_07_Spline|Malik_Rig_v2:Pony_07_IK_Handle" 
-		"translate" " -type \"double3\" -14.33710478624170648 204.83103307354105027 -10.85685475270042133"
+		"translate" " -type \"double3\" -14.65740188850909576 204.57242056571314492 -7.89760142428434264"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_07_Spline|Malik_Rig_v2:Pony_07_IK_Handle" 
-		"rotate" " -type \"double3\" 174.85839762786710594 58.45338387751591114 175.61503183646837556"
+		"rotate" " -type \"double3\" 3.78365223442703913 121.19737124043709287 6.87163981339207464"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_06_Spline|Malik_Rig_v2:Pony_06_IK_Handle" 
-		"translate" " -type \"double3\" 7.33058739820672312 205.29789098369727185 -10.48931057850608717"
+		"translate" " -type \"double3\" 7.01261724646712281 205.09108528831291096 -7.34556532705651133"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_06_Spline|Malik_Rig_v2:Pony_06_IK_Handle" 
-		"rotate" " -type \"double3\" 34.35172956106188025 57.97669951317131165 30.09119772036326168"
+		"rotate" " -type \"double3\" 24.78579909540471604 60.37274849732455806 19.61286284267280777"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_05_Spline|Malik_Rig_v2:Pony_05_IK_Handle" 
-		"translate" " -type \"double3\" -2.00607322534379229 214.86713536846298211 -13.28444798390147064"
+		"translate" " -type \"double3\" -2.34397930493792694 214.1505047000869979 -11.88102612532022917"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_05_Spline|Malik_Rig_v2:Pony_05_IK_Handle" 
-		"rotate" " -type \"double3\" 88.71070827871665188 37.36873023587295251 87.87637297997675034"
+		"rotate" " -type \"double3\" 88.34736228783729928 44.08835241536642258 87.54918446847759128"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_04_Spline|Malik_Rig_v2:Pony_04_IK_Handle" 
-		"translate" " -type \"double3\" -8.4941596873647498 196.80460485088408973 -9.99389393727073205"
+		"translate" " -type \"double3\" -8.79498661814459837 196.75464105267130321 -5.65126879419402961"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_04_Spline|Malik_Rig_v2:Pony_04_IK_Handle" 
-		"rotate" " -type \"double3\" 72.22053422629419117 115.83753289640377204 70.38971357741245072"
+		"rotate" " -type \"double3\" -103.39663828118905542 57.88089220064128426 -104.92463344231430256"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_03_Spline|Malik_Rig_v2:Pony_03_IK_Handle" 
-		"translate" " -type \"double3\" 6.65683938184931012 201.98539098369815292 -2.60904820362817436"
+		"translate" " -type \"double3\" 6.27524425449910783 203.17593328614748316 0.88983686506854265"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_03_Spline|Malik_Rig_v2:Pony_03_IK_Handle" 
-		"rotate" " -type \"double3\" 0.28160698258961392 22.8351807684427186 0.7256057151553631"
+		"rotate" " -type \"double3\" -1.01939812380011241 22.35878515954462387 -1.89229303474183053"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_02_Spline|Malik_Rig_v2:Pony_02_IK_Handle" 
-		"translate" " -type \"double3\" 5.8145408741588307 215.78641637432326661 -1.10775692860362884"
+		"translate" " -type \"double3\" 5.37720370739803322 217.15081267183049363 -0.11754985207965185"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_02_Spline|Malik_Rig_v2:Pony_02_IK_Handle" 
-		"rotate" " -type \"double3\" 59.74003626786493015 38.35924544458805485 46.76847700821949161"
+		"rotate" " -type \"double3\" 54.16110618833867818 42.73841716975008609 42.70276553627558513"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_01_Spline|Malik_Rig_v2:Pony_01_IK_Handle" 
-		"translate" " -type \"double3\" -10.41041659196672775 215.19165929424437422 -3.72938092152355205"
+		"translate" " -type \"double3\" -10.79931110342396394 216.10638337542107479 -2.82990814645997579"
 		
 		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Joints|Malik_Rig_v2:Ponytail_Splines|Malik_Rig_v2:Pony_01_Spline|Malik_Rig_v2:Pony_01_IK_Handle" 
-		"rotate" " -type \"double3\" 138.4119576632153894 50.10240329033093332 145.7506676607388556"
+		"rotate" " -type \"double3\" 146.77386316817941747 53.7461337391352032 152.90765169736235407"
 		
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Bang_03_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Bang_02_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Bang_01_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Pony_08_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Pony_07_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Pony_06_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Pony_05_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Pony_04_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Pony_03_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Pony_02_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Spline_Curves|Malik_Rig_v2:Pony_01_Curve" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"visibility" " -av 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"translateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"translateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"translateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"rotateX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"rotateY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"rotateZ" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"scaleX" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"scaleY" " -av"
+		2 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scale_Ctrl_Grp|Malik_Rig_v2:Scale_Ctrl" 
+		"scaleZ" " -av"
 		2 "Malik_Rig_v2:Spine_03_RK_Ctrl_scaleX" "postInfinity" " 0"
 		2 "Malik_Rig_v2:Spine_03_RK_Ctrl_scaleY" "postInfinity" " 0"
 		2 "Malik_Rig_v2:Spine_03_RK_Ctrl_scaleZ" "postInfinity" " 0"
 		2 "Malik_Rig_v2:Spine_04_RK_Ctrl_scaleX" "postInfinity" " 0"
 		2 "Malik_Rig_v2:Spine_04_RK_Ctrl_scaleY" "postInfinity" " 0"
 		2 "Malik_Rig_v2:Spine_04_RK_Ctrl_scaleZ" "postInfinity" " 0"
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Translate.constraintTranslateX" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.translateX" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Translate.constraintTranslateY" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.translateY" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Translate.constraintTranslateZ" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.translateZ" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Rotate.constraintRotateX" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.rotateX" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Rotate.constraintRotateY" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.rotateY" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Rotate.constraintRotateZ" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.rotateZ" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintTranslateX" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.translateX" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintTranslateY" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.translateY" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintTranslateZ" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.translateZ" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintRotateX" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.rotateX" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintRotateY" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.rotateY" 
+		""
+		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintRotateZ" 
+		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.rotateZ" 
+		""
 		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch|Malik_Rig_v2:R_Leg_01_Switch_parentConstraint1.constraintTranslateX" 
 		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Leg_01_Switch.translateX" 
 		""
@@ -1801,42 +3919,6 @@ createNode reference -n "Malik_Rig_v2RN";
 		""
 		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch|Malik_Rig_v2:L_Arm_01_Switch_parentConstraint_Rotate.constraintRotateZ" 
 		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Arm_01_Switch.rotateZ" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintTranslateX" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.translateX" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintTranslateY" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.translateY" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintTranslateZ" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.translateZ" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintRotateX" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.rotateX" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintRotateY" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.rotateY" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch|Malik_Rig_v2:L_Leg_01_Switch_parentConstraint1.constraintRotateZ" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:L_Leg_01_Switch.rotateZ" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Translate.constraintTranslateX" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.translateX" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Translate.constraintTranslateY" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.translateY" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Translate.constraintTranslateZ" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.translateZ" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Rotate.constraintRotateX" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.rotateX" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Rotate.constraintRotateY" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.rotateY" 
-		""
-		3 "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch|Malik_Rig_v2:R_Arm_01_Switch_parentConstraint_Rotate.constraintRotateZ" 
-		"|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar|Malik_Rig_v2:Controls|Malik_Rig_v2:Switches|Malik_Rig_v2:R_Arm_01_Switch.rotateZ" 
 		""
 		5 4 "Malik_Rig_v2RN" "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Scalar.translateX" 
 		"Malik_Rig_v2RN.placeHolderList[1]" ""
@@ -3997,36 +6079,36 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n"
 		+ "            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
-		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 0\n            -nurbsCurves 0\n            -nurbsSurfaces 0\n            -polymeshes 1\n            -subdivSurfaces 0\n            -planes 0\n            -lights 0\n            -cameras 0\n            -controlVertices 0\n            -hulls 0\n            -grid 0\n            -imagePlane 0\n            -joints 0\n            -ikHandles 0\n            -deformers 0\n            -dynamics 0\n            -particleInstancers 0\n            -fluids 0\n            -hairSystems 0\n            -follicles 0\n            -nCloths 0\n            -nParticles 0\n            -nRigids 0\n            -dynamicConstraints 0\n            -locators 0\n            -manipulators 1\n            -pluginShapes 0\n            -dimensions 0\n            -handles 0\n            -pivots 0\n            -textures 0\n            -strokes 0\n            -motionTrails 0\n            -clipGhosts 0\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n"
-		+ "            -width 1248\n            -height 678\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n"
-		+ "            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n"
-		+ "            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
-		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
-		+ "            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n"
-		+ "                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n"
-		+ "                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -clipTime \"on\" \n                -stackedCurves 1\n                -stackedCurvesMin -1\n"
-		+ "                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 1\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n"
-		+ "                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n"
-		+ "                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n"
-		+ "                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n"
-		+ "                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n"
-		+ "                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n"
+		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 0\n            -nurbsCurves 1\n            -nurbsSurfaces 0\n            -polymeshes 1\n            -subdivSurfaces 0\n            -planes 0\n            -lights 0\n            -cameras 0\n            -controlVertices 0\n            -hulls 0\n            -grid 0\n            -imagePlane 0\n            -joints 0\n            -ikHandles 0\n            -deformers 0\n            -dynamics 0\n            -particleInstancers 0\n            -fluids 0\n            -hairSystems 0\n            -follicles 0\n            -nCloths 0\n            -nParticles 0\n            -nRigids 0\n            -dynamicConstraints 0\n            -locators 0\n            -manipulators 1\n            -pluginShapes 0\n            -dimensions 0\n            -handles 0\n            -pivots 0\n            -textures 0\n            -strokes 0\n            -motionTrails 0\n            -clipGhosts 0\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n"
+		+ "            -width 1248\n            -height 697\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n"
+		+ "            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n"
+		+ "            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"<function selCom at 0x7f29c5c04aa0>\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n"
+		+ "            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n"
+		+ "            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n"
+		+ "                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n"
+		+ "                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n"
+		+ "                -clipTime \"on\" \n                -stackedCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 1\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n"
+		+ "                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n"
+		+ "                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n"
+		+ "                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n"
+		+ "                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n"
+		+ "                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n"
-		+ "                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 0\\n    -nurbsCurves 0\\n    -nurbsSurfaces 0\\n    -polymeshes 1\\n    -subdivSurfaces 0\\n    -planes 0\\n    -lights 0\\n    -cameras 0\\n    -controlVertices 0\\n    -hulls 0\\n    -grid 0\\n    -imagePlane 0\\n    -joints 0\\n    -ikHandles 0\\n    -deformers 0\\n    -dynamics 0\\n    -particleInstancers 0\\n    -fluids 0\\n    -hairSystems 0\\n    -follicles 0\\n    -nCloths 0\\n    -nParticles 0\\n    -nRigids 0\\n    -dynamicConstraints 0\\n    -locators 0\\n    -manipulators 1\\n    -pluginShapes 0\\n    -dimensions 0\\n    -handles 0\\n    -pivots 0\\n    -textures 0\\n    -strokes 0\\n    -motionTrails 0\\n    -clipGhosts 0\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1248\\n    -height 678\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 0\\n    -nurbsCurves 0\\n    -nurbsSurfaces 0\\n    -polymeshes 1\\n    -subdivSurfaces 0\\n    -planes 0\\n    -lights 0\\n    -cameras 0\\n    -controlVertices 0\\n    -hulls 0\\n    -grid 0\\n    -imagePlane 0\\n    -joints 0\\n    -ikHandles 0\\n    -deformers 0\\n    -dynamics 0\\n    -particleInstancers 0\\n    -fluids 0\\n    -hairSystems 0\\n    -follicles 0\\n    -nCloths 0\\n    -nParticles 0\\n    -nRigids 0\\n    -dynamicConstraints 0\\n    -locators 0\\n    -manipulators 1\\n    -pluginShapes 0\\n    -dimensions 0\\n    -handles 0\\n    -pivots 0\\n    -textures 0\\n    -strokes 0\\n    -motionTrails 0\\n    -clipGhosts 0\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1248\\n    -height 678\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 0\\n    -nurbsCurves 1\\n    -nurbsSurfaces 0\\n    -polymeshes 1\\n    -subdivSurfaces 0\\n    -planes 0\\n    -lights 0\\n    -cameras 0\\n    -controlVertices 0\\n    -hulls 0\\n    -grid 0\\n    -imagePlane 0\\n    -joints 0\\n    -ikHandles 0\\n    -deformers 0\\n    -dynamics 0\\n    -particleInstancers 0\\n    -fluids 0\\n    -hairSystems 0\\n    -follicles 0\\n    -nCloths 0\\n    -nParticles 0\\n    -nRigids 0\\n    -dynamicConstraints 0\\n    -locators 0\\n    -manipulators 1\\n    -pluginShapes 0\\n    -dimensions 0\\n    -handles 0\\n    -pivots 0\\n    -textures 0\\n    -strokes 0\\n    -motionTrails 0\\n    -clipGhosts 0\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1248\\n    -height 697\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 0\\n    -nurbsCurves 1\\n    -nurbsSurfaces 0\\n    -polymeshes 1\\n    -subdivSurfaces 0\\n    -planes 0\\n    -lights 0\\n    -cameras 0\\n    -controlVertices 0\\n    -hulls 0\\n    -grid 0\\n    -imagePlane 0\\n    -joints 0\\n    -ikHandles 0\\n    -deformers 0\\n    -dynamics 0\\n    -particleInstancers 0\\n    -fluids 0\\n    -hairSystems 0\\n    -follicles 0\\n    -nCloths 0\\n    -nParticles 0\\n    -nRigids 0\\n    -dynamicConstraints 0\\n    -locators 0\\n    -manipulators 1\\n    -pluginShapes 0\\n    -dimensions 0\\n    -handles 0\\n    -pivots 0\\n    -textures 0\\n    -strokes 0\\n    -motionTrails 0\\n    -clipGhosts 0\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1248\\n    -height 697\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "FC70FCEE-42DE-1849-CDC2-AC88B1DCDE43";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 190 -ast 1 -aet 200 ";
+	setAttr ".b" -type "string" "playbackOptions -min 1 -max 27 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
 createNode animCurveTL -n "Scalar_translateX";
 	rename -uid "47961DF4-44DF-6A64-AFA6-71B9D47715C6";
@@ -4048,7500 +6130,6359 @@ createNode animCurveTL -n "Scalar_translateZ";
 	setAttr ".kot[0]"  5;
 createNode animCurveTL -n "Bang_01_Spline_01_Ctrl_translateX";
 	rename -uid "59908E8C-4478-B26F-1D0E-C196C38888E3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_01_Spline_01_Ctrl_translateY";
 	rename -uid "98A8834A-45AA-BD3C-8E50-6185ACDC6BDD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_01_Spline_01_Ctrl_translateZ";
 	rename -uid "C2162F7A-40F3-5A45-07CA-76BBE6A43C50";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_01_Spline_02_Ctrl_translateX";
 	rename -uid "3CC72EB2-4BAD-D76B-6FC4-EBA67A63B4E4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_01_Spline_02_Ctrl_translateY";
 	rename -uid "E2EB39B7-41AC-1344-FE76-0DA751AEBD6E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_01_Spline_02_Ctrl_translateZ";
 	rename -uid "E9577125-40A9-895D-5AFA-1EADF0255A66";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_02_Spline_01_Ctrl_translateX";
 	rename -uid "9B521988-47E2-E94D-F87D-0AB6F1B54FB4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_02_Spline_01_Ctrl_translateY";
 	rename -uid "7263578E-4DB3-91EB-D70E-B494E5119B58";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_02_Spline_01_Ctrl_translateZ";
 	rename -uid "4EF10D26-4872-85EF-ACA3-2886DA221D01";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_02_Spline_02_Ctrl_translateX";
 	rename -uid "2E56E66B-4353-FE04-0916-688A23304395";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_02_Spline_02_Ctrl_translateY";
 	rename -uid "8939C7C7-46DF-DA13-DEEC-249660491F4C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_02_Spline_02_Ctrl_translateZ";
 	rename -uid "08CA3B3B-4C59-E787-8212-01B2BE8B17E5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_03_Spline_01_Ctrl_translateX";
 	rename -uid "8B3F11E9-40D4-3352-2AC2-C69A8D01CEA8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_03_Spline_01_Ctrl_translateY";
 	rename -uid "3EC84FC4-4E56-FE0F-0A6B-2DBCFF532EA1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_03_Spline_01_Ctrl_translateZ";
 	rename -uid "3096F04E-4FBB-A9B8-E559-6487B566B85F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_03_Spline_02_Ctrl_translateX";
 	rename -uid "4B7BE9D4-4D02-BE02-A635-D698230DC138";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_03_Spline_02_Ctrl_translateY";
 	rename -uid "DA5BBE38-4175-CBFE-F554-5FBFF8D0FE7B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bang_03_Spline_02_Ctrl_translateZ";
 	rename -uid "19BCE6B0-4367-1B9D-4A4B-F58C539FC1C5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Arm_01_FK_Ctrl_translateX";
 	rename -uid "3A86B739-43FD-BC59-6858-9D8078F5073A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Arm_01_FK_Ctrl_translateY";
 	rename -uid "A8276071-4135-79F6-5C1D-7EBE30E6251F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Arm_01_FK_Ctrl_translateZ";
 	rename -uid "85B4ADFB-4F90-81F1-BB8E-5B874736BB17";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Arm_02_FK_Ctrl_translateX";
 	rename -uid "A5148860-4F50-42B1-DFCF-6181F58DB8E6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Arm_02_FK_Ctrl_translateY";
 	rename -uid "AE05AD80-4F55-DCE9-4AB6-EA91CCB6E98A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Arm_02_FK_Ctrl_translateZ";
 	rename -uid "66662D0C-44CD-921E-62BE-DB8F3A01328C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Arm_03_FK_Ctrl_translateX";
 	rename -uid "7EF82F19-40F4-21D2-29EC-278E663C22C3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Arm_03_FK_Ctrl_translateY";
 	rename -uid "D08FA1A8-452C-059F-2605-21B294F2F888";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Arm_03_FK_Ctrl_translateZ";
 	rename -uid "50F6E278-4AB7-CFD8-53DC-CBB64C53ADB9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Arm_01_FK_Ctrl_translateX";
 	rename -uid "285B10E2-408F-2CB7-5B1A-4AAD01562878";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Arm_01_FK_Ctrl_translateY";
 	rename -uid "6BE5E6AD-4115-B55E-0222-A2A96BDE638D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Arm_01_FK_Ctrl_translateZ";
 	rename -uid "48CFD02A-49C1-DAD2-F4BD-7FA0D5F1C358";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Arm_02_FK_Ctrl_translateX";
 	rename -uid "5ADB24EB-4DDE-60DE-3C0D-ADBEB7381DB5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Arm_02_FK_Ctrl_translateY";
 	rename -uid "F1835039-4179-691F-FB4A-78A20A105D2A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Arm_02_FK_Ctrl_translateZ";
 	rename -uid "ED7CD770-4944-D958-C3C2-B1A31DFCF6C4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Arm_03_FK_Ctrl_translateX";
 	rename -uid "7B7A6D0F-4663-F094-508D-40A3DC201DFD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Arm_03_FK_Ctrl_translateY";
 	rename -uid "4272DD8B-47B1-0814-9517-6682D902E00C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Arm_03_FK_Ctrl_translateZ";
 	rename -uid "656FC561-420A-5F47-ED90-8F9B6212E470";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Leg_01_IK_Base_Ctrl_translateX";
 	rename -uid "236A51FB-432E-F83B-DB42-768314B3CBDA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Leg_01_IK_Base_Ctrl_translateY";
 	rename -uid "AEFED9A8-4314-E113-8A58-D19FAA1FE39B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Leg_01_IK_Base_Ctrl_translateZ";
 	rename -uid "D2E08C9F-4A1D-8E2F-676C-96949062B868";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Leg_01_IK_Handle_Ctrl_translateX";
 	rename -uid "DFB22E14-4EC4-AF7A-8538-3DA6F48E8856";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 0.10447145050214386 4 0.10447145050214386
-		 7 -29.388486882412646 10 -95.703481209072521 13 -103.84799220172373 16 -74.13663909693814
-		 19 -10.561436915510937 22 0.10447145050214386 25 0.10447145050214386 28 0.10447145050214386;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 13 ".ktv[0:12]"  1 0.10447145050214386 4 0.10447145050214386
+		 5 0 6 -5.3390175926959325 7 -29.388486882412646 10 -95.703481209072521 13 -103.84799220172373
+		 16 -74.13663909693814 19 -10.561436915510937 20 0.10447145050214386 22 0.10447145050214386
+		 25 0.10447145050214386 28 0.10447145050214386;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Leg_01_IK_Handle_Ctrl_translateY";
 	rename -uid "E715D54E-48A8-8B0E-017C-6789D616DAD5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 -21.188148994674521 4 -21.188148994674521
-		 7 -22.404375285146898 10 -17.424082673979182 13 -16.812425411091194 16 -19.043764399173867
-		 19 -23.818297110705263 22 -21.188148994674521 25 -21.188148994674521 28 -21.188148994674521;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 12 ".ktv[0:11]"  1 -21.188148994674521 4 -21.188148994674521
+		 6 -21.688094195164517 7 -22.404375285146898 10 -17.424082673979182 13 -16.812425411091194
+		 16 -19.043764399173867 19 -23.818297110705263 20 -21.188148994674521 22 -21.188148994674521
+		 25 -21.188148994674521 28 -21.188148994674521;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Leg_01_IK_Handle_Ctrl_translateZ";
 	rename -uid "7C11EA01-4708-E1C6-B8D5-BF9E6949FBEC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 8.9060093350210678 4 8.9060093350210678
-		 7 8.4789860201728153 10 12.616755942077202 13 13.124938336665222 16 11.27107791694657
-		 19 7.3042592202653962 22 8.9060093350210678 25 8.9060093350210678 28 8.9060093350210678;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 12 ".ktv[0:11]"  1 8.9060093350210678 4 8.9060093350210678
+		 6 8.9228274626166346 7 8.4789860201728153 10 12.616755942077202 13 13.124938336665222
+		 16 11.27107791694657 19 7.3042592202653962 20 8.9060093350210678 22 8.9060093350210678
+		 25 8.9060093350210678 28 8.9060093350210678;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_RSide_Ctrl_translateX";
 	rename -uid "9EE56A20-4A34-2F75-0C16-CFB0BF0E7CF5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_RSide_Ctrl_translateY";
 	rename -uid "066F46A4-4434-6CBD-2688-6EB575839E76";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_RSide_Ctrl_translateZ";
 	rename -uid "83880DC9-4786-985B-3D38-C5B8F28376E4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_LSide_Ctrl_translateX";
 	rename -uid "F7449304-4364-4D62-823C-C1901C1EFC31";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_LSide_Ctrl_translateY";
 	rename -uid "4A0ADEFA-414B-ABCD-BE3E-BEB28F85CE91";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_LSide_Ctrl_translateZ";
 	rename -uid "77083C85-410E-19FC-2FD6-5FA62E6E5769";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_Heel_Ctrl_translateX";
 	rename -uid "9BFC7E4B-460A-77FC-A3F6-35B276B3864D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_Heel_Ctrl_translateY";
 	rename -uid "BCC3C401-4F3E-3F58-AA96-2886F55B0D67";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_Heel_Ctrl_translateZ";
 	rename -uid "D7C05973-4B83-1185-DDE7-59AF07B44A4A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_Toe_Ctrl_translateX";
 	rename -uid "F60B1404-49DC-3BEA-D494-4EB6CF1C848E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_Toe_Ctrl_translateY";
 	rename -uid "20D1CD38-4204-C085-6CA2-CE8D2AE302E9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_Toe_Ctrl_translateZ";
 	rename -uid "705408FB-427D-5C6D-90CD-E2994E336674";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_Ball_Ctrl_translateX";
 	rename -uid "9ED6A979-40EC-D84B-962B-00984DD4B1B6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_Ball_Ctrl_translateY";
 	rename -uid "4F6FAAB7-4BEF-2649-88B2-4BBEA3CD3163";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_Ball_Ctrl_translateZ";
 	rename -uid "C405272A-4FD8-7D30-0750-46A271F94B4E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_ToeTap_01_Ctrl_translateX";
 	rename -uid "F4A45472-457D-7E17-A701-438EF6023172";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_ToeTap_01_Ctrl_translateY";
 	rename -uid "CA31FAD4-4C74-3705-8571-3FAFE9FC8AB1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Foot_Reverse_IK_ToeTap_01_Ctrl_translateZ";
 	rename -uid "C6E6EE7A-4C7E-893F-ABC8-A0A5263A211B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Leg_01_IK_PV_Ctrl_translateX";
 	rename -uid "E20B6827-4897-853F-E7CD-9EBE9FCE1C5E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 4 -4.6423661041415967 10 -26.156427894424542
 		 13 -38.404369350147 16 -8.6930162453613988 19 -4.7125846406610385 22 -4.6423661041415967
 		 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Leg_01_IK_PV_Ctrl_translateY";
 	rename -uid "8E5767E1-48C2-BF38-5CCF-C2898BC7B079";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -62.078469308202195 7 -47.937999300123593
 		 10 -45.895335078380725 13 -44.906096912332757 16 -47.137435900415419 19 -47.484131804400448
 		 22 -62.078469308202195 25 0 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Leg_01_IK_PV_Ctrl_translateZ";
 	rename -uid "BE17770C-4996-D1B1-D77E-55895A9D5713";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 -7.0360384185619296e-15 4 0.31670686735720094
 		 10 16.980225212042793 13 31.349862687631735 16 29.496002267913052 19 19.885442513727572
 		 22 0.31670686735720094 25 -7.0360384185619296e-15 28 -7.0360384185619296e-15;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Leg_01_IK_Base_Ctrl_translateX";
 	rename -uid "550D9A70-4154-C171-CD71-AEA003183B51";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Leg_01_IK_Base_Ctrl_translateY";
 	rename -uid "79B6036D-4EC4-D239-A3AF-8CBFE932EACE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Leg_01_IK_Base_Ctrl_translateZ";
 	rename -uid "30BB5665-4B3A-6F7F-DB16-DABA37796DC0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Leg_01_IK_Handle_Ctrl_translateX";
 	rename -uid "1A256B89-415F-CBE9-F4CB-AD916CBC0302";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 0.29481112241298807 4 0.29481112241298807
-		 7 0.29481112241298807 10 55.752049678127761 13 84.698934384605366 16 97.610544675119172
-		 19 53.926803761037142 22 0.29481112241298807 25 0.29481112241298807 28 0.29481112241298807;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 10 ".ktv[0:9]"  1 0.62983803284398299 4 0.62983803284398299
+		 7 0.62983803284398299 10 56.355846357318725 13 85.261885946436081 16 98.08413170134861
+		 19 54.701764038881414 22 0.89780781959683875 25 0.62983803284398299 28 0.62983803284398299;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Leg_01_IK_Handle_Ctrl_translateY";
 	rename -uid "B2E069F8-474D-771C-3648-968EFB2F46A6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 -24.965032987988309 4 -24.965032987988309
-		 7 -24.965032987988309 10 -29.129917324231133 13 -31.303852230418663 16 -32.273524807977829
-		 19 -28.992839851066947 22 -24.965032987988309 25 -24.965032987988309 28 -24.965032987988309;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 10 ".ktv[0:9]"  1 -16.542767242691109 4 -16.542767242691109
+		 7 -16.542767242691109 10 -21.055879519127785 13 -23.775999975991134 16 -25.940665278332336
+		 19 -18.62998295501372 22 -16.901692633188073 25 -16.542767242691109 28 -16.542767242691109;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Leg_01_IK_Handle_Ctrl_translateZ";
 	rename -uid "076F62E8-4751-8A8E-BCB2-E69F22686E0A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 -0.55084991336197853 4 -0.55084991336197853
-		 7 -0.55084991336197853 10 -4.011125397022747 13 -5.8172772734373783 16 -6.6229021063067801
-		 19 -3.8972384840958396 22 -0.55084991336197853 25 -0.55084991336197853 28 -0.55084991336197853;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 10 ".ktv[0:9]"  1 -0.59381893131271846 4 -0.59381893131271846
+		 7 -0.59381893131271846 10 -4.0523178131580524 13 -5.8556831405084306 16 -6.6552113165642153
+		 19 -3.9501080796955774 22 -0.59198775286100869 25 -0.59381893131271846 28 -0.59381893131271846;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_RSide_Ctrl_translateX";
 	rename -uid "3C18AED2-48A0-67FC-523E-5A9320901A53";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_RSide_Ctrl_translateY";
 	rename -uid "A5C4BEBB-40BA-F677-DD9E-47868D41F78A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_RSide_Ctrl_translateZ";
 	rename -uid "751E52CB-4A82-3C61-AAD8-E48827B432B4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_LSide_Ctrl_translateX";
 	rename -uid "AF1B5A4A-43FF-6073-C52B-F2A255CA8E96";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_LSide_Ctrl_translateY";
 	rename -uid "1604B1B8-4F27-FD3B-A1AA-A58F17594425";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_LSide_Ctrl_translateZ";
 	rename -uid "D6BF412B-43D7-3F98-4478-4CAD7E29AA23";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_Heel_Ctrl_translateX";
 	rename -uid "93912284-4F82-167A-D137-EFB44A92883C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_Heel_Ctrl_translateY";
 	rename -uid "9E0EFA9C-42A3-64DC-1FB6-84920F707D8D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_Heel_Ctrl_translateZ";
 	rename -uid "ACF2465E-43D3-1B8E-AE49-E98418B8B7A3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_Toe_Ctrl_translateX";
 	rename -uid "B09E1DD1-451C-FC41-6D55-72B28C52FC08";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_Toe_Ctrl_translateY";
 	rename -uid "EACAF2F0-4E40-5329-B232-5BACF6BE0A33";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_Toe_Ctrl_translateZ";
 	rename -uid "8A13308F-4E27-9C26-DBA9-73A9A7F8FCB3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_Ball_Ctrl_translateX";
 	rename -uid "5E6EFC99-4170-9966-BC09-AF8265026A45";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_Ball_Ctrl_translateY";
 	rename -uid "2BB75453-4E10-8785-3814-4EA866279717";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_Ball_Ctrl_translateZ";
 	rename -uid "9BCCCBD8-4A78-B5DA-B6BE-C48A6798D8BC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_ToeTap_01_Ctrl_translateX";
 	rename -uid "ED5FEAA9-4F1D-B4F8-6C64-A4A72F1B29AF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_ToeTap_01_Ctrl_translateY";
 	rename -uid "19E888BF-4271-0442-FFA4-29ADBC6F4B0D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Foot_Reverse_IK_ToeTap_01_Ctrl_translateZ";
 	rename -uid "97520A97-43BC-1EF4-3869-EDB30ECEE9D4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Leg_01_IK_PV_Ctrl_translateX";
 	rename -uid "E406D746-4EBB-61C5-9D51-25974D5E55B7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 0 4 3.1600904748519931 10 27.110869504419927
-		 13 57.689215639752064 16 61.207439964831188 19 19.794513166729431 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
+	setAttr -s 10 ".ktv[0:9]"  1 0 4 3.1600904748519931 7 12.850625351262618
+		 10 27.110869504419927 13 57.689215639752064 16 61.207439964831188 19 19.794513166729431
+		 22 0 25 0 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Leg_01_IK_PV_Ctrl_translateY";
 	rename -uid "DD666E4D-4D66-BA23-C5FC-279549C6460B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 -7.6100521550123377 4 50.21040942493552
-		 10 -9.6461007494923567 13 18.501978526558609 16 18.237756986523713 19 21.347901845095382
-		 22 -7.6100521550123377 25 -7.6100521550123377 28 -7.6100521550123377;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
+	setAttr -s 10 ".ktv[0:9]"  1 -7.6100521550123377 4 50.21040942493552
+		 7 20.282154337721572 10 -9.6461007494923567 13 18.501978526558609 16 18.237756986523713
+		 19 21.347901845095382 22 -7.6100521550123377 25 -7.6100521550123377 28 -7.6100521550123377;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Leg_01_IK_PV_Ctrl_translateZ";
 	rename -uid "BB6784F4-4C5A-FDC2-7B50-FE953081CB38";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 -18.614309656366309 4 -37.562406257569315
-		 10 -20.305902734065267 13 -32.461326364533193 16 -32.680847317674342 19 -30.096871901928271
-		 22 -18.614309656366309 25 -18.614309656366309 28 -18.614309656366309;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
+	setAttr -s 10 ".ktv[0:9]"  1 -18.614309656366309 4 -42.799287257515637
+		 7 -31.55259499579045 10 -20.305902734065267 13 -32.461326364533193 16 -32.680847317674342
+		 19 -30.096871901928271 22 -18.614309656366309 25 -18.614309656366309 28 -18.614309656366309;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_01_Spline_01_Ctrl_translateX";
 	rename -uid "D191A21C-4970-738F-ACF2-2E9DDD4743BE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_01_Spline_01_Ctrl_translateY";
 	rename -uid "0B51FF93-4EFA-950C-0E65-D598ED40101F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_01_Spline_01_Ctrl_translateZ";
 	rename -uid "B66FC857-4460-C04E-D7D1-028A7821D829";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_01_Spline_02_Ctrl_translateX";
 	rename -uid "C9C0DCC1-4540-C1F5-24D8-A6B84D85C93F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_01_Spline_02_Ctrl_translateY";
 	rename -uid "4D5653A9-472C-432F-4A52-CEA0097DF4E3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_01_Spline_02_Ctrl_translateZ";
 	rename -uid "C11C828A-4AF7-5D28-6959-F29CC69891E6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_02_Spline_01_Ctrl_translateX";
 	rename -uid "03FB047E-4A84-591A-5896-D6A2A30A1A21";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_02_Spline_01_Ctrl_translateY";
 	rename -uid "F74DD12A-469D-852B-E718-A99608613A20";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_02_Spline_01_Ctrl_translateZ";
 	rename -uid "C1BBCEC5-4B57-AAC6-42F5-4CA0BFCE0556";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_02_Spline_02_Ctrl_translateX";
 	rename -uid "145A2EBC-4147-873B-922D-9EB31F5D8B48";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_02_Spline_02_Ctrl_translateY";
 	rename -uid "3F1D02B5-4B88-F815-A12D-BB83B96AE457";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_02_Spline_02_Ctrl_translateZ";
 	rename -uid "5EB4C6FC-41A5-0D6B-60FF-44A794A753D5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_03_Spline_01_Ctrl_translateX";
 	rename -uid "CB0331A2-4855-F996-7689-B6B975FBDC04";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_03_Spline_01_Ctrl_translateY";
 	rename -uid "3192D931-4A66-28D2-B1D1-3B971B676C6C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_03_Spline_01_Ctrl_translateZ";
 	rename -uid "34360954-4175-488F-6D27-CFA4FC740E8A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_03_Spline_02_Ctrl_translateX";
 	rename -uid "35AAEA47-4BBE-3C5A-9D8E-7A95EC4B0AC6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_03_Spline_02_Ctrl_translateY";
 	rename -uid "95E4D66D-46D2-ACA7-1E70-1EB26E38B047";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_03_Spline_02_Ctrl_translateZ";
 	rename -uid "9E98E306-43A6-9068-7776-3B99CAB9D573";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_04_Spline_01_Ctrl_translateX";
 	rename -uid "35F832EC-4CDD-C496-B9C5-8F871255FB9E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_04_Spline_01_Ctrl_translateY";
 	rename -uid "D8BD7EDB-4832-9885-BFEB-D583EA5E13C3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_04_Spline_01_Ctrl_translateZ";
 	rename -uid "08A649DD-4C02-EB0A-89E6-97B4ED7837B7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_04_Spline_02_Ctrl_translateX";
 	rename -uid "0609F8BF-4180-2EA7-B910-1F8588C2C8F6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_04_Spline_02_Ctrl_translateY";
 	rename -uid "4EFFD7BC-4E42-7BAB-836C-74BB7A79D1E8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_04_Spline_02_Ctrl_translateZ";
 	rename -uid "2F12A420-4FB8-1CEC-4BFC-2AA2B8B59259";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_05_Spline_01_Ctrl_translateX";
 	rename -uid "1AF2B5D2-4ED9-C6C9-C4A3-C19554FFD969";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_05_Spline_01_Ctrl_translateY";
 	rename -uid "0B333A01-4FE5-2754-F034-3B8BB31F380C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_05_Spline_01_Ctrl_translateZ";
 	rename -uid "E698F9D0-420A-18BC-34C5-4482D7BD3FD4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_05_Spline_02_Ctrl_translateX";
 	rename -uid "1D3C133D-4087-3D89-11A7-23A1FCBFF2CA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_05_Spline_02_Ctrl_translateY";
 	rename -uid "DEC2620D-44FF-3771-6DE1-138E29C64465";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_05_Spline_02_Ctrl_translateZ";
 	rename -uid "3DF098D9-4EBC-A8B7-CA79-EB8C56DE1F65";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_06_Spline_01_Ctrl_translateX";
 	rename -uid "71465BB6-4A77-0FAE-FB07-41B8097D5640";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_06_Spline_01_Ctrl_translateY";
 	rename -uid "39D57D3F-415E-2A08-A6B2-81BED1B61397";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_06_Spline_01_Ctrl_translateZ";
 	rename -uid "B5EE63FE-4FA8-03CD-4A98-66805A59ACB8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_06_Spline_02_Ctrl_translateX";
 	rename -uid "AA1948C4-4ECF-A1AB-C697-5D874BC93EFE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_06_Spline_02_Ctrl_translateY";
 	rename -uid "31BA5C44-4D58-2389-A163-5A9E10FCC0D8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_06_Spline_02_Ctrl_translateZ";
 	rename -uid "E41E3D77-45B9-394A-DFAC-52A02C437356";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_07_Spline_01_Ctrl_translateX";
 	rename -uid "534109A4-4BFD-A0C4-0F5E-10A20B6AA70C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_07_Spline_01_Ctrl_translateY";
 	rename -uid "BD6F31D9-4F8B-29BF-4855-AF899D7E724D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_07_Spline_01_Ctrl_translateZ";
 	rename -uid "74A42B89-4112-6309-2B69-DDB9CD2C1654";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_07_Spline_02_Ctrl_translateX";
 	rename -uid "5360E11C-4A4B-F1D2-E6A2-84AD7DEF0A9C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_07_Spline_02_Ctrl_translateY";
 	rename -uid "E405DE34-42B0-9617-3B51-F8B1A4916EA1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_07_Spline_02_Ctrl_translateZ";
 	rename -uid "0399645F-40CA-ED00-DE09-849E0B7DD030";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_08_Spline_01_Ctrl_translateX";
 	rename -uid "40D69B01-4225-6EC9-67EE-C298E50475AD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_08_Spline_01_Ctrl_translateY";
 	rename -uid "EE4D6D98-42D0-2CF5-FBF1-8CA946415B9A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_08_Spline_01_Ctrl_translateZ";
 	rename -uid "ED373BF2-41BA-9B8F-5EFE-3482646BB301";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_08_Spline_02_Ctrl_translateX";
 	rename -uid "FF83C161-4141-6948-0FF4-D7B719BA006D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_08_Spline_02_Ctrl_translateY";
 	rename -uid "8913053A-4621-9FCC-00F7-AD8AB331604B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Pony_08_Spline_02_Ctrl_translateZ";
 	rename -uid "D1043586-4111-6372-1994-889E4234D1E1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bangs_Base_RK_Ctrl_translateX";
 	rename -uid "0DFA590B-4048-8809-B409-33A7626AF24B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bangs_Base_RK_Ctrl_translateY";
 	rename -uid "1959B332-4E84-829D-0F29-8380880DA8DF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Bangs_Base_RK_Ctrl_translateZ";
 	rename -uid "9092C5C9-44BA-4DC8-CDD9-FDBBFBF54166";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Head_Rotate_RK_Ctrl_translateX";
 	rename -uid "73097AFC-443D-0BCD-A577-DF9304DA0051";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Head_Rotate_RK_Ctrl_translateY";
 	rename -uid "F3929646-4F0A-2E41-E627-3F95E24A24C7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Head_Rotate_RK_Ctrl_translateZ";
 	rename -uid "6C113687-444C-FAE4-2786-54B3C61E8384";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Brow_01_RK_Ctrl_translateX";
 	rename -uid "13EFE148-4A5D-9F49-12B7-3C9D474E7FE9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -2.6645352591003757e-15 10 -2.6645352591003757e-15
 		 13 -2.6645352591003757e-15 16 -2.6645352591003757e-15 19 -2.6645352591003757e-15
 		 22 -2.6645352591003757e-15 25 -2.6645352591003757e-15 28 -2.6645352591003757e-15;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Brow_01_RK_Ctrl_translateY";
 	rename -uid "7D28CFA2-4549-2ADB-0C6D-3BA80942785E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Brow_01_RK_Ctrl_translateZ";
 	rename -uid "625172A5-43C9-4725-2D1B-CFB15B2325FD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -7.1054273576010019e-15 10 -7.1054273576010019e-15
 		 13 -7.1054273576010019e-15 16 -7.1054273576010019e-15 19 -7.1054273576010019e-15
 		 22 -7.1054273576010019e-15 25 -7.1054273576010019e-15 28 -7.1054273576010019e-15;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Brow_02_RK_Ctrl_translateX";
 	rename -uid "8AD5850A-40E7-CAC1-201E-F3850B4DD032";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 8.8817841970012523e-16 10 8.8817841970012523e-16
 		 13 8.8817841970012523e-16 16 8.8817841970012523e-16 19 8.8817841970012523e-16 22 8.8817841970012523e-16
 		 25 8.8817841970012523e-16 28 8.8817841970012523e-16;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Brow_02_RK_Ctrl_translateY";
 	rename -uid "0513DA4A-43C9-1841-114F-A1A81B324E54";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Brow_02_RK_Ctrl_translateZ";
 	rename -uid "DCBEB267-49A0-FC86-3B69-029FBD7574E1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Brow_03_RK_Ctrl_translateX";
 	rename -uid "6FB8EC0F-470E-845D-C2E4-C8A48547CD64";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -2.2204460492503131e-16 10 -2.2204460492503131e-16
 		 13 -2.2204460492503131e-16 16 -2.2204460492503131e-16 19 -2.2204460492503131e-16
 		 22 -2.2204460492503131e-16 25 -2.2204460492503131e-16 28 -2.2204460492503131e-16;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Brow_03_RK_Ctrl_translateY";
 	rename -uid "155EE7BD-4D75-9D92-1163-9BBCE5298381";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Brow_03_RK_Ctrl_translateZ";
 	rename -uid "700835B1-4100-C382-C57E-F6B791DA9FD4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -1.7763568394002505e-15 10 -1.7763568394002505e-15
 		 13 -1.7763568394002505e-15 16 -1.7763568394002505e-15 19 -1.7763568394002505e-15
 		 22 -1.7763568394002505e-15 25 -1.7763568394002505e-15 28 -1.7763568394002505e-15;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Cheek_RK_Ctrl_translateX";
 	rename -uid "AF9A8459-4003-3582-F826-888E8818F58D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Cheek_RK_Ctrl_translateY";
 	rename -uid "F0C0E5F3-4943-C381-2196-AFA8A25EA547";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Cheek_RK_Ctrl_translateZ";
 	rename -uid "7FFCF40D-4795-A5BD-6CD8-2583C91ADDA1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Ear_RK_Ctrl_translateX";
 	rename -uid "089A69EE-450E-5EE8-B5FC-0391D9E8B658";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Ear_RK_Ctrl_translateY";
 	rename -uid "DA634DE2-4F58-C7E8-FFB9-BF907048B864";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Ear_RK_Ctrl_translateZ";
 	rename -uid "0845272E-4AAF-CA90-1EBA-B59F9D11B7F8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Eye_RK_Ctrl_translateX";
 	rename -uid "F008212B-47FB-82CD-456B-879467BDBF55";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Eye_RK_Ctrl_translateY";
 	rename -uid "2B78D933-4996-5BD2-5EAE-048D4EA43E07";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Eye_RK_Ctrl_translateZ";
 	rename -uid "3B3F937A-4ADA-3DD5-C0D3-F28A87ED9707";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Eyelid_RK_Ctrl_translateX";
 	rename -uid "9F21940F-480E-2102-5484-3D9637A87191";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Eyelid_RK_Ctrl_translateY";
 	rename -uid "F8EB96F5-4108-614F-8173-0DB31245A7B5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Eyelid_RK_Ctrl_translateZ";
 	rename -uid "D1D78406-450B-5B2B-B12D-18828817ED70";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Bottom_RK_Ctrl_translateX";
 	rename -uid "270B40D8-4006-2463-5E31-8E97CF64C77B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Bottom_RK_Ctrl_translateY";
 	rename -uid "8997070B-42E3-5847-7852-44993EE74EDC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Bottom_RK_Ctrl_translateZ";
 	rename -uid "059FD6CA-4F85-6A18-CF18-38A59DC665F5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Left_RK_Ctrl_translateX";
 	rename -uid "5DAFC38C-465B-60FD-81AA-97901200918B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Left_RK_Ctrl_translateY";
 	rename -uid "E6863E1E-4AFD-7F42-CDA4-BF94ABCFB0BF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Left_RK_Ctrl_translateZ";
 	rename -uid "9CA74338-44BF-B606-986D-558C0FCA4DDE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -1.2434497875801753e-14 10 -1.2434497875801753e-14
 		 13 -1.2434497875801753e-14 16 -1.2434497875801753e-14 19 -1.2434497875801753e-14
 		 22 -1.2434497875801753e-14 25 -1.2434497875801753e-14 28 -1.2434497875801753e-14;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Right_RK_Ctrl_translateX";
 	rename -uid "4C336748-4B73-8C5C-7726-FBA069FAEE88";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Right_RK_Ctrl_translateY";
 	rename -uid "3E6C97AB-4F51-CDA5-389E-81BC684F51E3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Right_RK_Ctrl_translateZ";
 	rename -uid "AB2EA4F6-4ADD-E683-BA71-08A3009B4A00";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Top_RK_Ctrl_translateX";
 	rename -uid "FA307167-49CC-6323-DDA8-DC8605BB2345";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Top_RK_Ctrl_translateY";
 	rename -uid "1CCF2542-451C-170D-CC7F-01B3AD7516F6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Lip_Top_RK_Ctrl_translateZ";
 	rename -uid "AD951935-4A10-E5A0-0071-7486E9004E3F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "PonyTail_Base_RK_Ctrl_translateX";
 	rename -uid "31A63A3C-4773-0483-A813-1DBD55C8596B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "PonyTail_Base_RK_Ctrl_translateY";
 	rename -uid "3760F6EB-44DB-6858-EEAB-E4B9A9D4AD20";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "PonyTail_Base_RK_Ctrl_translateZ";
 	rename -uid "046CFB89-465D-1F5A-2B0A-6A985D28D221";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Brow_01_RK_Ctrl_translateX";
 	rename -uid "7B056C70-4366-17F4-AFFC-42A92BA4A8F2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Brow_01_RK_Ctrl_translateY";
 	rename -uid "0E5D1130-4DAE-02D3-1F7B-99BCF560C0F8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Brow_01_RK_Ctrl_translateZ";
 	rename -uid "30003D4A-4705-4F94-5784-D38A351DC753";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Brow_02_RK_Ctrl_translateX";
 	rename -uid "F4007E48-4018-7D0B-B46D-259BF64FAFD3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Brow_02_RK_Ctrl_translateY";
 	rename -uid "689E9AA8-44CF-AC34-562B-5A888EACE138";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Brow_02_RK_Ctrl_translateZ";
 	rename -uid "BB52BDA8-4223-CA93-26D5-E88F6D302518";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Brow_03_RK_Ctrl_translateX";
 	rename -uid "44EA11A3-4472-CE64-9BC2-B5B7A7BBDC24";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Brow_03_RK_Ctrl_translateY";
 	rename -uid "07C157AB-4332-DD61-E168-219EA0B72D51";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Brow_03_RK_Ctrl_translateZ";
 	rename -uid "0C6B3E73-4667-BA19-4FBD-F5BFC414C57A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Cheek_RK_Ctrl_translateX";
 	rename -uid "0FEAC27E-4CD5-F2C1-C803-EB88B9E78E71";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Cheek_RK_Ctrl_translateY";
 	rename -uid "10F065AD-4644-53A3-F3E2-178219447F40";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Cheek_RK_Ctrl_translateZ";
 	rename -uid "78998EB8-4A69-1352-D917-99B73E48A95D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Ear_RK_Ctrl_translateX";
 	rename -uid "6ACABBD0-43BB-2681-8B28-D2BD6ED75838";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Ear_RK_Ctrl_translateY";
 	rename -uid "100A9033-4028-DF1B-9840-C8A17DFFB68B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Ear_RK_Ctrl_translateZ";
 	rename -uid "94C2DEF3-4642-6F4D-8C40-C3AF0425253B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Eye_RK_Ctrl_translateX";
 	rename -uid "49BEE152-4BC5-F010-CD75-2DAC4DAA2D1B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Eye_RK_Ctrl_translateY";
 	rename -uid "BCAA1E5B-4DC9-5A44-A0CE-00ACD6036ECE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Eye_RK_Ctrl_translateZ";
 	rename -uid "8368E763-420C-1DFF-CEC4-5BAE762FFC77";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Eyelid_RK_Ctrl_translateX";
 	rename -uid "0C71EE91-4555-3159-8138-688EBD0D49AE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Eyelid_RK_Ctrl_translateY";
 	rename -uid "E2912D2C-441A-7E4C-97CD-428D61F61D8C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Eyelid_RK_Ctrl_translateZ";
 	rename -uid "C312F40B-4DE2-796C-D03C-BC9F92C29F40";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_01_01_RK_Ctrl_translateX";
 	rename -uid "DCDA567A-4BAF-CE4A-FD33-239F1DD0ED35";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_01_01_RK_Ctrl_translateY";
 	rename -uid "912A365B-411C-AAA1-FA33-509EA7F3D082";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_01_01_RK_Ctrl_translateZ";
 	rename -uid "A25ABFAB-459C-A00D-2F70-5E960CAF4521";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_01_02_RK_Ctrl_translateX";
 	rename -uid "E2098704-4DDB-A551-3AC8-47BCFCF56BFC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_01_02_RK_Ctrl_translateY";
 	rename -uid "A2F7BF80-4349-4FF6-65C4-B7A7DE4F17D1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_01_02_RK_Ctrl_translateZ";
 	rename -uid "B062490A-465C-37F4-FFD3-F5937692EDD9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_01_03_RK_Ctrl_translateX";
 	rename -uid "1917A764-46DC-2DA9-7E37-A291747738FB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_01_03_RK_Ctrl_translateY";
 	rename -uid "461832D1-42A2-0985-3AB8-FE86569B2AED";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_01_03_RK_Ctrl_translateZ";
 	rename -uid "A966E3C0-475B-B905-959E-7DB3401270E7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_02_01_RK_Ctrl_translateX";
 	rename -uid "35CD2E9E-4864-F350-6C00-00B2FA952407";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_02_01_RK_Ctrl_translateY";
 	rename -uid "14703A32-4EDF-704D-CAA1-07BF23A7596A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_02_01_RK_Ctrl_translateZ";
 	rename -uid "D4302B97-4D08-9E0A-144A-42A3E4A39CB8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_02_02_RK_Ctrl_translateX";
 	rename -uid "02226861-45A8-CD37-B7C2-BC9542398F4A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_02_02_RK_Ctrl_translateY";
 	rename -uid "F4640CBD-4BB9-F559-38EA-669C3762B011";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_02_02_RK_Ctrl_translateZ";
 	rename -uid "F1848993-4855-5E91-FAC6-42A7D6D680CD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_02_03_RK_Ctrl_translateX";
 	rename -uid "3A969D7E-4A73-3F44-79C6-09B188998BC6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_02_03_RK_Ctrl_translateY";
 	rename -uid "3CD234E5-482F-B4EE-5B50-3D8F0F0728BE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_02_03_RK_Ctrl_translateZ";
 	rename -uid "44F0DD87-4179-7B90-6F9E-7F8F35CEDF7C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_03_01_RK_Ctrl_translateX";
 	rename -uid "EEE84B0B-4629-DBE6-276A-9591F24A6D4F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_03_01_RK_Ctrl_translateY";
 	rename -uid "A08888FD-42D9-5E80-5CB6-9A811AF63980";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_03_01_RK_Ctrl_translateZ";
 	rename -uid "7CEA9419-4DCF-C06E-2AF6-0EB97D36E533";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_03_02_RK_Ctrl_translateX";
 	rename -uid "CC0BAE72-4C0C-D264-3716-77A6A399520E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_03_02_RK_Ctrl_translateY";
 	rename -uid "3FC2E090-4160-9262-9A27-4BB00B5C2733";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_03_02_RK_Ctrl_translateZ";
 	rename -uid "8AECB730-47A2-8ECA-6213-D59C7C4989AF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_03_03_RK_Ctrl_translateX";
 	rename -uid "8CFE876C-414D-8B01-711A-FE8F8CD15665";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_03_03_RK_Ctrl_translateY";
 	rename -uid "5A2808C2-4C1A-AFAC-68EE-26AD4633C222";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_03_03_RK_Ctrl_translateZ";
 	rename -uid "95420093-4195-B6FD-356B-E1A42C606E71";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_04_01_RK_Ctrl_translateX";
 	rename -uid "58A95568-4A9A-C032-D6D8-93A1473B2E7E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_04_01_RK_Ctrl_translateY";
 	rename -uid "6018990F-472D-6235-8EC8-9583A397B3EE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_04_01_RK_Ctrl_translateZ";
 	rename -uid "B0939A91-4D00-8D66-0C1C-8D8A3C042B5D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_04_02_RK_Ctrl_translateX";
 	rename -uid "D064141C-4B86-F87C-E9BF-5B9D97867AE7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_04_02_RK_Ctrl_translateY";
 	rename -uid "1B978CDF-4F49-7C96-A25B-AF8F9E9E0BA1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_04_02_RK_Ctrl_translateZ";
 	rename -uid "845B8C60-45F7-9E02-4142-A6AE5D632233";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_04_03_RK_Ctrl_translateX";
 	rename -uid "5F49E2BF-4401-DD1B-AFF9-60A2AFF762DA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_04_03_RK_Ctrl_translateY";
 	rename -uid "012BB6C7-4D23-1242-3E40-2C87BA937FBE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_04_03_RK_Ctrl_translateZ";
 	rename -uid "CAC0CCC6-434C-6E4E-8C25-BBAF479EC66E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_05_01_RK_Ctrl_translateX";
 	rename -uid "118E140B-4181-6CA2-C7FE-7783EB2E677A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_05_01_RK_Ctrl_translateY";
 	rename -uid "0A75654F-4406-D69C-BA19-078AF61EFFCB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_05_01_RK_Ctrl_translateZ";
 	rename -uid "B85A4B06-43E9-0DBE-148A-7AB566C367D7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_05_02_RK_Ctrl_translateX";
 	rename -uid "CB4354A0-4B03-A2B9-D052-1481646C4B0C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_05_02_RK_Ctrl_translateY";
 	rename -uid "360E4E04-4DB3-4983-C4C2-9682A08FB293";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_05_02_RK_Ctrl_translateZ";
 	rename -uid "353E64CF-44BC-11A0-879B-34A0CC0614CD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_05_03_RK_Ctrl_translateX";
 	rename -uid "1ADE0AD0-400A-724A-0D66-D5921715E736";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_05_03_RK_Ctrl_translateY";
 	rename -uid "87681B00-4939-CD1F-068B-A79E7036EA60";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Finger_05_03_RK_Ctrl_translateZ";
 	rename -uid "F89F2CCF-4A34-704C-5AE1-489B3B15CC74";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Wrist_RK_Ctrl_translateX";
 	rename -uid "F2BFF8C8-4B5F-529B-60A0-B78180F24FE1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Wrist_RK_Ctrl_translateY";
 	rename -uid "B40ABB1E-45C3-A5BC-4133-04891CB1899E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Wrist_RK_Ctrl_translateZ";
 	rename -uid "81B837F8-4DA8-B72B-3C02-92B2FB6E8B5D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Hip_RK_Ctrl_translateX";
 	rename -uid "36D346AC-438A-C459-50C6-3A9E7E3517B8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Hip_RK_Ctrl_translateY";
 	rename -uid "A48557E6-40A2-63FF-5507-C0BFD527384F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Hip_RK_Ctrl_translateZ";
 	rename -uid "BAA97301-436A-DBE5-0141-10ABEEC5B716";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Neck_RK_Ctrl_translateX";
 	rename -uid "AD98F784-4BFE-586D-6A23-EDBB95AD3489";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Neck_RK_Ctrl_translateY";
 	rename -uid "0CFD0E1A-4AAC-4205-E238-CEB8C6EEFEC1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Neck_RK_Ctrl_translateZ";
 	rename -uid "ED5819D3-4939-AFF5-53A1-CFA621535BA6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Clavicle_RK_Ctrl_translateX";
 	rename -uid "CBB47068-4B80-5423-9C37-7780BAA84D6A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Clavicle_RK_Ctrl_translateY";
 	rename -uid "BBB74025-47FE-E6DB-B8AD-26892A71B86E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Clavicle_RK_Ctrl_translateZ";
 	rename -uid "75D26182-45CC-05B3-37BE-55ACB5893CF7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_01_01_RK_Ctrl_translateX";
 	rename -uid "19262148-4E49-3219-5C64-9DBAAEC78B3C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_01_01_RK_Ctrl_translateY";
 	rename -uid "0437E79C-4040-94A7-1642-138D5A02274F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_01_01_RK_Ctrl_translateZ";
 	rename -uid "7B044588-403C-C146-AE2F-44BE9E2E42FB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_01_02_RK_Ctrl_translateX";
 	rename -uid "80454E63-47FC-A79C-8B87-E2AD6F6795E4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_01_02_RK_Ctrl_translateY";
 	rename -uid "0EB358FB-421B-B55B-D830-DCA9E910254C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_01_02_RK_Ctrl_translateZ";
 	rename -uid "794420CC-4668-AD6D-4E2A-6A9F6C0AEB69";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_01_03_RK_Ctrl_translateX";
 	rename -uid "CB4FDBDF-439E-C566-7280-EAB95F7E6948";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_01_03_RK_Ctrl_translateY";
 	rename -uid "8E4A5830-4FCE-7E64-32C9-08A8D5FD9A4D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_01_03_RK_Ctrl_translateZ";
 	rename -uid "EA3465D6-4571-A641-CA1F-DEB369DF21C6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_02_01_RK_Ctrl_translateX";
 	rename -uid "3239EE24-4540-9F21-6492-5395B7910F10";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_02_01_RK_Ctrl_translateY";
 	rename -uid "FEAA4281-43FD-1431-7F73-17BC34F111ED";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_02_01_RK_Ctrl_translateZ";
 	rename -uid "620CDF61-45F6-CD79-0CF5-E48FC9242674";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_02_02_RK_Ctrl_translateX";
 	rename -uid "933D00F1-4855-C34F-D36C-DC9FC0930486";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_02_02_RK_Ctrl_translateY";
 	rename -uid "ABD9197C-4C69-40A9-C5D1-45A75B36E7A7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_02_02_RK_Ctrl_translateZ";
 	rename -uid "54CBF46A-4DCF-5096-6362-2EA5E80EAA34";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_02_03_RK_Ctrl_translateX";
 	rename -uid "303A616A-4E4D-4F6D-AE09-B3A4DA9E4AAF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_02_03_RK_Ctrl_translateY";
 	rename -uid "1EC106E9-49F5-7EB0-3A80-BD975F742BE5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_02_03_RK_Ctrl_translateZ";
 	rename -uid "94C23850-47E7-1585-156E-499573ECCD6C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_03_01_RK_Ctrl_translateX";
 	rename -uid "6F81F00D-4F78-9BD6-7661-8B97CE611C24";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_03_01_RK_Ctrl_translateY";
 	rename -uid "CC2A1A1D-4995-6BC6-01DA-20AB28547076";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_03_01_RK_Ctrl_translateZ";
 	rename -uid "F32D6E1A-4CF4-C679-1E7E-E1AE43531229";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_03_02_RK_Ctrl_translateX";
 	rename -uid "02B93AF7-4651-90FF-18B5-FA87E9958B5E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_03_02_RK_Ctrl_translateY";
 	rename -uid "03CA8CC3-4E3A-6F58-C7AE-3D90F9F6F5E8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_03_02_RK_Ctrl_translateZ";
 	rename -uid "3A41BE23-4168-F773-AF24-7FA1DDD64B01";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_03_03_RK_Ctrl_translateX";
 	rename -uid "B11FC845-4CC1-6494-823D-4D86033D05EC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_03_03_RK_Ctrl_translateY";
 	rename -uid "38ED2CF3-43B2-0D12-E045-B694400F0B34";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_03_03_RK_Ctrl_translateZ";
 	rename -uid "82E91A34-4D62-6298-5F33-D3A68FF33357";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_04_01_RK_Ctrl_translateX";
 	rename -uid "98E19071-4290-0C40-302E-C4829AC9085A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_04_01_RK_Ctrl_translateY";
 	rename -uid "7CC2C1C5-4D74-B83E-78D0-C2B5CEC14DE4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_04_01_RK_Ctrl_translateZ";
 	rename -uid "E98D1618-4507-2BB2-EF5A-3487255D09C5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_04_02_RK_Ctrl_translateX";
 	rename -uid "F24B9200-4EDC-06FD-0645-7FB1CA4E6189";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_04_02_RK_Ctrl_translateY";
 	rename -uid "E1A935DF-4DB5-B4D6-0ACE-E38A75345085";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_04_02_RK_Ctrl_translateZ";
 	rename -uid "A267BDAF-4E39-D06E-BDE3-2882F575FBA0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_04_03_RK_Ctrl_translateX";
 	rename -uid "64B8F24E-4A9A-4534-B42E-3CA2236F449C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_04_03_RK_Ctrl_translateY";
 	rename -uid "998E20AC-4C9E-95F8-DA90-FB8FA38A9354";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_04_03_RK_Ctrl_translateZ";
 	rename -uid "AE85EAE7-499C-0E88-A06D-FB8A8FB7ECA3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_05_01_RK_Ctrl_translateX";
 	rename -uid "9B10338E-41C5-E439-F2DF-B0AE0F7A3E12";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_05_01_RK_Ctrl_translateY";
 	rename -uid "8B39B360-4616-C525-7437-33B97A3BEAB3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_05_01_RK_Ctrl_translateZ";
 	rename -uid "F11E5FB1-4354-61EB-69B3-ED89F059DA27";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_05_02_RK_Ctrl_translateX";
 	rename -uid "2B8F50D8-4B18-DD38-DBA4-89B232C61A30";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_05_02_RK_Ctrl_translateY";
 	rename -uid "EE4FD6AA-4044-79EC-8645-F799E89CCAC4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_05_02_RK_Ctrl_translateZ";
 	rename -uid "CA440EDF-4F9F-6AFF-3C3D-5188DAA00A6E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_05_03_RK_Ctrl_translateX";
 	rename -uid "6F75F4F0-4499-76AC-186A-70BD52256287";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_05_03_RK_Ctrl_translateY";
 	rename -uid "0E7DD741-46F7-F4A9-3C4B-C98183CFE340";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Finger_05_03_RK_Ctrl_translateZ";
 	rename -uid "C42419EC-42FD-C002-7D49-2FB21EBD5712";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Wrist_RK_Ctrl_translateX";
 	rename -uid "5354251C-4344-B741-9CEE-3B9DF36ADA0F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Wrist_RK_Ctrl_translateY";
 	rename -uid "6BFB11AD-46A2-35A7-C02B-C78B2C3B334C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Wrist_RK_Ctrl_translateZ";
 	rename -uid "78B241D6-45D9-83BF-7490-2FA67E11A860";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Hip_RK_Ctrl_translateX";
 	rename -uid "6FB439A7-4F85-727E-0991-DA82627A23E2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Hip_RK_Ctrl_translateY";
 	rename -uid "4A21E3D6-44CE-9D05-9D30-538F657A27F6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "R_Hip_RK_Ctrl_translateZ";
 	rename -uid "CD657B4E-474D-F72E-B44E-D4ABA8ECDD1D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Root_RK_Ctrl_translateX";
 	rename -uid "AB7DE00A-465F-212F-6C71-9DB0462D5DE0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Root_RK_Ctrl_translateY";
 	rename -uid "352CC3FE-4B45-D38A-59D2-AEBC084BA7CD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 -3 4 -46.106313948222649 7 6.4608940470780993
+	setAttr -s 11 ".ktv[0:10]"  1 -3 4 -46.106313948222649 7 6.4608940470780993
 		 10 44.241045964757042 13 49.052625385163658 16 37.592105174487038 19 8.1017871379929929
-		 22 -32.325941489402368 25 -3 28 -3;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+		 22 -21.655975374866657 23 -30.674165663461743 25 -3 28 -3;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Root_RK_Ctrl_translateZ";
 	rename -uid "B351D56E-4B2A-9806-8F7D-AF91F0E09368";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_01_RK_Ctrl_translateX";
 	rename -uid "7AC5AD0A-429D-903F-FE39-498079666B6A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_01_RK_Ctrl_translateY";
 	rename -uid "8DE10942-4278-F588-2DB1-6D9C290F0ECC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_01_RK_Ctrl_translateZ";
 	rename -uid "5411AC4E-41EF-A02A-91DC-1D89D0C27849";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_02_RK_Ctrl_translateX";
 	rename -uid "48F1ACC4-4D49-1898-05D2-76AF476B1CA7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 4 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_02_RK_Ctrl_translateY";
 	rename -uid "2E0620D6-4B53-750E-825B-12AE0CA3B871";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 4 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_02_RK_Ctrl_translateZ";
 	rename -uid "86C14BAE-42F2-E3FD-D6A7-299F30C7C3F4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 4 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Waist_RK_Ctrl_translateX";
 	rename -uid "B30C587E-48F5-6CC1-88DD-688D2E328A6C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Waist_RK_Ctrl_translateY";
 	rename -uid "72EE41F0-4C88-C20B-648C-D18055608055";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Waist_RK_Ctrl_translateZ";
 	rename -uid "12A123DC-455C-7A52-A221-188BF22E391B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode pairBlend -n "pairBlend1";
 	rename -uid "7B301544-4BE6-2CEF-25A3-7F89701BE822";
 createNode animCurveTL -n "pairBlend1_inTranslateX1";
 	rename -uid "0D4983E4-4A11-7390-0F27-F581D428ACCB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 51.69101314509053 10 51.69101314509053
 		 13 51.69101314509053 16 51.69101314509053 19 51.69101314509053 22 51.69101314509053
 		 25 51.69101314509053 28 51.69101314509053;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "pairBlend1_inTranslateY1";
 	rename -uid "3CE6F209-4ECC-F590-ED0F-E19EDCDCCEDD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 89.455594592362488 10 89.455594592362488
 		 13 89.455594592362488 16 89.455594592362488 19 89.455594592362488 22 89.455594592362488
 		 25 89.455594592362488 28 89.455594592362488;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "pairBlend1_inTranslateZ1";
 	rename -uid "52782458-4DF6-C32F-4C8C-299CD4731D06";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 7.9038849775001729 10 7.9038849775001729
 		 13 7.9038849775001729 16 7.9038849775001729 19 7.9038849775001729 22 7.9038849775001729
 		 25 7.9038849775001729 28 7.9038849775001729;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode pairBlend -n "pairBlend2";
 	rename -uid "90ABD0B1-469A-4549-5063-8782D01AFA95";
 createNode animCurveTL -n "pairBlend2_inTranslateX1";
 	rename -uid "5EB5DF12-48B8-9923-C3B2-F9909E244F77";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 20.612211689204415 10 20.612211689204415
 		 13 20.612211689204415 16 20.612211689204415 19 20.612211689204415 22 20.612211689204415
 		 25 20.612211689204415 28 20.612211689204415;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "pairBlend2_inTranslateY1";
 	rename -uid "0DC0FFCF-4B91-C5BA-D24B-F6843E6C3182";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 34.400461122468379 10 34.400461122468379
 		 13 34.400461122468379 16 34.400461122468379 19 34.400461122468379 22 34.400461122468379
 		 25 34.400461122468379 28 34.400461122468379;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "pairBlend2_inTranslateZ1";
 	rename -uid "BB9C5548-4D34-B946-3894-8781171A631F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -3.2829267583396664 10 -3.2829267583396664
 		 13 -3.2829267583396664 16 -3.2829267583396664 19 -3.2829267583396664 22 -3.2829267583396664
 		 25 -3.2829267583396664 28 -3.2829267583396664;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode pairBlend -n "pairBlend3";
 	rename -uid "9E7786AA-480F-CFAD-C2DD-6F820D83F693";
 createNode animCurveTL -n "pairBlend3_inTranslateX1";
 	rename -uid "B3F748E1-4838-F3B8-E098-1A8AD8FB4899";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -49.921173981451183 10 -49.921173981451183
 		 13 -49.921173981451183 16 -49.921173981451183 19 -49.921173981451183 22 -49.921173981451183
 		 25 -49.921173981451183 28 -49.921173981451183;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "pairBlend3_inTranslateY1";
 	rename -uid "94A0565D-439A-6C04-59CA-6690210009E3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 92.006989106360606 10 92.006989106360606
 		 13 92.006989106360606 16 92.006989106360606 19 92.006989106360606 22 92.006989106360606
 		 25 92.006989106360606 28 92.006989106360606;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "pairBlend3_inTranslateZ1";
 	rename -uid "FD4BE2A9-490B-42EA-8209-799E79FC870A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 7.4989279863053397 10 7.4989279863053397
 		 13 7.4989279863053397 16 7.4989279863053397 19 7.4989279863053397 22 7.4989279863053397
 		 25 7.4989279863053397 28 7.4989279863053397;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode pairBlend -n "pairBlend4";
 	rename -uid "65B4A88C-454F-E1EA-DBF0-8DA0766A261F";
 createNode animCurveTL -n "pairBlend4_inTranslateX1";
 	rename -uid "32012D6A-478A-0321-809D-03B1C9099A64";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -20.612240769404774 10 -20.612240769404774
 		 13 -20.612240769404774 16 -20.612240769404774 19 -20.612240769404774 22 -20.612240769404774
 		 25 -20.612240769404774 28 -20.612240769404774;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "pairBlend4_inTranslateY1";
 	rename -uid "BD91776C-4652-8531-AF2F-7FA1D823CEEA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 34.400444678071366 10 34.400444678071366
 		 13 34.400444678071366 16 34.400444678071366 19 34.400444678071366 22 34.400444678071366
 		 25 34.400444678071366 28 34.400444678071366;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "pairBlend4_inTranslateZ1";
 	rename -uid "8193819E-4A00-525E-EC0C-28B31FC3532C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -3.2829317092060988 10 -3.2829317092060988
 		 13 -3.2829317092060988 16 -3.2829317092060988 19 -3.2829317092060988 22 -3.2829317092060988
 		 25 -3.2829317092060988 28 -3.2829317092060988;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_01_Curve_visibility";
 	rename -uid "937489FE-46A7-5C27-7D78-248A40E00FC2";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_02_Curve_visibility";
 	rename -uid "93BA6128-44CE-31D7-113E-6480762E4CF3";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_03_Curve_visibility";
 	rename -uid "384DF9DF-4AE4-24D3-93B8-9BA1F71138B3";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_04_Curve_visibility";
 	rename -uid "EE3A2684-4197-CC9D-F392-F7AB38AD3942";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_05_Curve_visibility";
 	rename -uid "C1614C2A-4694-663E-0342-12A47445AA89";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_06_Curve_visibility";
 	rename -uid "38C7249F-4835-D381-A0A2-918539C6ED47";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_07_Curve_visibility";
 	rename -uid "283E0376-4A82-EB6C-4EF8-ACA24732698D";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_08_Curve_visibility";
 	rename -uid "5D454703-4215-D47B-A0A2-F2B18FF014D9";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_01_Curve_visibility";
 	rename -uid "E2F8477D-4588-E5D9-9665-A7B3FB38383F";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_02_Curve_visibility";
 	rename -uid "F990CDA5-4CDF-65C0-C2E6-D5B36A29D029";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_03_Curve_visibility";
 	rename -uid "A896A8ED-4729-2861-B5C4-7AAB0DD5EA0F";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_01_Spline_02_Ctrl_visibility";
 	rename -uid "3BFC5A72-434A-C18D-54B5-BABC40AA4487";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_01_Spline_02_Ctrl_rotateX";
 	rename -uid "AF092393-46F6-4174-AF21-96A2ECAC071D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -10.273301794834294 7 -10.739008396434578
 		 10 -2.6300892140420582 13 15.026523143520855 16 18.947685729534616 19 -2.2920689801787155
-		 22 -4.9985673997411979 25 -3.7272404358869671 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+		 22 -4.9985673997411988 25 -3.7272404358869671 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_01_Spline_02_Ctrl_rotateY";
 	rename -uid "3C3301A5-42E1-7709-83F5-C68417DFCF7C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 1.6407566492979924 7 1.706800638748821
 		 10 0.076988365737927208 13 3.9495359668617671 16 6.0480932992820193 19 0.083878418737101335
 		 22 0.41492843695419923 25 0.12064500426198792 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_01_Spline_02_Ctrl_rotateZ";
 	rename -uid "360BCE73-4092-A254-ADFA-A49AEDECF0C8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 17.970429214594326 7 19.306151845295403
 		 10 4.7459014516387086 13 -27.540218680187657 16 -34.28973232817232 19 3.9440908071265524
 		 22 8.608234903021124 25 6.5240535188109297 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_01_Spline_02_Ctrl_Translate";
 	rename -uid "F3B0DE13-4037-8F73-5C1E-D4BF77165B84";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_01_Spline_02_Ctrl_Rotate";
 	rename -uid "29E34FC9-4E1B-F9E4-9FAF-E0B0FD2A22DB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_01_Spline_01_Ctrl_visibility";
 	rename -uid "03F47DD0-4B4E-C583-49BB-42BE1DEF3A73";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_01_Spline_01_Ctrl_rotateX";
 	rename -uid "66F498A0-47AF-D870-3CB6-6981A6208412";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -3.1475730330192899 7 5.1025740543059435
 		 10 7.3020378907038053 13 2.8564996390159627 16 -3.4430834089215892 19 -7.2810054062616212
 		 22 -9.7671986159633608 25 -0.64373117775420274 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_01_Spline_01_Ctrl_rotateY";
 	rename -uid "93FDAEE1-4F71-C168-32C8-1EB8F5877CF7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0.19543510620317275 7 0.65023247092908532
 		 10 1.3586564622926038 13 0.31786367358538697 16 0.34661674933595094 19 1.1755274728180345
 		 22 2.064487750431292 25 0.4664202529381159 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_01_Spline_01_Ctrl_rotateZ";
 	rename -uid "77A54E68-41E3-638A-83E9-DB8F88BF88FF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 6.8765449447619327 7 -11.340171371430074
 		 10 -16.564925258179805 13 -6.5401229496660598 16 7.2098584306188584 19 15.733908136868431
 		 22 21.432229362550437 25 1.1179610900654966 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_01_Spline_01_Ctrl_Translate";
 	rename -uid "E8AD0264-4073-9528-3AC3-638642A7A756";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_01_Spline_01_Ctrl_Rotate";
 	rename -uid "428CDBBD-452F-7474-0B78-2680257DBEB1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_02_Spline_02_Ctrl_visibility";
 	rename -uid "AEE9A203-44D3-3C91-DEC7-7E9F0FA9EB29";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_02_Spline_02_Ctrl_rotateX";
 	rename -uid "06F58D80-429B-4EC0-E267-78A9222ACA2A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 12.40170198852878 7 13.295188329112849
 		 10 3.3166583243558843 13 -18.907503644751181 16 -23.09700870713236 19 2.740869008808557
 		 22 5.9854929852320753 25 4.5020510320363085 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_02_Spline_02_Ctrl_rotateY";
 	rename -uid "1A95D0A0-45A4-E34A-D8DE-DEB6C7DCA74F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -1.7915883974349756 7 -2.2863846656326055
 		 10 -0.19899762482843025 13 -3.8306046816084045 16 -6.4412232233731723 19 -0.075886159105309867
 		 22 -0.36454218356886098 25 -0.33176472158115128 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_02_Spline_02_Ctrl_rotateZ";
 	rename -uid "DE4C7541-46FC-D95B-8FC5-F7A37FC6A900";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 16.530009203349646 7 17.498033006541196
 		 10 4.2866827107177414 13 -25.018146857846133 16 -31.40509766255283 19 3.6467524370645776
 		 22 7.9573612672561591 25 5.9991729651949672 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_02_Spline_02_Ctrl_Translate";
 	rename -uid "BB150D39-495D-EA4B-86C2-A7A186214475";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_02_Spline_02_Ctrl_Rotate";
 	rename -uid "E63D229D-442C-6162-4944-50A25C378AC5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_02_Spline_01_Ctrl_visibility";
 	rename -uid "DC873F67-41F6-4B13-4ED2-4C946B64261D";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_02_Spline_01_Ctrl_rotateX";
 	rename -uid "D18CF319-4093-9BA0-D778-F9A3D5223173";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 2.8018947916420971 7 -4.6674755899502038
 		 10 -6.8645947627192827 13 -2.7708400042553656 16 2.8389541127155744 19 6.2700072019987969
 		 22 8.5121014456996278 25 0.35358509556728085 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_02_Spline_01_Ctrl_rotateY";
 	rename -uid "71FB5873-469E-86A2-26E1-40A6952F7633";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -0.16579554003887953 7 -0.33136797438676879
 		 10 -0.72885822314856008 13 -0.0096269019768723992 16 -0.061406456991654437 19 -0.73176558345060827
 		 22 -1.4564283263636013 25 0.45128782090312691 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_02_Spline_01_Ctrl_rotateZ";
 	rename -uid "C7058A6D-4EDB-E151-86DD-FBAC18859B3B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 7.026305566089091 7 -11.554038463277127
-		 10 -16.830437955984412 13 -6.5921348170118543 16 7.4844255290615838 19 16.219639500872702
+		 10 -16.830437955984412 13 -6.5921348170118552 16 7.4844255290615838 19 16.219639500872702
 		 22 22.066822343481974 25 1.2499690251703488 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_02_Spline_01_Ctrl_Translate";
 	rename -uid "67278527-4AB2-07B4-CB91-EC850915C50D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_02_Spline_01_Ctrl_Rotate";
 	rename -uid "71896118-4D42-4297-C746-7AAF2828B040";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_03_Spline_02_Ctrl_visibility";
 	rename -uid "78BB9651-4453-3E4E-FCD8-2EB253021D83";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_03_Spline_02_Ctrl_rotateX";
 	rename -uid "6CB9D033-4B78-283C-7EFA-47B70CD09CE5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 19.961049289972003 7 21.382394883264435
 		 10 5.227345686433658 13 -30.67363994344683 16 -38.481984794552183 19 4.369081855287229
 		 22 9.5413597937992307 25 7.2242329326330852 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_03_Spline_02_Ctrl_rotateY";
 	rename -uid "9C3BD8EF-436B-39B9-A3FE-A5ABEF2463D8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -1.0299859683979966 7 -1.0754974396286003
 		 10 -0.033805241589120939 13 -2.3160389468634217 16 -3.5998171827341006 19 -0.055044938561001421
-		 22 -0.23392171252913899 25 -0.1824234824116226 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+		 22 -0.23392171252913899 25 -0.18242348241162262 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_03_Spline_02_Ctrl_rotateZ";
 	rename -uid "3F63975F-4559-381A-1A3D-D8870F26E022";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 5.8577165796419317 7 5.973435113506735
 		 10 1.4595823714686427 13 -8.3002305598804593 16 -10.631996023362209 19 1.3156883038852347
 		 22 2.8876233454255322 25 2.0595618200257984 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_03_Spline_02_Ctrl_Translate";
 	rename -uid "AE363D6C-4DAE-6FA2-9F3C-DAAAC5A896E7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_03_Spline_02_Ctrl_Rotate";
 	rename -uid "AA88E3BF-4322-33AE-93EA-D4992FA28E92";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_03_Spline_01_Ctrl_visibility";
 	rename -uid "FFFDE8C0-4168-32E5-377F-F08AD81E218C";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_03_Spline_01_Ctrl_rotateX";
 	rename -uid "6B2A48C2-47BD-CF89-B983-2EB7432D1B0B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 7.4951526491442539 7 -12.372021641972216
 		 10 -18.084555532324092 13 -7.1053423286412336 16 7.8994369614662654 19 17.229011694492872
 		 22 23.500061085903642 25 1.2217964924833249 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_03_Spline_01_Ctrl_rotateY";
 	rename -uid "63445E6C-456E-FF61-31A0-E0A98C8683B2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -0.06457523912087329 7 -0.10430616766140825
 		 10 -0.24406143134710551 13 -0.017184771674973461 16 -0.087297415401107636 19 -0.36810616641405669
 		 22 -0.65971832169969136 25 0.24805122953557043 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_03_Spline_01_Ctrl_rotateZ";
 	rename -uid "D123BB90-48B3-AD60-8C6C-A2B64686F266";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 1.0513692082936859 7 -1.5889578159289095
-		 10 -2.1918662765636037 13 -0.80088498891204185 16 1.2921838870857396 19 2.5975134155608783
+		 10 -2.1918662765636041 13 -0.80088498891204185 16 1.2921838870857396 19 2.5975134155608783
 		 22 3.452487175750393 25 0.57998119877325582 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_03_Spline_01_Ctrl_Translate";
 	rename -uid "13140F4D-43D7-943C-B097-A7A818009E6D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_03_Spline_01_Ctrl_Rotate";
 	rename -uid "5EE06A01-436A-F818-EC77-00A3D908B272";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_04_Spline_02_Ctrl_visibility";
 	rename -uid "78D9431C-4204-765C-9D83-5A9DAD3A7927";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_04_Spline_02_Ctrl_rotateX";
 	rename -uid "E1269F54-4724-5557-FEF5-C9A5F6B9EBFA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -6.6552356754165851 7 -6.8576098763431004
 		 10 -1.7017107926628365 13 9.6805593049805942 16 12.019445507065374 19 -1.4881461836600847
 		 22 -3.2692006587804658 25 -2.3408516945402891 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_04_Spline_02_Ctrl_rotateY";
 	rename -uid "BB13E647-4BC4-D5E6-B5EC-6B8679D785B4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 1.1474120572231967 7 1.4791958978797906
 		 10 0.1584559545584027 13 2.3291043025402676 16 4.1836463446710193 19 0.043729890384994571
 		 22 0.24357908193115019 25 0.1522203781190454 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_04_Spline_02_Ctrl_rotateZ";
 	rename -uid "9BD7E49C-4E7A-2FFF-9A01-EA800B0EA6E8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 19.692074774558126 7 21.062471474696483
 		 10 5.1494169914250651 13 -30.24757049984732 16 -37.927846321217366 19 4.3136156928285958
 		 22 9.4164773491720464 25 7.1390676376797071 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_04_Spline_02_Ctrl_Translate";
 	rename -uid "E183F44A-462C-C558-EBB8-1FAF03C491B7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_04_Spline_02_Ctrl_Rotate";
 	rename -uid "E6D0523C-4FDF-2135-E7E8-6AB8CA22F24A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_01_Spline_02_Ctrl_visibility";
 	rename -uid "A4A75127-4FF8-F3FE-8D78-9CA3E8518EBF";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_01_Spline_02_Ctrl_rotateX";
 	rename -uid "32651CCD-408C-6B82-F639-E9A98058A064";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_01_Spline_02_Ctrl_rotateY";
 	rename -uid "C84730CF-4223-B019-4ABE-CAA8776FF093";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_01_Spline_02_Ctrl_rotateZ";
 	rename -uid "ED0B8A8B-41A5-84CB-BE9E-2AB419698474";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_01_Spline_02_Ctrl_Translate";
 	rename -uid "688EDB83-440E-C22A-387D-7C94674A63CD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_01_Spline_02_Ctrl_Rotate";
 	rename -uid "2FFB84BE-462D-3200-4EE7-7881EF4E70F9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_01_Spline_01_Ctrl_visibility";
 	rename -uid "0BB7E524-42C1-221B-985C-AFA91C59D2BB";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_01_Spline_01_Ctrl_rotateX";
 	rename -uid "6BC41658-4F6E-5117-C1AA-D88D6F20D444";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_01_Spline_01_Ctrl_rotateY";
 	rename -uid "25E2A246-481D-27BA-2FB2-C0B08E43E963";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_01_Spline_01_Ctrl_rotateZ";
 	rename -uid "19467E32-4AEE-57D1-FE07-0381AAA6A976";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_01_Spline_01_Ctrl_Translate";
 	rename -uid "1736C962-4102-3ECC-1E5C-9980CFE9DCE7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_01_Spline_01_Ctrl_Rotate";
 	rename -uid "EF45040A-4AC8-BCB5-F1EC-32ADB350BFC4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_02_Spline_02_Ctrl_visibility";
 	rename -uid "84A6E48A-4841-E162-B43D-46B151FE2F3D";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_02_Spline_02_Ctrl_rotateX";
 	rename -uid "9A34C622-4626-1638-A789-41B84BE7C25B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_02_Spline_02_Ctrl_rotateY";
 	rename -uid "C344EABF-4D3D-D5D6-6D32-CD981AC3D2E9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_02_Spline_02_Ctrl_rotateZ";
 	rename -uid "5F3CD7AE-4EE3-E9A6-5C7C-FA8373CAE61F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_02_Spline_02_Ctrl_Translate";
 	rename -uid "72046966-4506-8E3D-4C49-2D9FE46E1A39";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_02_Spline_02_Ctrl_Rotate";
 	rename -uid "61CCA6DD-4F7B-E6B9-5507-67B39F9E36F2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_02_Spline_01_Ctrl_visibility";
 	rename -uid "8A7F9451-46E2-C1CB-26C6-5BAB635887A1";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_02_Spline_01_Ctrl_rotateX";
 	rename -uid "16D46F8C-4DB0-0A54-876C-21991CEBE425";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_02_Spline_01_Ctrl_rotateY";
 	rename -uid "660EAECC-4B39-E86A-218C-3C983CEAA035";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_02_Spline_01_Ctrl_rotateZ";
 	rename -uid "0680A113-44CF-31BB-E8AE-A386721397B1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_02_Spline_01_Ctrl_Translate";
 	rename -uid "6A396E6E-4E6D-031A-62E6-438A1D6EE194";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_02_Spline_01_Ctrl_Rotate";
 	rename -uid "CEAA6939-469D-08D8-8ED2-86910B19CE69";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_03_Spline_02_Ctrl_visibility";
 	rename -uid "FA7DCAF8-4099-BA83-D542-3C99925DE7EF";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_03_Spline_02_Ctrl_rotateX";
 	rename -uid "C6C2A5FE-4284-F28A-D51E-C4B8C1B25423";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_03_Spline_02_Ctrl_rotateY";
 	rename -uid "0F0360B5-49E6-7E54-4CB5-42AB38466EFB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_03_Spline_02_Ctrl_rotateZ";
 	rename -uid "4A6E2DF6-4E2B-9319-5CC7-82B5894D3533";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_03_Spline_02_Ctrl_Translate";
 	rename -uid "0892E47D-42E8-B8B5-2529-4CA5B7CDF68F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_03_Spline_02_Ctrl_Rotate";
 	rename -uid "E0C61822-40B2-543D-4B38-CBADC7C1CB52";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_03_Spline_01_Ctrl_visibility";
 	rename -uid "C8C7CB95-428E-71B5-D3EF-74BF81CC3171";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_03_Spline_01_Ctrl_rotateX";
 	rename -uid "3930AB1D-432D-7847-E405-90A5A8217406";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_03_Spline_01_Ctrl_rotateY";
 	rename -uid "DAEE4092-4D9E-13E0-2613-1B933E43B8CB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bang_03_Spline_01_Ctrl_rotateZ";
 	rename -uid "55D16941-4DB7-F30D-025D-F2B49E610848";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_03_Spline_01_Ctrl_Translate";
 	rename -uid "4F9A2A65-47D8-0E80-7807-62A1B51B5416";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bang_03_Spline_01_Ctrl_Rotate";
 	rename -uid "9DD89893-4FDD-E69C-8787-0385C81D164B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_08_Spline_02_Ctrl_visibility";
 	rename -uid "6B9F611B-441F-29CC-B12B-B98AC9A481EF";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_08_Spline_02_Ctrl_rotateX";
 	rename -uid "C5B2EA54-47E4-BA3D-40AE-A892E18B515E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_08_Spline_02_Ctrl_rotateY";
 	rename -uid "2E6AB220-4B4A-3506-A219-3BABB0375DFA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_08_Spline_02_Ctrl_rotateZ";
 	rename -uid "5F2BEFF0-4908-C133-2C4C-1C90740E0C34";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_08_Spline_02_Ctrl_Translate";
 	rename -uid "3FBC5181-4DF2-8D62-A0A1-B0BA2E09FFB0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_08_Spline_02_Ctrl_Rotate";
 	rename -uid "18A20914-42AC-953A-8099-5BB6C167823A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_08_Spline_01_Ctrl_visibility";
 	rename -uid "8B794466-44F6-8861-037A-7890BF05F3A6";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_08_Spline_01_Ctrl_rotateX";
 	rename -uid "35C0CA7E-44D1-D450-3004-70A89D1D4C15";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 1.3233489787006034 7 -2.3050753539794142
-		 10 -3.3891854188528696 13 -1.3842904036545396 16 1.2846619082252007 19 2.8565252383131838
+		 10 -3.3891854188528696 13 -1.3842904036545396 16 1.2846619082252009 19 2.8565252383131843
 		 22 3.8566622329653479 25 -0.21052512870654802 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_08_Spline_01_Ctrl_rotateY";
 	rename -uid "761386BB-46E8-87E9-3C61-3B8ABFB20E72";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -0.087372487399386342 7 -0.31858027976519587
 		 10 -0.72992351752845563 13 -0.22109533233471532 16 -0.23996402228069261 19 -0.59422210801687747
 		 22 -0.96581502450714374 25 -0.17337539005409217 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_08_Spline_01_Ctrl_rotateZ";
 	rename -uid "427EA72F-4415-39BA-DB80-25B46611FE05";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 7.4513566223470722 7 -12.250603749771003
 		 10 -17.870371766458238 13 -7.009162238915204 16 7.8957991081647689 19 17.175541547865876
-		 22 23.414957481242471 25 1.3468824975998543 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+		 22 23.414957481242475 25 1.3468824975998543 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_08_Spline_01_Ctrl_Translate";
 	rename -uid "71E8337E-44C1-BD9C-47E7-11BDA28D2455";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_08_Spline_01_Ctrl_Rotate";
 	rename -uid "40FE8A76-408B-DAAF-31CF-4F8104A366CA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Wrist_RK_Ctrl_visibility";
 	rename -uid "6D4643DF-4A10-1E07-9EFF-9086115E669A";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Wrist_RK_Ctrl_rotateX";
 	rename -uid "38D775DA-4518-1448-E446-DC93DB8D7747";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Wrist_RK_Ctrl_rotateY";
 	rename -uid "DED59363-4DB0-EF8B-8F14-779A38C84AB6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Wrist_RK_Ctrl_rotateZ";
 	rename -uid "8226E752-489D-B433-2CC6-3D8544C5B58C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Wrist_RK_Ctrl_Translate";
 	rename -uid "3F08BC8D-42C2-A684-32EB-50B0898DF11C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Wrist_RK_Ctrl_Rotate";
 	rename -uid "C64D32A3-4BB5-A809-73D8-4A958648E308";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_01_03_RK_Ctrl_visibility";
 	rename -uid "A81FCAEA-4CEB-0203-B72E-1FBBF4A69C91";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_01_03_RK_Ctrl_rotateX";
 	rename -uid "44C6EDA6-434A-F95C-24A9-37918B9E05E2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_01_03_RK_Ctrl_rotateY";
 	rename -uid "49468161-4C4D-CC0D-EAB2-8C8A3F728C93";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_01_03_RK_Ctrl_rotateZ";
 	rename -uid "782E21E3-4EDC-34C2-B27A-2E9EAC528D6B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 37.085821994112045 10 37.085821994112045
 		 13 37.085821994112045 16 37.085821994112045 19 37.085821994112045 22 37.085821994112045
 		 25 37.085821994112045 28 37.085821994112045;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_01_03_RK_Ctrl_Translate";
 	rename -uid "7F93E596-48E8-A946-0408-F88982B08C19";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_01_03_RK_Ctrl_Rotate";
 	rename -uid "F37A7F0D-48E9-0056-C109-3FA1839C1D70";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_01_02_RK_Ctrl_visibility";
 	rename -uid "F9D5EF10-4464-A9DC-0693-E1B8EAECF936";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_01_02_RK_Ctrl_rotateX";
 	rename -uid "585369CE-4B27-AE53-FA48-8F8EC258FA61";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 15.957079042853314 10 15.957079042853314
 		 13 15.957079042853314 16 15.957079042853314 19 15.957079042853314 22 15.957079042853314
 		 25 15.957079042853314 28 15.957079042853314;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_01_02_RK_Ctrl_rotateY";
 	rename -uid "794317F2-4555-9B19-7E1E-38AC624E3732";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -3.4818185587253274 10 -3.4818185587253274
 		 13 -3.4818185587253274 16 -3.4818185587253274 19 -3.4818185587253274 22 -3.4818185587253274
 		 25 -3.4818185587253274 28 -3.4818185587253274;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_01_02_RK_Ctrl_rotateZ";
 	rename -uid "46A1FA01-4DEB-A84F-FD4A-438FA3A15C6A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 33.365913850080723 10 33.365913850080723
 		 13 33.365913850080723 16 33.365913850080723 19 33.365913850080723 22 33.365913850080723
 		 25 33.365913850080723 28 33.365913850080723;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_01_02_RK_Ctrl_Translate";
 	rename -uid "597D6AC3-4BB7-9040-3F8C-26A32F2F4432";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_01_02_RK_Ctrl_Rotate";
 	rename -uid "0B38FDD2-4994-17C7-8A32-20B2105A1FB9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_01_01_RK_Ctrl_visibility";
 	rename -uid "6A367C43-4555-FE19-4FF8-8BB02C1DFC2A";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_01_01_RK_Ctrl_rotateX";
 	rename -uid "E43D8F84-45E6-1719-7122-ABA462CFF06C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -6.2542916305953904 10 -6.2542916305953904
 		 13 -6.2542916305953904 16 -6.2542916305953904 19 -6.2542916305953904 22 -6.2542916305953904
 		 25 -6.2542916305953904 28 -6.2542916305953904;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_01_01_RK_Ctrl_rotateY";
 	rename -uid "491FA870-4CD0-AA29-3DBC-2783C58BC199";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -3.9631211258648746 10 -3.9631211258648746
 		 13 -3.9631211258648746 16 -3.9631211258648746 19 -3.9631211258648746 22 -3.9631211258648746
 		 25 -3.9631211258648746 28 -3.9631211258648746;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_01_01_RK_Ctrl_rotateZ";
 	rename -uid "C33B81AB-476F-D5C2-D872-D6A093452F79";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -17.708774890957411 10 -17.708774890957411
 		 13 -17.708774890957411 16 -17.708774890957411 19 -17.708774890957411 22 -17.708774890957411
 		 25 -17.708774890957411 28 -17.708774890957411;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_01_01_RK_Ctrl_Translate";
 	rename -uid "BC9771AF-405B-6896-7368-67AAE2FFED31";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_01_01_RK_Ctrl_Rotate";
 	rename -uid "AFB98862-42B9-77AB-D133-9CBFF476E655";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_02_03_RK_Ctrl_visibility";
 	rename -uid "6CD888E3-429A-A938-FBFE-6087B6471DD9";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_02_03_RK_Ctrl_rotateX";
 	rename -uid "923629DF-434F-828E-8130-19A8754E50C0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_02_03_RK_Ctrl_rotateY";
 	rename -uid "431B28B9-4AC7-DD5D-250E-0B83D0A7695C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_02_03_RK_Ctrl_rotateZ";
 	rename -uid "AE3F08D7-437B-C164-8B0B-DBAA92700774";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 45.334150370260318 10 45.334150370260318
 		 13 45.334150370260318 16 45.334150370260318 19 45.334150370260318 22 45.334150370260318
 		 25 45.334150370260318 28 45.334150370260318;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_02_03_RK_Ctrl_Translate";
 	rename -uid "6698C2A0-4821-3DB1-8A83-D8911A082B4E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_02_03_RK_Ctrl_Rotate";
 	rename -uid "784A97CF-4430-5D64-935F-E5AE16D4B139";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_04_Spline_01_Ctrl_visibility";
 	rename -uid "D79CA6BF-43A2-394C-ACEE-5EBB693E1FC6";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_04_Spline_01_Ctrl_rotateX";
 	rename -uid "FB09160E-42E3-90A9-D574-7D95EF548CB4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -2.9755580568924938 7 4.7803793100792289
 		 10 6.907402473072203 13 2.7219081001278358 16 -3.21656045687301 19 -6.8907201469153812
 		 22 -9.2985432177616936 25 -0.86389970240447733 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_04_Spline_01_Ctrl_rotateY";
 	rename -uid "CA42F25C-44FE-1A8D-F7FD-30B3AC3BD657";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0.17814938572533437 7 0.37941100887426088
-		 10 0.76378974415447509 13 -0.0091504140700850011 16 0.031789410670911643 19 0.77246820540397565
+		 10 0.76378974415447509 13 -0.0091504140700850028 16 0.031789410670911643 19 0.77246820540397565
 		 22 1.5792147296521897 25 -0.27148388259895412 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_04_Spline_01_Ctrl_rotateZ";
 	rename -uid "BB1C0295-4DF6-ACE4-B08B-0BAC38E12A12";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 6.9537801015611764 7 -11.504162907512811
 		 10 -16.809154747406524 13 -6.6129206675774386 16 7.3311066829462614 19 15.959562225444456
 		 22 21.723666904128066 25 1.0353000789610947 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_04_Spline_01_Ctrl_Translate";
 	rename -uid "50244D30-40B2-C52E-A6BC-57BC02CA54D7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_04_Spline_01_Ctrl_Rotate";
 	rename -uid "B7E8D284-4E58-3BB5-D594-539D8A0DD877";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_05_Spline_02_Ctrl_visibility";
 	rename -uid "DD36F2C5-4ADB-0D87-C02F-55BF84224B66";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_05_Spline_02_Ctrl_rotateX";
 	rename -uid "2BFA105F-4437-AD2E-F7A6-F18586BD84FC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0.43984633009480656 7 0.68659800657619086
 		 10 0.21068451336204475 13 -1.0763700564444825 16 -0.86494906987883047 19 0.086594052600298468
 		 22 0.18581717322294214 25 0.18856965799801606 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_05_Spline_02_Ctrl_rotateY";
 	rename -uid "AF0BA847-4089-A7A9-19B6-32BD25AC2BEA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -0.068533187182492183 7 -0.26718936796562537
-		 10 -0.044703721410381855 13 -0.0501341099950657 16 -0.16273381106172238 19 0.0019045384323831418
+		 10 -0.044703721410381855 13 -0.050134109995065707 16 -0.16273381106172238 19 0.0019045384323831418
 		 22 0.023341139212555227 25 -0.10514115646921965 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_05_Spline_02_Ctrl_rotateZ";
 	rename -uid "9F1DECB9-4048-E09E-9644-C99204AE0EAC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 20.86510799032062 7 22.257720338924653
-		 10 5.4233242594635449 13 -31.976072606213741 16 -40.335061991544833 19 4.5629090385632152
+		 10 5.4233242594635449 13 -31.976072606213741 16 -40.335061991544833 19 4.5629090385632161
 		 22 9.9744410426444734 25 7.5137987540258813 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_05_Spline_02_Ctrl_Translate";
 	rename -uid "72829C5D-47DE-85B4-91A3-96963D05EE72";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_05_Spline_02_Ctrl_Rotate";
 	rename -uid "5693C8BA-4705-F0CC-8DA6-869906D47468";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_05_Spline_01_Ctrl_visibility";
 	rename -uid "7E7E7696-479C-8553-0D5F-CFB328CA3CA6";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_05_Spline_01_Ctrl_rotateX";
 	rename -uid "96B22524-4673-A9FC-1BC7-639A3B9C66AF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0.31102460299909973 7 -0.65711044810917485
 		 10 -1.0729753827391364 13 -0.48983786025333365 16 0.14666962446696102 19 0.50885374030800823
 		 22 0.74389109928146702 25 -0.33267282058345177 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_05_Spline_01_Ctrl_rotateY";
 	rename -uid "0A7474AE-4A3A-C2BD-C406-A9BA6B78CB2C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -0.016050503109891024 7 0.0026687665242125366
 		 10 -0.051882345095636391 13 0.011114622385164925 16 0.00062894523585544716 19 -0.042089999509672002
 		 22 -0.086166470852950081 25 0.27687705719575023 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_05_Spline_01_Ctrl_rotateZ";
 	rename -uid "E6BC341A-48D2-5389-EC4A-C689C04DFDBE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 7.5628464827664645 7 -12.457880880186849
-		 10 -18.190147156718083 13 -7.1336813244160577 16 8.0043671912275993 19 17.426754519068478
+		 10 -18.190147156718087 13 -7.1336813244160577 16 8.0043671912275993 19 17.426754519068478
 		 22 23.765285888332073 25 1.303146983551517 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_05_Spline_01_Ctrl_Translate";
 	rename -uid "F390B12A-4D63-947C-DBE5-A1964813C2E0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_05_Spline_01_Ctrl_Rotate";
 	rename -uid "5888BC77-4AB6-C89C-1424-17919BBB0B1B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_06_Spline_02_Ctrl_visibility";
 	rename -uid "D156EBFD-47DF-83E0-6370-2C8D08C89DCE";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_06_Spline_02_Ctrl_rotateX";
 	rename -uid "1916FBE3-4C8C-A263-F657-539A8A1F98AF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 14.274445753624638 7 15.392739186867011
 		 10 3.8229050415825503 13 -21.902343987380565 16 -26.874364924492951 19 3.146584431375584
-		 22 6.8587372017402952 25 5.2220848672769948 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+		 22 6.8587372017402961 25 5.2220848672769948 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_06_Spline_02_Ctrl_rotateY";
 	rename -uid "285E7A7D-496F-C22A-F157-2887FB0B8114";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -1.8680407470842237 7 -2.2278110332533019
 		 10 -0.14865763344876581 13 -4.1697356421927987 16 -6.6878859526340264 19 -0.087555805416843477
 		 22 -0.3992680696833199 25 -0.33289753723981624 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_06_Spline_02_Ctrl_rotateZ";
 	rename -uid "5656612E-40F0-A891-82F3-CE88AD713359";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 14.918394889531314 7 15.692886266435119
 		 10 3.8458218530821178 13 -22.304519974045157 16 -28.088109231435656 19 3.3023976757975557
 		 22 7.2138615354031632 25 5.3835129568777393 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_06_Spline_02_Ctrl_Translate";
 	rename -uid "8FCC4A40-4A53-39EC-314E-6C8984EDC874";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_06_Spline_02_Ctrl_Rotate";
 	rename -uid "3E3E00C4-4D1D-E765-6A9F-6CB016C2EE25";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_06_Spline_01_Ctrl_visibility";
 	rename -uid "188F2406-4557-AB76-2B3E-EAB1A476C3AE";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_06_Spline_01_Ctrl_rotateX";
 	rename -uid "EB677BF5-434E-6701-8742-61BD69EA570C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 5.3278777927628473 7 -8.8741586575153431
-		 10 -12.977387706765063 13 -5.1660441317634946 16 5.5123433311207943 19 12.04912891347486
+		 10 -12.977387706765064 13 -5.1660441317634946 16 5.5123433311207952 19 12.04912891347486
 		 22 16.355151799462281 25 0.57422048592506003 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_06_Spline_01_Ctrl_rotateY";
 	rename -uid "7AC75B68-4584-02E0-574C-7FABF59354D8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -0.24780826036940387 7 -0.67585668665280829
 		 10 -1.481742606088007 13 -0.27782703501188466 16 -0.35980449277994248 19 -1.387938467359118
 		 22 -2.4860858447634193 25 0.044622989637048326 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_06_Spline_01_Ctrl_rotateZ";
 	rename -uid "76F18DC4-47AB-3A8B-4C2D-9AA50F7A81E9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 5.3613181312787015 7 -8.6984856807075133
 		 10 -12.566309621978824 13 -4.9250836559075477 16 5.7794368068220985 19 12.402074827348041
 		 22 16.786543385307077 25 1.2475822689562943 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_06_Spline_01_Ctrl_Translate";
 	rename -uid "3765BD61-4853-5368-0A8B-CE934ED03A41";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_06_Spline_01_Ctrl_Rotate";
 	rename -uid "5F1BB544-48D8-D772-0A5E-6E9C8D8D333B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_07_Spline_02_Ctrl_visibility";
 	rename -uid "845C6B47-4306-4EAD-3010-AAAE0D6492FA";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_07_Spline_02_Ctrl_rotateX";
 	rename -uid "AADDA858-4E0A-E964-0F0B-6796C19EC145";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -13.022740448732312 7 -13.647676998502989
 		 10 -3.3475772496836589 13 19.254211074110462 16 24.229529413101396 19 -2.8923738888239319
 		 22 -6.3197554398526892 25 -4.6903623261515657 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_07_Spline_02_Ctrl_rotateY";
 	rename -uid "58957B6A-4C82-A41B-F0F5-928089D0399F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 1.8471655935597313 7 2.0725192522718512
-		 10 0.13521303375070273 13 4.3027824263306034 16 6.8078793324994695 19 0.087606345889046991
+		 10 0.13521303375070276 13 4.3027824263306034 16 6.8078793324994695 19 0.087606345889046991
 		 22 0.44407692304489116 25 0.17067177776621809 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_07_Spline_02_Ctrl_rotateZ";
 	rename -uid "0E736320-4084-F6F6-7B0E-67B75BD0AFBA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 16.030317546244707 7 17.274201380362268
 		 10 4.266921402592887 13 -24.59674821964375 16 -30.372552742555261 19 3.5272042357646725
 		 22 7.6857752005233726 25 5.8664293703583352 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_07_Spline_02_Ctrl_Translate";
 	rename -uid "69AF1B8F-48D6-5E50-35AD-17BCD7B3CA5E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_07_Spline_02_Ctrl_Rotate";
 	rename -uid "1E69403B-4BE2-EF1C-6881-FEB55A0CD489";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_07_Spline_01_Ctrl_visibility";
 	rename -uid "6C22E396-4513-A865-3FB9-9FB39240885E";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_07_Spline_01_Ctrl_rotateX";
 	rename -uid "3044926B-4BF3-85EF-1B31-06B4E0904499";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -4.8519424970183564 7 7.8506914180155212
 		 10 11.338158771064245 13 4.4467421581229587 16 -5.2494524683783146 19 -11.243714237030725
 		 22 -15.196354851751915 25 -1.1917030091362073 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_07_Spline_01_Ctrl_rotateY";
 	rename -uid "C79D543B-4F11-A6DF-734E-7C9B64C83B38";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 0 4 0.2466667026039418 7 0.64051387444612695
+	setAttr -s 10 ".ktv[0:9]"  1 0 4 0.2466667026039418 7 0.64051387444612706
 		 10 1.3108266386469041 13 0.13471287697933776 16 0.17127607506913312 19 1.1984240004340634
 		 22 2.3126986996336951 25 -0.012864843379106736 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Pony_07_Spline_01_Ctrl_rotateZ";
 	rename -uid "636D0A64-4C21-DFFB-841A-5DAD3A8C9196";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 5.795780540990588 7 -9.6377436377779357
 		 10 -14.098866451839241 13 -5.5941103833982257 16 6.0362316873175574 19 13.174597554124386
 		 22 17.890563080719808 25 0.68373173343082083 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_07_Spline_01_Ctrl_Translate";
 	rename -uid "CA1C7A7B-4DC1-91ED-BBEE-27811EB6045A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Pony_07_Spline_01_Ctrl_Rotate";
 	rename -uid "D3992ED9-499D-CB38-7FF0-D3A105F04DB0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_04_01_RK_Ctrl_visibility";
 	rename -uid "21AE980E-4461-5B0C-7A41-6DBFB04FF025";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_04_01_RK_Ctrl_rotateX";
 	rename -uid "73FA84A2-4B8D-9ABC-8E8A-879FB62F4711";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_04_01_RK_Ctrl_rotateY";
 	rename -uid "9E45FE86-4361-A784-7760-098153EB1E94";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_04_01_RK_Ctrl_rotateZ";
 	rename -uid "71577FC6-4695-1C2C-E23C-C3AC1D147357";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 61.845158175083029 10 61.845158175083029
 		 13 61.845158175083029 16 61.845158175083029 19 61.845158175083029 22 61.845158175083029
 		 25 61.845158175083029 28 61.845158175083029;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_04_01_RK_Ctrl_Translate";
 	rename -uid "C0ABC491-40C2-31C2-51AB-528B7B209B52";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_04_01_RK_Ctrl_Rotate";
 	rename -uid "8AADBA93-4C2B-642A-8A6E-2CB83B0CEDE3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_05_03_RK_Ctrl_visibility";
 	rename -uid "EB42819D-44BD-8911-2FE6-678EBBB56C79";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_05_03_RK_Ctrl_rotateX";
 	rename -uid "0F3D695A-4EA4-DD1E-55D3-2B8C2B1A5E2F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_05_03_RK_Ctrl_rotateY";
 	rename -uid "695FB567-41AD-08FC-82FA-BCA1C75511BC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_05_03_RK_Ctrl_rotateZ";
 	rename -uid "9C36168C-46CF-F6EA-221F-54A9FE2A201F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 53.541095737485257 10 53.541095737485257
 		 13 53.541095737485257 16 53.541095737485257 19 53.541095737485257 22 53.541095737485257
 		 25 53.541095737485257 28 53.541095737485257;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_05_03_RK_Ctrl_Translate";
 	rename -uid "772536E6-4F03-6258-2926-B08093DE2C8B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_05_03_RK_Ctrl_Rotate";
 	rename -uid "94E40767-40E4-EEE2-458A-F7B44199191E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_05_02_RK_Ctrl_visibility";
 	rename -uid "1ECF980A-4665-91F6-2C85-068DAFE9CD9A";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_05_02_RK_Ctrl_rotateX";
 	rename -uid "198FA2B2-4DAB-51D5-6E17-D4B6D6401FD0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_05_02_RK_Ctrl_rotateY";
 	rename -uid "6488C0A2-4D79-9EA4-408B-7794948E0ECD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_05_02_RK_Ctrl_rotateZ";
 	rename -uid "7856BAF2-4A76-6762-DCA4-54AAF3CD7C53";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 53.541095737485257 10 53.541095737485257
 		 13 53.541095737485257 16 53.541095737485257 19 53.541095737485257 22 53.541095737485257
 		 25 53.541095737485257 28 53.541095737485257;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_05_02_RK_Ctrl_Translate";
 	rename -uid "FB2940D0-4423-A0D2-B762-F6AEE72C8567";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_05_02_RK_Ctrl_Rotate";
 	rename -uid "AC220E16-4421-A2AC-83E9-B1A10E5ED5A5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_05_01_RK_Ctrl_visibility";
 	rename -uid "AEFDAFE4-47EB-8FA1-B5F7-81AC6317AAE6";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_05_01_RK_Ctrl_rotateX";
 	rename -uid "FE45F157-4A75-384D-8F49-FCA3768674FA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -16.08119337712801 10 -16.08119337712801
 		 13 -16.08119337712801 16 -16.08119337712801 19 -16.08119337712801 22 -16.08119337712801
 		 25 -16.08119337712801 28 -16.08119337712801;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_05_01_RK_Ctrl_rotateY";
 	rename -uid "81A5C2C0-4504-4D20-40AD-EBA51DF8511D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_05_01_RK_Ctrl_rotateZ";
 	rename -uid "EB3CB1EE-45D4-CAB0-A74F-F7AF80FFE811";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 53.541095737485257 10 53.541095737485257
 		 13 53.541095737485257 16 53.541095737485257 19 53.541095737485257 22 53.541095737485257
 		 25 53.541095737485257 28 53.541095737485257;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_05_01_RK_Ctrl_Translate";
 	rename -uid "7316EA04-49C9-9D03-CF7F-CD9AFE123361";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_05_01_RK_Ctrl_Rotate";
 	rename -uid "8E320CB4-4498-C2AE-458B-CE9BB5585422";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_05_03_RK_Ctrl_visibility";
 	rename -uid "300C5B1B-45BB-3C4F-72FE-F4B12F0F3F88";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_05_03_RK_Ctrl_rotateX";
 	rename -uid "3F6E3EEC-459C-DC31-9636-0782E72F2E5F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -11.895853857412707 10 -11.895853857412707
 		 13 -11.895853857412707 16 -11.895853857412707 19 -11.895853857412707 22 -11.895853857412707
 		 25 -11.895853857412707 28 -11.895853857412707;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_05_03_RK_Ctrl_rotateY";
 	rename -uid "D50D033A-47FE-9567-9BEE-E2968C4B0D33";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_05_03_RK_Ctrl_rotateZ";
 	rename -uid "221BBA4C-47F7-C12A-64EB-ADA3B951660D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 55.100582251189131 10 55.100582251189131
 		 13 55.100582251189131 16 55.100582251189131 19 55.100582251189131 22 55.100582251189131
 		 25 55.100582251189131 28 55.100582251189131;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_05_03_RK_Ctrl_Translate";
 	rename -uid "B820E739-4C40-2C0A-ABDF-B3907C7F76EE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_05_03_RK_Ctrl_Rotate";
 	rename -uid "ADECD78D-4545-321E-B340-C998A6899DAC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_05_02_RK_Ctrl_visibility";
 	rename -uid "CBEA101A-4162-B975-D43A-2398141F1B55";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_05_02_RK_Ctrl_rotateX";
 	rename -uid "8F419FC9-4CF9-08E4-723A-2186B6CA5661";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -11.895853857412707 10 -11.895853857412707
 		 13 -11.895853857412707 16 -11.895853857412707 19 -11.895853857412707 22 -11.895853857412707
 		 25 -11.895853857412707 28 -11.895853857412707;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_05_02_RK_Ctrl_rotateY";
 	rename -uid "944D5DE4-4794-3136-F3BD-D8A82E5BE9C8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_05_02_RK_Ctrl_rotateZ";
 	rename -uid "86F9B903-485E-6F5D-36A3-1CAB5799A70E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 55.100582251189131 10 55.100582251189131
 		 13 55.100582251189131 16 55.100582251189131 19 55.100582251189131 22 55.100582251189131
 		 25 55.100582251189131 28 55.100582251189131;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_05_02_RK_Ctrl_Translate";
 	rename -uid "49989A9D-45D0-BE2E-3EA1-D8AF2DCAE563";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_05_02_RK_Ctrl_Rotate";
 	rename -uid "D1A54735-40DE-F5C6-962B-DD853889F3D3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_05_01_RK_Ctrl_visibility";
 	rename -uid "B669F2A6-42F6-B018-FDD6-919C9F5A28EB";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_05_01_RK_Ctrl_rotateX";
 	rename -uid "09BD91F0-4B46-6B1E-D31F-EA94FD878D56";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -11.895853857412707 10 -11.895853857412707
 		 13 -11.895853857412707 16 -11.895853857412707 19 -11.895853857412707 22 -11.895853857412707
 		 25 -11.895853857412707 28 -11.895853857412707;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_05_01_RK_Ctrl_rotateY";
 	rename -uid "38806BB6-46E0-44E4-34F9-5A897751FF1A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_05_01_RK_Ctrl_rotateZ";
 	rename -uid "DCED1A9A-4491-1839-E395-72BB08110E09";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 55.100582251189131 10 55.100582251189131
 		 13 55.100582251189131 16 55.100582251189131 19 55.100582251189131 22 55.100582251189131
 		 25 55.100582251189131 28 55.100582251189131;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_05_01_RK_Ctrl_Translate";
 	rename -uid "05357295-4F2B-27FF-B0CF-9E88C1C083A3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_05_01_RK_Ctrl_Rotate";
 	rename -uid "5698C248-435E-E95C-C80F-E781C7E83EA3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_02_02_RK_Ctrl_visibility";
 	rename -uid "3AEC2AED-4990-50B6-493B-66A41CB6BBE3";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_02_02_RK_Ctrl_rotateX";
 	rename -uid "2150D21D-43C6-1A89-D451-71BF70B6750B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_02_02_RK_Ctrl_rotateY";
 	rename -uid "67A25365-40E8-7F89-BC79-6C9D97BFD3E9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_02_02_RK_Ctrl_rotateZ";
 	rename -uid "77EEC9FF-4D26-710C-F3F2-ECB2379E5C88";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 45.334150370260318 10 45.334150370260318
 		 13 45.334150370260318 16 45.334150370260318 19 45.334150370260318 22 45.334150370260318
 		 25 45.334150370260318 28 45.334150370260318;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_02_02_RK_Ctrl_Translate";
 	rename -uid "5C04838C-4B53-E587-723B-E8834885AEE7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_02_02_RK_Ctrl_Rotate";
 	rename -uid "28379343-485C-A50C-A6DE-3090005851CF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_02_01_RK_Ctrl_visibility";
 	rename -uid "339E8065-452F-BB56-F970-E38194F2643E";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_02_01_RK_Ctrl_rotateX";
 	rename -uid "09F3F077-4E76-A14C-AB14-EA85F4420E0D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_02_01_RK_Ctrl_rotateY";
 	rename -uid "49DADA40-44A6-D18C-AD73-70A89CACABC5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_02_01_RK_Ctrl_rotateZ";
 	rename -uid "3E8225E2-48F0-20BA-4971-83ACAF612DEF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 45.334150370260318 10 45.334150370260318
 		 13 45.334150370260318 16 45.334150370260318 19 45.334150370260318 22 45.334150370260318
 		 25 45.334150370260318 28 45.334150370260318;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_02_01_RK_Ctrl_Translate";
 	rename -uid "0A03E7D0-4A0F-A403-4490-3D8441EED9B2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_02_01_RK_Ctrl_Rotate";
 	rename -uid "B2C50956-4DDF-537C-9BE3-C1B49E4982BB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_03_03_RK_Ctrl_visibility";
 	rename -uid "51D23C41-4255-77F7-0E0A-7F982C53A80E";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_03_03_RK_Ctrl_rotateX";
 	rename -uid "75E0E4EA-431A-8FAF-9A29-28B8207BFB09";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_03_03_RK_Ctrl_rotateY";
 	rename -uid "10F4C98F-44C3-9F61-B050-2E93ECD0A974";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_03_03_RK_Ctrl_rotateZ";
 	rename -uid "106C17DE-40E2-C5AE-88EA-BE82504A22E4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 62.137418331628389 10 62.137418331628389
 		 13 62.137418331628389 16 62.137418331628389 19 62.137418331628389 22 62.137418331628389
 		 25 62.137418331628389 28 62.137418331628389;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_03_03_RK_Ctrl_Translate";
 	rename -uid "8081EB45-4B43-3276-3F8A-CDBE3F38271B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_03_03_RK_Ctrl_Rotate";
 	rename -uid "F5E147F4-4CAC-611F-8332-C7B2B81323E1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_03_02_RK_Ctrl_visibility";
 	rename -uid "1641631C-4EF2-863C-7699-AC8E4EBB1FA0";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_03_02_RK_Ctrl_rotateX";
 	rename -uid "09A4A5E6-46A3-018A-9625-0E8594942162";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_03_02_RK_Ctrl_rotateY";
 	rename -uid "258E22E9-4861-299D-5153-BDAB28ECD512";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_03_02_RK_Ctrl_rotateZ";
 	rename -uid "E9E2C24B-49B3-8AC2-6F42-DFA94FF1654A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 62.137418331628389 10 62.137418331628389
 		 13 62.137418331628389 16 62.137418331628389 19 62.137418331628389 22 62.137418331628389
 		 25 62.137418331628389 28 62.137418331628389;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_03_02_RK_Ctrl_Translate";
 	rename -uid "9A9D1018-4491-87C6-6518-CD9C6C818128";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_03_02_RK_Ctrl_Rotate";
 	rename -uid "15149674-4E58-9A28-A302-B59919FC52D6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_03_01_RK_Ctrl_visibility";
 	rename -uid "B7FA2B8C-4C20-5851-41D4-DC9017BD5B93";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_03_01_RK_Ctrl_rotateX";
 	rename -uid "1F43496F-4130-C91D-0245-4FAC4185B4E4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_03_01_RK_Ctrl_rotateY";
 	rename -uid "66671286-4909-E57B-2B39-D6825F675BE8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_03_01_RK_Ctrl_rotateZ";
 	rename -uid "2880C475-431C-D675-4330-A5BE22184DA9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 36.737807954866746 10 36.737807954866746
 		 13 36.737807954866746 16 36.737807954866746 19 36.737807954866746 22 36.737807954866746
 		 25 36.737807954866746 28 36.737807954866746;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_03_01_RK_Ctrl_Translate";
 	rename -uid "3731DA44-4E45-602D-4C30-5EB112CFED7C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_03_01_RK_Ctrl_Rotate";
 	rename -uid "9C0FD0FB-425A-BA96-486E-3BA1E518B78F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_04_03_RK_Ctrl_visibility";
 	rename -uid "407D8D8B-4528-05CA-5D78-24BD774C2A5C";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_04_03_RK_Ctrl_rotateX";
 	rename -uid "E4179AA0-48EF-7AD8-9E6C-3A9C7398FD4F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_04_03_RK_Ctrl_rotateY";
 	rename -uid "DAB7AD9F-4234-DEDC-A0B2-37970BBE91B7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_04_03_RK_Ctrl_rotateZ";
 	rename -uid "558C3B9F-4461-43A6-FA99-8D899DFE9157";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 61.845158175083029 10 61.845158175083029
 		 13 61.845158175083029 16 61.845158175083029 19 61.845158175083029 22 61.845158175083029
 		 25 61.845158175083029 28 61.845158175083029;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_04_03_RK_Ctrl_Translate";
 	rename -uid "2D23929C-4132-A888-E9A4-D7BEBE5417D5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_04_03_RK_Ctrl_Rotate";
 	rename -uid "739C7DE2-4A60-F062-234D-9D934BFF5645";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_04_02_RK_Ctrl_visibility";
 	rename -uid "F78AC2C8-422C-F46E-7518-85873B934048";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_04_02_RK_Ctrl_rotateX";
 	rename -uid "7F6E25D9-4DCA-E441-70A3-8B81841BB616";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_04_02_RK_Ctrl_rotateY";
 	rename -uid "A8B32AFE-48DD-770F-747B-5DA54BFE98FE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Finger_04_02_RK_Ctrl_rotateZ";
 	rename -uid "0A70385D-4FC1-4BAB-B0F4-0498E1872D8C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 61.845158175083029 10 61.845158175083029
 		 13 61.845158175083029 16 61.845158175083029 19 61.845158175083029 22 61.845158175083029
 		 25 61.845158175083029 28 61.845158175083029;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_04_02_RK_Ctrl_Translate";
 	rename -uid "F1D82FF9-4B34-0CD3-E3DF-758C1E755E1E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Finger_04_02_RK_Ctrl_Rotate";
 	rename -uid "5F14CF8A-4026-DC79-D7F9-F094D4AD1D0C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_04_03_RK_Ctrl_visibility";
 	rename -uid "2F48C66A-4C13-1EDC-35DE-70959E28878E";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_04_03_RK_Ctrl_rotateX";
 	rename -uid "002B9AA8-410B-B87C-A5A0-148D0E0AE8E5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_04_03_RK_Ctrl_rotateY";
 	rename -uid "F47643DD-4E44-2CEC-4BC7-5085E0BF6CED";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_04_03_RK_Ctrl_rotateZ";
 	rename -uid "D7578E55-4216-E3F5-3C15-1D8B8E068EAC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 66.167940424480435 10 66.167940424480435
 		 13 66.167940424480435 16 66.167940424480435 19 66.167940424480435 22 66.167940424480435
 		 25 66.167940424480435 28 66.167940424480435;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_04_03_RK_Ctrl_Translate";
 	rename -uid "F5E5066B-455F-03A0-6225-4C90FA3B3C1D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_04_03_RK_Ctrl_Rotate";
 	rename -uid "4F095D6C-4702-ECD0-73F0-A8BAA1CA1D5A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_04_02_RK_Ctrl_visibility";
 	rename -uid "2208892A-48D8-A3E4-C966-E9B85CE2C297";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_04_02_RK_Ctrl_rotateX";
 	rename -uid "A631E818-4A83-0ADC-35DE-19A7AE864588";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_04_02_RK_Ctrl_rotateY";
 	rename -uid "9A244D2F-4630-6224-F42D-0B92C19CDC65";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_04_02_RK_Ctrl_rotateZ";
 	rename -uid "83A668FA-4495-C2AE-833A-969E6902569B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 66.167940424480435 10 66.167940424480435
 		 13 66.167940424480435 16 66.167940424480435 19 66.167940424480435 22 66.167940424480435
 		 25 66.167940424480435 28 66.167940424480435;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_04_02_RK_Ctrl_Translate";
 	rename -uid "3D90ED51-4B32-F42D-EEF6-CF88FAC8079E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_04_02_RK_Ctrl_Rotate";
 	rename -uid "A212D78A-41DA-0F45-686B-E3A1831F6E21";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_04_01_RK_Ctrl_visibility";
 	rename -uid "95DAF1A0-486F-A7EB-7513-C39767E294FD";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_04_01_RK_Ctrl_rotateX";
 	rename -uid "AA367863-41E3-BDA4-269F-BCAFDCF4C3B2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_04_01_RK_Ctrl_rotateY";
 	rename -uid "E0C92DE5-43DA-FB25-8D9D-CFBC697EDD83";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_04_01_RK_Ctrl_rotateZ";
 	rename -uid "5F8E692C-4B76-0D24-23CE-C88B3BE69CDC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 66.167940424480435 10 66.167940424480435
 		 13 66.167940424480435 16 66.167940424480435 19 66.167940424480435 22 66.167940424480435
 		 25 66.167940424480435 28 66.167940424480435;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_04_01_RK_Ctrl_Translate";
 	rename -uid "C708851A-4A54-0036-AE7A-3299E3ABCF54";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_04_01_RK_Ctrl_Rotate";
 	rename -uid "3CDC5C9E-49CB-AA2D-09AE-E69CF63943CB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_03_03_RK_Ctrl_visibility";
 	rename -uid "1D079BF8-47F9-2F81-F79D-42973B709776";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_03_03_RK_Ctrl_rotateX";
 	rename -uid "E831FD73-4100-F5A8-C66E-CAA6ECDA20C6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_03_03_RK_Ctrl_rotateY";
 	rename -uid "306042CE-48E5-41D1-8CE1-02887E74969B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_03_03_RK_Ctrl_rotateZ";
 	rename -uid "BE0B328A-4E49-1DAC-6BB7-F6BDC5563B34";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 44.550389154204112 10 44.550389154204112
 		 13 44.550389154204112 16 44.550389154204112 19 44.550389154204112 22 44.550389154204112
 		 25 44.550389154204112 28 44.550389154204112;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_03_03_RK_Ctrl_Translate";
 	rename -uid "7008A141-443D-B7F9-8D37-01ABF774D0A4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_03_03_RK_Ctrl_Rotate";
 	rename -uid "76A609B1-4A56-E588-0E48-4D83BCCA561C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_03_02_RK_Ctrl_visibility";
 	rename -uid "7F362EE8-4F40-717A-9A11-D38B51EAD3E6";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_03_02_RK_Ctrl_rotateX";
 	rename -uid "0FC8430A-4D44-B91C-108B-46A15C40C877";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_03_02_RK_Ctrl_rotateY";
 	rename -uid "461BC8E4-47EF-B755-45BE-EA9A3C6AEFD5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_03_02_RK_Ctrl_rotateZ";
 	rename -uid "852BC4E8-4C64-0726-6A9C-34A5E0CD007A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 44.550389154204112 10 44.550389154204112
 		 13 44.550389154204112 16 44.550389154204112 19 44.550389154204112 22 44.550389154204112
 		 25 44.550389154204112 28 44.550389154204112;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_03_02_RK_Ctrl_Translate";
 	rename -uid "2465A9A2-4475-B347-FB91-D6A916708BE7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_03_02_RK_Ctrl_Rotate";
 	rename -uid "3F72D1B8-40C7-991C-583E-DC8F5FDEB70C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_03_01_RK_Ctrl_visibility";
 	rename -uid "9294B5A4-4C65-230C-17E6-39BAF279F095";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_03_01_RK_Ctrl_rotateX";
 	rename -uid "E16EA719-48A1-38DA-56B5-3D89D83A34CC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_03_01_RK_Ctrl_rotateY";
 	rename -uid "F9C267EA-4B4A-B4E5-1508-B3A604FE2FD3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_03_01_RK_Ctrl_rotateZ";
 	rename -uid "4B1FB846-4D83-B917-EC72-EE9AFD520CD3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 44.550389154204112 10 44.550389154204112
 		 13 44.550389154204112 16 44.550389154204112 19 44.550389154204112 22 44.550389154204112
 		 25 44.550389154204112 28 44.550389154204112;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_03_01_RK_Ctrl_Translate";
 	rename -uid "7EB5790A-443B-7C67-A4D1-52811A628661";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_03_01_RK_Ctrl_Rotate";
 	rename -uid "F53E0E68-448A-DE55-0E39-65ABF800C24C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_02_03_RK_Ctrl_visibility";
 	rename -uid "B69AF118-463C-B45B-F908-D094AF37A957";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_02_03_RK_Ctrl_rotateX";
 	rename -uid "5ED90BF5-4417-B46C-DA3B-FD8B2D8C0BA1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_02_03_RK_Ctrl_rotateY";
 	rename -uid "580C1B16-41BA-6F3E-5705-37AA1F15590A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_02_03_RK_Ctrl_rotateZ";
 	rename -uid "3A5B4A17-47CD-FC47-5D59-86B6A3986016";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 46.666652956515257 10 46.666652956515257
 		 13 46.666652956515257 16 46.666652956515257 19 46.666652956515257 22 46.666652956515257
 		 25 46.666652956515257 28 46.666652956515257;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_02_03_RK_Ctrl_Translate";
 	rename -uid "F3BD2EDA-4642-A953-5757-06B72EB6F97C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_02_03_RK_Ctrl_Rotate";
 	rename -uid "32CF271E-466F-4EE0-AD13-82AE611BD5C2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_02_02_RK_Ctrl_visibility";
 	rename -uid "FD84DDA2-4C82-ADCF-2E51-E397D9EAED29";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_02_02_RK_Ctrl_rotateX";
 	rename -uid "C410D707-4C8C-4896-A968-3FAC46F63D31";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_02_02_RK_Ctrl_rotateY";
 	rename -uid "2E84243A-4369-FFC7-864D-08BF63F1D8CA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_02_02_RK_Ctrl_rotateZ";
 	rename -uid "BD1D8F37-47F4-4D56-A53B-25AFAF9A59B9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 46.666652956515257 10 46.666652956515257
 		 13 46.666652956515257 16 46.666652956515257 19 46.666652956515257 22 46.666652956515257
 		 25 46.666652956515257 28 46.666652956515257;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_02_02_RK_Ctrl_Translate";
 	rename -uid "FA3CC982-4B84-72FA-5229-72A7E9DD7DF0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_02_02_RK_Ctrl_Rotate";
 	rename -uid "98D9EB88-43EA-DC04-F327-A09321574922";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Head_Rotate_RK_Ctrl_visibility";
 	rename -uid "87AAC0F6-41FC-B2AA-4CFE-218BC37AE162";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Head_Rotate_RK_Ctrl_rotateX";
 	rename -uid "BB562295-4FC8-36B4-BF6D-E391D2E6CCE1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Head_Rotate_RK_Ctrl_rotateY";
 	rename -uid "ECFB9627-42DE-C846-BBB7-76922A37DD7C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Head_Rotate_RK_Ctrl_rotateZ";
 	rename -uid "829C004F-493F-3D6D-149E-B6A26F667586";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -11.691921114497861 7 29.311133614905071
 		 10 23.207443723625786 13 4.3870502854917417 16 0 19 -9.1945734764691096 22 -14.304984961484287
 		 25 10.294239272440493 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Head_Rotate_RK_Ctrl_Translate";
 	rename -uid "1C294535-4DDD-EF12-0174-7987F60A96C8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Head_Rotate_RK_Ctrl_Rotate";
 	rename -uid "CA49E79E-4377-4C1D-A5EE-B6AA7618933B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Bottom_RK_Ctrl_visibility";
 	rename -uid "8FF861C2-4C6E-1CA0-4A87-A4850D46CF16";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Bottom_RK_Ctrl_rotateX";
 	rename -uid "337AF11D-43A4-9DD4-7609-04A7B7A33DFC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Bottom_RK_Ctrl_rotateY";
 	rename -uid "79ABBE67-4F6E-DD34-374E-91B3A2DC3109";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Bottom_RK_Ctrl_rotateZ";
 	rename -uid "A501AA5D-4FEA-B402-178B-FF8C93224EFE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Bottom_RK_Ctrl_Translate";
 	rename -uid "A46DEF63-47CA-7D58-87B1-2796FBB08D3C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Bottom_RK_Ctrl_Rotate";
 	rename -uid "A969C961-43DC-DB6A-44B8-B18E8FFDA9C3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Top_RK_Ctrl_visibility";
 	rename -uid "64D54532-4554-EB73-A29B-BB931DA9ACB6";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Top_RK_Ctrl_rotateX";
 	rename -uid "9BD6E884-40D9-3436-6F8B-6791B6B97DCE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Top_RK_Ctrl_rotateY";
 	rename -uid "E3EAFDBA-40A4-EE60-8EB2-7CA6608EF221";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Top_RK_Ctrl_rotateZ";
 	rename -uid "7EA4CC3C-4C46-9CF7-6ECA-17B54E9D1F9A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Top_RK_Ctrl_Translate";
 	rename -uid "E76F6DF9-4C9D-E7AE-0D7C-D3A8F664E883";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Top_RK_Ctrl_Rotate";
 	rename -uid "F1793FBC-4DB6-73D2-65C5-EFBD30811E5B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bangs_Base_RK_Ctrl_visibility";
 	rename -uid "C5E387DF-4787-448D-B449-9AAEDF73AC4D";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bangs_Base_RK_Ctrl_rotateX";
 	rename -uid "C294E548-4F19-073C-C4E2-6097AAA3FB48";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bangs_Base_RK_Ctrl_rotateY";
 	rename -uid "25B682E6-49D6-EDE4-365E-51882F98D191";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Bangs_Base_RK_Ctrl_rotateZ";
 	rename -uid "324D411E-4CDA-90FE-03F4-EF8E3564E872";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bangs_Base_RK_Ctrl_Translate";
 	rename -uid "D8417369-43EE-B09F-F971-D8ADFFF66F14";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Bangs_Base_RK_Ctrl_Rotate";
 	rename -uid "A1D9CC3C-49DA-EBA5-9FAC-A3B743B8F91C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Left_RK_Ctrl_visibility";
 	rename -uid "16C9E371-4E6A-BC75-A73B-13AFF3A02F1D";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Left_RK_Ctrl_rotateX";
 	rename -uid "7D384345-49A7-4B7F-41FB-CCA9BA47E26D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Left_RK_Ctrl_rotateY";
 	rename -uid "46DA0FB1-4C60-49F1-D05F-0A80DA8DAD8C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Left_RK_Ctrl_rotateZ";
 	rename -uid "936955F0-49D5-E15A-1E0D-2BB39A88DF28";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Left_RK_Ctrl_Translate";
 	rename -uid "480BAD96-4B14-06F3-4CFF-5B99348A11BB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Left_RK_Ctrl_Rotate";
 	rename -uid "AE45E2B1-4313-C63E-7CD3-B28433AC18E8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Cheek_RK_Ctrl_visibility";
 	rename -uid "A06D92C4-4CCC-A9C1-243D-30B000325EBB";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Cheek_RK_Ctrl_rotateX";
 	rename -uid "C1E2839A-47A6-91E4-D030-E4880E3B8A7A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Cheek_RK_Ctrl_rotateY";
 	rename -uid "3D2BE1CB-4AF2-0594-FB2A-2A973EBA1AB3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Cheek_RK_Ctrl_rotateZ";
 	rename -uid "A90FB7BD-4159-0524-86C0-A9858F73C68B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Cheek_RK_Ctrl_Translate";
 	rename -uid "383633E6-4716-A7D7-ED1D-D5BA00179983";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Cheek_RK_Ctrl_Rotate";
 	rename -uid "5C62A284-4219-841B-74D7-5DAB57000728";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Brow_01_RK_Ctrl_visibility";
 	rename -uid "64CF4C87-470A-294B-5823-45ACC5BA102E";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Brow_01_RK_Ctrl_rotateX";
 	rename -uid "B0DA6038-423F-9418-1C48-1082F470E8DB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Brow_01_RK_Ctrl_rotateY";
 	rename -uid "96446D90-49BD-AB0B-2F32-A697F58DCFCE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Brow_01_RK_Ctrl_rotateZ";
 	rename -uid "DA616FCF-4113-349C-EDEC-9FBF6E810F21";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Brow_01_RK_Ctrl_Translate";
 	rename -uid "9306F5EC-486B-B570-0C96-CE82829FBC46";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Brow_01_RK_Ctrl_Rotate";
 	rename -uid "C6498A2C-44EA-9ECE-DAFF-21A60D6C772B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Brow_03_RK_Ctrl_visibility";
 	rename -uid "7DDB9996-4664-F2CE-A2F9-E7A6D73031FD";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Brow_03_RK_Ctrl_rotateX";
 	rename -uid "6CDBB9C3-4B84-4DE9-0E71-DDAC03955C8E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Brow_03_RK_Ctrl_rotateY";
 	rename -uid "D9BFA3BD-42EA-6803-CF9E-05B68B703493";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Brow_03_RK_Ctrl_rotateZ";
 	rename -uid "6CB08D28-4CF9-70EC-8ECA-109C7213414C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Brow_03_RK_Ctrl_Translate";
 	rename -uid "3E3D329E-4018-E2EE-01AA-C88FC6DAE7FE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Brow_03_RK_Ctrl_Rotate";
 	rename -uid "9155CE41-4CC4-EBE4-940B-769CA1CD5702";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_02_01_RK_Ctrl_visibility";
 	rename -uid "194F9A7E-4C32-F00A-2598-1CA0C68FE430";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_02_01_RK_Ctrl_rotateX";
 	rename -uid "93DAE1F2-40D6-3223-2302-2490F0E99B3C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_02_01_RK_Ctrl_rotateY";
 	rename -uid "E937D964-4995-F3F3-AA42-6E92EED8E084";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_02_01_RK_Ctrl_rotateZ";
 	rename -uid "92AFF49B-45DC-77D7-CFAC-60B3119B0C8C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 46.666652956515257 10 46.666652956515257
 		 13 46.666652956515257 16 46.666652956515257 19 46.666652956515257 22 46.666652956515257
 		 25 46.666652956515257 28 46.666652956515257;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_02_01_RK_Ctrl_Translate";
 	rename -uid "A6B6F302-47A8-6908-E8FD-D7BEF10A04C7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_02_01_RK_Ctrl_Rotate";
 	rename -uid "F552F84E-4E59-4B4D-8CE5-0B8626A764A9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_01_03_RK_Ctrl_visibility";
 	rename -uid "0FACB94B-4BA7-EEBE-E5F4-92A018C93707";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_01_03_RK_Ctrl_rotateX";
 	rename -uid "4B5E53A4-4081-F7D8-FE00-87A6F7DBAFF6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_01_03_RK_Ctrl_rotateY";
 	rename -uid "AC909672-411C-E4D1-E2B0-C7A9EFC5AECB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_01_03_RK_Ctrl_rotateZ";
 	rename -uid "D239444F-443C-C6CC-F4E8-EC93D9AC553C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 38.193336721349908 10 38.193336721349908
 		 13 38.193336721349908 16 38.193336721349908 19 38.193336721349908 22 38.193336721349908
 		 25 38.193336721349908 28 38.193336721349908;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_01_03_RK_Ctrl_Translate";
 	rename -uid "DAD842B2-4AF0-83E0-980F-A69E878D2514";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_01_03_RK_Ctrl_Rotate";
 	rename -uid "4A0FEFD9-407D-7C15-6E50-9986232269E2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_01_02_RK_Ctrl_visibility";
 	rename -uid "883AC6E9-4FAF-D972-AEA7-8195C81705F4";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_01_02_RK_Ctrl_rotateX";
 	rename -uid "3F5C1256-457B-B92F-0B23-E48BAB6D0105";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 18.175997775530522 10 18.175997775530522
 		 13 18.175997775530522 16 18.175997775530522 19 18.175997775530522 22 18.175997775530522
 		 25 18.175997775530522 28 18.175997775530522;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_01_02_RK_Ctrl_rotateY";
 	rename -uid "831FDF0B-4260-BE7C-3557-59A6AC8EC986";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -16.214907311762289 10 -16.214907311762289
 		 13 -16.214907311762289 16 -16.214907311762289 19 -16.214907311762289 22 -16.214907311762289
 		 25 -16.214907311762289 28 -16.214907311762289;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_01_02_RK_Ctrl_rotateZ";
 	rename -uid "E7FB994F-4F8E-A6C9-D00C-69AC676F98C8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 56.113312507689521 10 56.113312507689521
 		 13 56.113312507689521 16 56.113312507689521 19 56.113312507689521 22 56.113312507689521
 		 25 56.113312507689521 28 56.113312507689521;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_01_02_RK_Ctrl_Translate";
 	rename -uid "0E905F53-4775-1361-F3BA-8B88FFF91C6D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_01_02_RK_Ctrl_Rotate";
 	rename -uid "7135749A-4544-5C15-746D-1EA16EBCAA29";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_01_01_RK_Ctrl_visibility";
 	rename -uid "8812C531-4AB4-B33C-94FB-54BB8DBE9CA2";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_01_01_RK_Ctrl_rotateX";
 	rename -uid "A4B1E47B-49E1-EFF8-1EB5-F29BA09A17DE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_01_01_RK_Ctrl_rotateY";
 	rename -uid "CE7E7458-465D-6348-1C24-B3A01C432843";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Finger_01_01_RK_Ctrl_rotateZ";
 	rename -uid "E752222E-48AE-0AF3-BEAC-269F293BF9AC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_01_01_RK_Ctrl_Translate";
 	rename -uid "BF68B03D-4DD6-4898-C9EF-7D857612EBE6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Finger_01_01_RK_Ctrl_Rotate";
 	rename -uid "1F88826F-46F4-5A42-7CEC-D5B1F23A48EC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Wrist_RK_Ctrl_visibility";
 	rename -uid "90DD710F-4383-A057-0801-94801B09B96D";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Wrist_RK_Ctrl_rotateX";
 	rename -uid "9DA3F547-4555-F5D5-8EA4-B195EDFCB4C0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Wrist_RK_Ctrl_rotateY";
 	rename -uid "1DE16945-4DFF-1341-72BA-37B85EB5EFE9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Wrist_RK_Ctrl_rotateZ";
 	rename -uid "139D14E9-4F3D-EE37-DCEB-DD87BC084C94";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Wrist_RK_Ctrl_Translate";
 	rename -uid "729BABFD-4ABE-56D5-FC7E-89AE120C148A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Wrist_RK_Ctrl_Rotate";
 	rename -uid "F9D51B30-4C2D-1D3B-D473-A0BD8BF65B68";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Eye_RK_Ctrl_visibility";
 	rename -uid "E8A6F7C2-4605-03E7-6238-FA83BFBA7A73";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Eye_RK_Ctrl_rotateX";
 	rename -uid "CFA88EF2-4AE2-1E96-D957-F787445D072B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Eye_RK_Ctrl_rotateY";
 	rename -uid "E46DF96E-40B3-B773-3D0A-2BBC867C0EDA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Eye_RK_Ctrl_rotateZ";
 	rename -uid "83B1C778-44AF-D47C-A11C-579A949EE849";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Eye_RK_Ctrl_Translate";
 	rename -uid "D66D57B7-4C9B-A057-5E58-FB89DA93C84E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Eye_RK_Ctrl_Rotate";
 	rename -uid "871687D4-479D-5963-094C-2EB043551A4A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Eye_RK_Ctrl_visibility";
 	rename -uid "236DFE62-41BD-0D51-D790-BDBB401CC547";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Eye_RK_Ctrl_rotateX";
 	rename -uid "E2934CA4-4563-B700-333B-7D9F964AD4C2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Eye_RK_Ctrl_rotateY";
 	rename -uid "3304F1C5-4FB1-763B-B422-35A50420647E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Eye_RK_Ctrl_rotateZ";
 	rename -uid "995E62EE-4123-E69C-C244-DCBF8EA372D7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Eye_RK_Ctrl_Translate";
 	rename -uid "DF4A49F9-4115-2622-6CC9-049D50B2E1A9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Eye_RK_Ctrl_Rotate";
 	rename -uid "9A54F33B-49BD-D610-B488-039B34968C8F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Brow_02_RK_Ctrl_visibility";
 	rename -uid "C9FDF93D-4848-FC04-8942-DEB5EB4E3BD0";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Brow_02_RK_Ctrl_rotateX";
 	rename -uid "3E900CB0-48A9-9F67-D776-EA8162E94938";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Brow_02_RK_Ctrl_rotateY";
 	rename -uid "200CFAE6-419B-3BB9-5ED1-AE8E553F0030";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Brow_02_RK_Ctrl_rotateZ";
 	rename -uid "6F5A2EB7-4CFF-F861-4A16-6E9754B061D3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Brow_02_RK_Ctrl_Translate";
 	rename -uid "0F64FE15-423D-590F-41F2-1F81B590B093";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Brow_02_RK_Ctrl_Rotate";
 	rename -uid "A9DDE333-45EC-02BF-DA4D-EC8FB11FEB6D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Ear_RK_Ctrl_visibility";
 	rename -uid "D70B1826-49FA-1F6E-622C-78BD4369273A";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Ear_RK_Ctrl_rotateX";
 	rename -uid "2D6117E6-4AAA-1104-1FB7-9EB5CA840714";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Ear_RK_Ctrl_rotateY";
 	rename -uid "63C93C58-4294-EEE3-4953-E3953A95161A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Ear_RK_Ctrl_rotateZ";
 	rename -uid "500BD76C-446A-D404-BC05-219369856D7C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Ear_RK_Ctrl_Translate";
 	rename -uid "9DF675B5-4F6B-DF90-353F-D599ED24F8D6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Ear_RK_Ctrl_Rotate";
 	rename -uid "9BDBDF35-4CF4-5A62-182A-1384D6699FA3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Eyelid_RK_Ctrl_visibility";
 	rename -uid "4D98B3A9-4582-A7DE-8988-EB86C96C6311";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Eyelid_RK_Ctrl_rotateX";
 	rename -uid "4E7473B0-40C3-B7D7-9179-E2927F4E9A16";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Eyelid_RK_Ctrl_rotateY";
 	rename -uid "7E54758E-474D-380F-3C75-3ABAE6133378";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Eyelid_RK_Ctrl_rotateZ";
 	rename -uid "3301EF76-4BE6-E872-214B-3FB0E90E809F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Eyelid_RK_Ctrl_Translate";
 	rename -uid "1ACA3D6C-41D8-9E35-FE51-37AEEE466712";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Eyelid_RK_Ctrl_Rotate";
 	rename -uid "62044BB7-47F2-1F36-6977-678F2372EF5D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Right_RK_Ctrl_visibility";
 	rename -uid "98E5A148-4F31-AAE5-503D-10B9BA87D807";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Right_RK_Ctrl_rotateX";
 	rename -uid "9950A682-46CC-1222-A5F7-95923DE47730";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Right_RK_Ctrl_rotateY";
 	rename -uid "2C930F64-4D7F-F108-E0AD-6AA2DAB2FC45";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Lip_Right_RK_Ctrl_rotateZ";
 	rename -uid "FE62C16D-4984-31E7-10EF-B6B05AFFDA59";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Right_RK_Ctrl_Translate";
 	rename -uid "C3831BF2-4169-1D6F-8555-23A1BFD9F805";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Lip_Right_RK_Ctrl_Rotate";
 	rename -uid "DC4E51A1-4537-397E-712E-648753F91BA9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Cheek_RK_Ctrl_visibility";
 	rename -uid "36B7C9D4-4A79-2844-23FA-41BEE590E073";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Cheek_RK_Ctrl_rotateX";
 	rename -uid "28E6CA50-41AC-B1EC-F838-01BB12DFA802";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Cheek_RK_Ctrl_rotateY";
 	rename -uid "0FCB3BFB-4D1A-52A7-D99E-7B8B0794EC02";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Cheek_RK_Ctrl_rotateZ";
 	rename -uid "F0353D49-4FD7-B797-8D2A-99B970D075C7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Cheek_RK_Ctrl_Translate";
 	rename -uid "3D66D0B1-4F1E-C22B-8F66-95A4708FC943";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Cheek_RK_Ctrl_Rotate";
 	rename -uid "ECD50E2F-42A2-2AEB-9E45-F6A3A36E5B12";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Brow_01_RK_Ctrl_visibility";
 	rename -uid "5A6E4FC7-4DDB-2FD6-CE7E-B59F168C1B55";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Brow_01_RK_Ctrl_rotateX";
 	rename -uid "09FA3778-4D63-3878-55DE-A99B94B46B54";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Brow_01_RK_Ctrl_rotateY";
 	rename -uid "08A6B975-47BB-73D8-ACF6-58AB274DFA08";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Brow_01_RK_Ctrl_rotateZ";
 	rename -uid "FDF5297E-49CD-C769-5EF1-EFBAD0A85201";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Brow_01_RK_Ctrl_Translate";
 	rename -uid "1CE053E5-4526-C9D2-CB8A-9D9A6D250A06";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Brow_01_RK_Ctrl_Rotate";
 	rename -uid "1D745DDA-4AC3-F4FF-DDA0-E39C6A380340";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Brow_03_RK_Ctrl_visibility";
 	rename -uid "FB2F2D58-4367-969B-B597-1CA00F15B5BA";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Brow_03_RK_Ctrl_rotateX";
 	rename -uid "D57B5C3C-45B0-772C-7940-13A6AE169DBB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Brow_03_RK_Ctrl_rotateY";
 	rename -uid "DE8122F0-4134-A631-7655-FB8EF1162BE7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Brow_03_RK_Ctrl_rotateZ";
 	rename -uid "97383460-424C-88E1-492A-D48E1ACAC1A8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Brow_03_RK_Ctrl_Translate";
 	rename -uid "8F3147A3-4774-F2AF-773C-60973B49A1A4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Brow_03_RK_Ctrl_Rotate";
 	rename -uid "D9757164-45C3-FEB5-6C45-2BB97924A692";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Brow_02_RK_Ctrl_visibility";
 	rename -uid "18184580-4805-083F-A5D0-C48ADD9321CB";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Brow_02_RK_Ctrl_rotateX";
 	rename -uid "7726E9F4-4297-E45E-FE77-A28CF64DBA33";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Brow_02_RK_Ctrl_rotateY";
 	rename -uid "69585449-4F6C-1461-9FA5-6780D5D641FB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Brow_02_RK_Ctrl_rotateZ";
 	rename -uid "302A7A83-41FD-1DEA-D920-178DD3EFD954";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Brow_02_RK_Ctrl_Translate";
 	rename -uid "2C5F5061-4F7B-7C46-0880-65A975E798BC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Brow_02_RK_Ctrl_Rotate";
 	rename -uid "DC65B86E-451F-01A2-ABCE-B883A869D372";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Ear_RK_Ctrl_visibility";
 	rename -uid "E2C01A3D-4B2C-2012-33B5-53A2A33BBAA7";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Ear_RK_Ctrl_rotateX";
 	rename -uid "8578EA8F-4D9E-5AA2-8E76-73934CB77785";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Ear_RK_Ctrl_rotateY";
 	rename -uid "A9C16C6E-4246-7209-EE24-6787DA495D37";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Ear_RK_Ctrl_rotateZ";
 	rename -uid "E814B3F7-4FC2-3BBB-E411-738B53855B9D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Ear_RK_Ctrl_Translate";
 	rename -uid "386C226C-4080-4389-DB8D-4885875CA76F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Ear_RK_Ctrl_Rotate";
 	rename -uid "967390B3-4CFB-72B6-626E-00B81F0DF06F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Eyelid_RK_Ctrl_visibility";
 	rename -uid "9164D440-4CA9-82FF-381E-6F93BECF4BB7";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Eyelid_RK_Ctrl_rotateX";
 	rename -uid "BBCF9B7E-449E-4AD3-7658-28BFB1E9B2E5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Eyelid_RK_Ctrl_rotateY";
 	rename -uid "37E6DF98-4C97-8606-8A65-849CBA1B747A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Eyelid_RK_Ctrl_rotateZ";
 	rename -uid "2D51F5F5-4D81-74B9-BFFA-ECA430157FE4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Eyelid_RK_Ctrl_Translate";
 	rename -uid "213B5408-40DC-F969-5288-BC9DB94E9BC7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Eyelid_RK_Ctrl_Rotate";
 	rename -uid "B7FA75DA-492A-DE0A-3C2C-F89EC3549501";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "PonyTail_Base_RK_Ctrl_visibility";
 	rename -uid "87C69AFB-4C86-5F4F-B602-9CA8931A47E7";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "PonyTail_Base_RK_Ctrl_rotateX";
 	rename -uid "00DA9573-4F2B-E69E-E51D-B5A2185D9EAD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "PonyTail_Base_RK_Ctrl_rotateY";
 	rename -uid "54E0D86B-4452-1DA1-4F22-BEB136C60EB1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0
 		 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "PonyTail_Base_RK_Ctrl_rotateZ";
 	rename -uid "9792E6A1-45E4-5AEC-F6BF-B18FC2BEBA96";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 0 4 -2.0977247374228876 7 31.318421351856681
-		 10 47.627473201265772 13 32.025423848199374 16 1.3599952093914796 19 -13.117606994492295
-		 22 -20.298826481591224 25 26.357311706549154 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 12 ".ktv[0:11]"  1 0 4 -2.0977247374228876 5 9.5189440055947383
+		 6 37.784254404490127 7 49.327907579913941 10 47.627473201265772 13 32.025423848199374
+		 16 1.3599952093914796 19 -13.117606994492295 22 -20.298826481591224 25 26.357311706549154
+		 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "PonyTail_Base_RK_Ctrl_Translate";
 	rename -uid "ACB4936D-4A9E-3DB9-890F-77838FE2DB83";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "PonyTail_Base_RK_Ctrl_Rotate";
 	rename -uid "F89D5D63-4F72-51E3-1F29-178284CF3BAF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Clavicle_RK_Ctrl_visibility";
 	rename -uid "4F5333B0-47F5-9116-937F-00874520B10C";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Clavicle_RK_Ctrl_rotateX";
 	rename -uid "A766B3D3-4068-5840-47C5-C99301EC2AFB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Clavicle_RK_Ctrl_rotateY";
 	rename -uid "51DD4EB5-4BC0-D5D8-9F08-04BA31A54E12";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Clavicle_RK_Ctrl_rotateZ";
 	rename -uid "2920FFC4-4086-E2E5-89EB-B98ACE22A4E9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -6.3725114674295193 10 -6.3725114674295193
 		 13 -6.3725114674295193 16 -6.3725114674295193 19 -6.3725114674295193 22 -6.3725114674295193
 		 25 -6.3725114674295193 28 -6.3725114674295193;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Clavicle_RK_Ctrl_Translate";
 	rename -uid "739349FB-4F64-459D-BEC5-5080CCDD89FE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Clavicle_RK_Ctrl_Rotate";
 	rename -uid "DD14B709-4498-669B-8938-7B836EF80131";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Neck_RK_Ctrl_visibility";
 	rename -uid "FDA5C89C-4F17-E87B-F6A7-429F18F4EC00";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Neck_RK_Ctrl_rotateX";
 	rename -uid "FB856C78-4407-4E99-496A-859FC3D999D6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Neck_RK_Ctrl_rotateY";
 	rename -uid "63A42045-41F2-EAB8-BF4C-32B9552ED9D5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Neck_RK_Ctrl_rotateZ";
 	rename -uid "666D81FA-461A-5D1A-380D-B7B58938E74D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 -24.311756474626339 7 -25.754637387488028
 		 10 -20.1355432125494 13 -14.542946799258354 16 -10.38964176515185 19 -10.38964176515185
 		 22 -10.38964176515185 25 -13.371288426552235 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Neck_RK_Ctrl_Translate";
 	rename -uid "A53EF871-488B-7FFD-E972-8FA8F2C29A50";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Neck_RK_Ctrl_Rotate";
 	rename -uid "A249CEB1-47B5-AE0F-52AD-B0B0380F2BD7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_03_FK_Ctrl_visibility";
 	rename -uid "A9E5443C-49E2-1988-D65B-F5A14596CA53";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Arm_03_FK_Ctrl_rotateX";
 	rename -uid "93B43967-462A-233D-ECE0-70B629EE7388";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Arm_03_FK_Ctrl_rotateY";
 	rename -uid "0DCE03D1-4AAA-D426-05EC-B3A17029D295";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Arm_03_FK_Ctrl_rotateZ";
 	rename -uid "783115C4-4CAE-56A5-55F9-6383CC7AF223";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_03_FK_Ctrl_Translate";
 	rename -uid "3AE34469-4DC4-E653-1196-93B39C1B160B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_03_FK_Ctrl_Rotate";
 	rename -uid "672D7A84-4634-F788-0051-F6B2344D5D5B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_02_FK_Ctrl_visibility";
 	rename -uid "7C266C2B-4A5C-40E8-7BFB-7BA1A466147D";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Arm_02_FK_Ctrl_rotateX";
 	rename -uid "B30EF071-424E-3A4C-7D4E-439EFA9F59EA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Arm_02_FK_Ctrl_rotateY";
 	rename -uid "21992923-44CA-8567-DA9A-8F932B04369F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Arm_02_FK_Ctrl_rotateZ";
 	rename -uid "1D8FF2B4-4EFA-5B11-3BCF-47BFA8B54670";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_02_FK_Ctrl_Translate";
 	rename -uid "41C7C497-4171-008C-EBC3-A2A690E31016";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_02_FK_Ctrl_Rotate";
 	rename -uid "EBC4924A-472E-B8D0-33C3-3D852480B733";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_01_FK_Ctrl_visibility";
 	rename -uid "F2450F84-4506-89F5-BA80-09978CD94486";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Arm_01_FK_Ctrl_rotateX";
 	rename -uid "18DDFA72-4C4E-F339-0321-87B699ED0842";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 -2.6853260044705123 4 11.586568394740207
 		 7 35.980974244716407 10 25.447443153639668 13 47.464122542736732 16 47.056088129421823
 		 19 49.236182077465045 22 25.447443153639668 25 31.202798217004304 28 -2.6853260044705123;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Arm_01_FK_Ctrl_rotateY";
 	rename -uid "B6F593F3-49CD-B05F-0052-06B427A6B127";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 -22.283802477377041 4 -0.20909790701807993
-		 7 -24.92256139796546 10 0.86807745657830659 13 10.727848810319129 16 26.736720943461048
+		 7 -24.92256139796546 10 0.86807745657830659 13 10.727848810319129 16 26.736720943461052
 		 19 39.136518753217089 22 0.86807745657830659 25 -30.453841867609686 28 -22.283802477377041;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Arm_01_FK_Ctrl_rotateZ";
 	rename -uid "5067BF80-4F68-675F-C67D-B3AA63FF4FFB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 -2.0418497081509304 4 1.2935496685323304
-		 7 8.7883827002559229 10 -3.0984205089134558 13 1.6601704969030759 16 -2.702137408809401
-		 19 0.65041349818960414 22 -3.0984205089134558 25 -1.5988006325581803 28 -2.0418497081509304;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 10 ".ktv[0:9]"  1 -2.0418497081509304 4 3.5711305753987244
+		 7 8.7883827002559229 10 6.5845520322785367 13 1.6601704969030759 16 2.8054683243558904
+		 19 0.85864946681738974 22 -3.0984205089134558 25 -1.5988006325581803 28 -2.0418497081509304;
+	setAttr -s 10 ".kit[1:9]"  1 18 18 18 18 18 18 18 
+		18;
+	setAttr -s 10 ".kot[1:9]"  1 18 18 18 18 18 18 18 
+		18;
+	setAttr -s 10 ".kix[1:9]"  0.68763578056021646 1 0.89526962570731849 
+		1 1 0.92454637948371332 1 1 1;
+	setAttr -s 10 ".kiy[1:9]"  0.72605580590843155 0 -0.44552474374144224 
+		0 0 -0.38106953720227715 0 0 0;
+	setAttr -s 10 ".kox[1:9]"  0.68763598316310859 1 0.89526962570731849 
+		1 1 0.92454637948371332 1 1 1;
+	setAttr -s 10 ".koy[1:9]"  0.72605561402643604 0 -0.44552474374144224 
+		0 0 -0.38106953720227715 0 0 0;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_01_FK_Ctrl_Translate";
 	rename -uid "A09179A4-4661-BCEF-24B9-EEA1D14D13EC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_01_FK_Ctrl_Rotate";
 	rename -uid "FA01C756-4A7D-0D72-18BE-FCACBB491A8C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_03_FK_Ctrl_visibility";
 	rename -uid "C48EF256-417C-3E90-D2C1-2A95F61D62C8";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Arm_03_FK_Ctrl_rotateX";
 	rename -uid "3A28ECB1-493C-0685-3456-00AB0BADA46A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Arm_03_FK_Ctrl_rotateY";
 	rename -uid "AC93DDB1-4365-0DB0-049E-C89C1920F280";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Arm_03_FK_Ctrl_rotateZ";
 	rename -uid "A30376D1-4AF0-1946-887E-6AA94DBB3E87";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_03_FK_Ctrl_Translate";
 	rename -uid "2C4A4276-4E22-BC59-9A49-33A26986C86D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_03_FK_Ctrl_Rotate";
 	rename -uid "0A577414-4448-3820-EE07-0DB2EAA72D59";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_02_FK_Ctrl_visibility";
 	rename -uid "A37BFF64-4EEA-7545-477C-8D9D78AF0444";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Arm_02_FK_Ctrl_rotateX";
 	rename -uid "269E039F-46D4-E50A-C756-9A979704060F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Arm_02_FK_Ctrl_rotateY";
 	rename -uid "76A0A7E8-427A-C6E5-7ADB-F9ABA1B43B27";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Arm_02_FK_Ctrl_rotateZ";
 	rename -uid "E899F4EE-47E8-D31A-6C58-5F938E75F8D9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_02_FK_Ctrl_Rotate";
 	rename -uid "FED99108-4777-2D66-D6E7-77860DFBDDCB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_02_FK_Ctrl_Translate";
 	rename -uid "7F3F2129-447B-B9FB-E8F2-BB8B5A78BC89";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_01_FK_Ctrl_visibility";
 	rename -uid "17E68DC2-4B01-4DEF-EC04-25BE72A222FF";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Arm_01_FK_Ctrl_rotateX";
 	rename -uid "AE533378-41F1-FEE3-80F1-8EA15FE746FF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 -2.6209973028243803 4 11.68048262998874
 		 7 31.720447672159768 10 25.496368296932292 13 47.563704366418833 16 47.115729108767681
 		 19 49.349748227172732 22 25.496368296932292 25 31.276969578518866 28 -2.6209973028243803;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Arm_01_FK_Ctrl_rotateY";
 	rename -uid "1CADF501-40C9-DC27-F629-9AA0B4DEE9BA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 -21.69524226389203 4 0.37497510681956814
 		 7 -17.144122404932137 10 1.4576267857699594 13 11.311292842510825 16 27.325905786269129
 		 19 39.721554229332732 22 1.4576267857699594 25 -29.865753087801558 28 -21.69524226389203;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Arm_01_FK_Ctrl_rotateZ";
 	rename -uid "54A43EED-4E44-DBD6-E75A-6B84FDB12A5E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 -1.9990275696196156 4 1.360595122642426
-		 7 23.887137343949703 10 -3.030518092173085 13 1.7461147512746185 16 -2.6081220655360062
-		 19 0.7894523235730514 22 -3.030518092173085 25 -1.5691563057348215 28 -1.9990275696196156;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 10 ".ktv[0:9]"  1 -1.9990275696196156 4 4.0287117552948883
+		 7 13.565377432150807 10 18.014595555004323 13 3.3965403400587899 16 -2.6081220655360062
+		 19 -4.4467536684784541 22 -3.7022134666920179 25 -2.6770237615273245 28 -1.9990000000000003;
+	setAttr -s 10 ".kit[1:9]"  1 18 18 18 18 18 18 18 
+		18;
+	setAttr -s 10 ".kot[1:9]"  1 18 18 18 18 18 18 18 
+		18;
+	setAttr -s 10 ".kix[1:9]"  0.57744149710988613 0.71549966543846866 
+		1 0.57046602032309457 0.87711615763149819 1 0.9924539249846176 0.99300468687862498 
+		1;
+	setAttr -s 10 ".kiy[1:9]"  0.81643206540133739 0.69861307514062398 
+		0 -0.82132120370579176 -0.48027830059430815 0 0.12261813398770691 0.11807494161372147 
+		0;
+	setAttr -s 10 ".kox[1:9]"  0.57744146552735609 0.71549966543846877 
+		1 0.57046602032309457 0.87711615763149819 1 0.9924539249846176 0.99300468687862498 
+		1;
+	setAttr -s 10 ".koy[1:9]"  0.81643208773885134 0.6986130751406241 
+		0 -0.82132120370579176 -0.48027830059430815 0 0.12261813398770691 0.11807494161372147 
+		0;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_01_FK_Ctrl_Rotate";
 	rename -uid "DD876D43-4EF6-39D2-7C70-E4B5E70A4B06";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_01_FK_Ctrl_Translate";
 	rename -uid "6BAB42A4-4503-FE08-EFAA-1FB8F6BE1DC4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_03_RK_Ctrl_visibility";
 	rename -uid "8E1EA653-421C-96A3-CD1B-B9A4AB40FB04";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_03_RK_Ctrl_rotateZ";
 	rename -uid "5E3695E2-45A2-8A61-47D5-27AC6B0FCD3E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 6.0000000000000009 4 12.887204637884809
 		 7 17.14212350889316 10 6.0000000000000009 13 1.7702117014808858 16 3.3419588155236806
 		 19 2.6450355061641999 22 13.42589049672725 25 9.6601309977578804 28 6.0000000000000009;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_02_RK_Ctrl_visibility";
 	rename -uid "8CC718AF-4E96-E69D-75C7-A880ABB5B578";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 1 4 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_02_RK_Ctrl_rotateX";
 	rename -uid "BA8D6181-401E-F336-6771-2399382B3763";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 -5.8635606619520422 4 -5.8602861774760742
 		 7 -5.8573495529302999 10 -5.8635606619520422 13 -5.8635606619520422 16 -5.8593897371525347
 		 19 -5.8635606619520422 22 -5.8635606619520422 25 -5.8635606619520422 28 -5.8635606619520422;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_02_RK_Ctrl_rotateY";
 	rename -uid "9D5A4D66-4459-D644-AFCC-DF87A5174E99";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 4 0.19627528484891102 7 -0.27028600811219256
 		 10 0 13 0 16 -0.2215100786444128 19 0 22 0 25 0 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_02_RK_Ctrl_rotateZ";
 	rename -uid "F7319536-4C1E-2B44-9CF0-679FC14E3E5D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 8 4 9.9115657300955746 7 5.3671811228799964
+	setAttr -s 10 ".ktv[0:9]"  1 8 4 9.9115657300955746 7 5.3671811228799973
 		 10 8 13 8 16 5.8425554750440538 19 8 22 8 25 8 28 8;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_02_RK_Ctrl_Translate";
 	rename -uid "26C6EC79-4861-61CE-3116-6594BB958B03";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 1 4 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_02_RK_Ctrl_Rotate";
 	rename -uid "9A83716D-4FED-CDC6-53C0-35B1E18291CF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 1 4 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_01_RK_Ctrl_visibility";
 	rename -uid "4C10A59D-402B-6AD5-9018-3F927CD0ECE7";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_01_RK_Ctrl_rotateX";
 	rename -uid "C0B8C0C3-49BB-1C96-06C1-F48D45B7F55E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 -0.10747817124855681 4 0.115151213613168
 		 10 -0.10747817124855681 13 -0.10747817124855681 16 -0.10747817124855681 19 -0.10747817124855681
 		 22 -0.10747817124855681 25 -0.10747817124855681 28 -0.10747817124855681;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_01_RK_Ctrl_rotateY";
 	rename -uid "00BE094F-4421-0B1C-84EF-CDB36988D1F3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 1.2901632288366387 4 1.2895011433760171
 		 10 1.2901632288366387 13 1.2901632288366387 16 1.2901632288366387 19 1.2901632288366387
 		 22 1.2901632288366387 25 1.2901632288366387 28 1.2901632288366387;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_01_RK_Ctrl_rotateZ";
 	rename -uid "CFDD774D-4ABE-8733-BE1E-939A600FD355";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 -4.9067029751485878 4 4.9591403092673536
 		 10 -4.9067029751485878 13 -4.9067029751485878 16 -4.9067029751485878 19 -4.9067029751485878
 		 22 -4.9067029751485878 25 -4.9067029751485878 28 -4.9067029751485878;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_01_RK_Ctrl_Translate";
 	rename -uid "389F6F3A-43B0-FEF4-C483-F7BAD3B86AE2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_01_RK_Ctrl_Rotate";
 	rename -uid "DC4B2C6A-4DAA-D5F1-B7E3-0C9BF6B4338A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Hip_RK_Ctrl_visibility";
 	rename -uid "87282488-4841-ABB8-5755-FA8A980D6A05";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Hip_RK_Ctrl_rotateX";
 	rename -uid "A2CC6694-4F0C-21D9-1522-FABC7DD8E116";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Hip_RK_Ctrl_rotateY";
 	rename -uid "D3CCAA69-4B5A-C917-5BD9-BDA8D8531811";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Hip_RK_Ctrl_rotateZ";
 	rename -uid "0D9CAAEC-453A-856B-1BB7-A78608533DDA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Hip_RK_Ctrl_Translate";
 	rename -uid "24A02946-41C9-7C71-CCAC-488611DCFC80";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Hip_RK_Ctrl_Rotate";
 	rename -uid "0CA90F02-469B-4ECA-632A-439059613537";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Hip_RK_Ctrl_visibility";
 	rename -uid "947202FC-4A8F-1443-7DEE-7FBBCFCF74F6";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Hip_RK_Ctrl_rotateX";
 	rename -uid "D2C0DC55-4A9B-BB5B-A1C7-D0AB79217C4E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Hip_RK_Ctrl_rotateY";
 	rename -uid "1B4C8545-4589-AECB-DDAF-7E8AC4507E26";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Hip_RK_Ctrl_rotateZ";
 	rename -uid "4A1FB6A3-40BC-E016-F6AE-14A03DB20C39";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Hip_RK_Ctrl_Translate";
 	rename -uid "FD4C8185-4674-A781-C014-508095391080";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Hip_RK_Ctrl_Rotate";
 	rename -uid "EB76CA87-4F6D-6CED-E4F3-5FBFD38728FB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Waist_RK_Ctrl_visibility";
 	rename -uid "18FB104B-4142-AB1E-FA17-AA9DDBCADAA0";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Waist_RK_Ctrl_rotateX";
 	rename -uid "B08B4860-4D5E-9106-F8CF-17BBACB224BA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Waist_RK_Ctrl_rotateY";
 	rename -uid "262BF358-470B-91B7-C1DA-8EA3478F0990";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Waist_RK_Ctrl_rotateZ";
 	rename -uid "DEFA6D9D-4AE8-C305-FDB1-1099A83338AE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Waist_RK_Ctrl_Translate";
 	rename -uid "E8C379DE-4632-C843-1242-A28D8D669C17";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Waist_RK_Ctrl_Rotate";
 	rename -uid "CE6E1FB2-494A-6EF1-E231-8EA8FDA8AF12";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Root_RK_Ctrl_visibility";
 	rename -uid "9EBC9195-47C9-DDD9-5228-D795C2ECD9A0";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Root_RK_Ctrl_rotateX";
 	rename -uid "B15B50F6-4F83-27DD-CDD2-F9B90BBC8A80";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Root_RK_Ctrl_rotateY";
 	rename -uid "1E2619B0-4FF6-9CB1-BED5-EC97CD9A1A53";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -14.789027095260343 10 -14.789027095260343
 		 13 -14.789027095260343 16 -14.789027095260343 19 -14.789027095260343 22 -14.789027095260343
 		 25 -14.789027095260343 28 -14.789027095260343;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Root_RK_Ctrl_rotateZ";
 	rename -uid "0181C49C-4F74-0E5C-9B82-58864E2290DA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Root_RK_Ctrl_Translate";
 	rename -uid "C59797BF-4036-2ED7-DBC8-36A6D6564389";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Root_RK_Ctrl_Rotate";
 	rename -uid "56BED04E-498B-6791-4460-63A304E2267A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Foot_Reverse_IK_LSide_Ctrl_visibility";
 	rename -uid "6DA3AE2A-4FCC-01E5-30AB-16887B5BF20B";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_LSide_Ctrl_rotateX";
 	rename -uid "269E3DCA-4ADB-B6D3-529D-89B5ED3778B6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_LSide_Ctrl_rotateY";
 	rename -uid "19BA8A8B-4E45-D0DB-5B73-A8AA1189CDDB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_LSide_Ctrl_rotateZ";
 	rename -uid "8107AD45-4867-3AFC-3A3A-BDACE0A899D1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Foot_Reverse_IK_RSide_Ctrl_visibility";
 	rename -uid "58A02AC2-4957-F1DC-4F7B-968679162D25";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_RSide_Ctrl_rotateX";
 	rename -uid "A1B60759-431F-5797-1772-D4873E9C1417";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_RSide_Ctrl_rotateY";
 	rename -uid "CBB3ADB8-45FC-7C6F-D542-1687551B9776";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_RSide_Ctrl_rotateZ";
 	rename -uid "C8472996-4AA7-07E9-FF59-4591734D16EA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Leg_01_IK_Handle_Ctrl_visibility";
 	rename -uid "315BD0BC-4DEB-BCF1-2117-E8A700F18029";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 1 4 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
+	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 10 1 13 1 16 1 19 1 20 1 22 1 25 1
+		 28 1;
+	setAttr -s 10 ".kit[6:9]"  9 18 18 18;
+	setAttr -s 10 ".kot[6:9]"  5 18 18 18;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Leg_01_IK_Handle_Ctrl_rotateX";
 	rename -uid "7F118B96-4A20-80D0-B2C8-448598982A06";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 -6.2629600373578755 4 -6.2629600373578755
-		 7 -5.4881265762295417 10 -5.4881265762295417 13 -5.4881265762295417 16 -5.4881265762295417
-		 19 -5.4881265762295417 22 -6.2629600373578755 25 -6.2629600373578755 28 -6.2629600373578755;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 12 ".ktv[0:11]"  1 -6.2629600373578755 4 -6.2629600373578755
+		 5 0 7 -6.9352466411468612 10 -5.4881265762295417 13 -4.6813904269091307 16 -5.4881265762295417
+		 19 -5.4881265762295417 20 -6.2629600373578755 22 -6.2629600373578755 25 -6.2629600373578755
+		 28 -6.2629600373578755;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Leg_01_IK_Handle_Ctrl_rotateY";
 	rename -uid "C9AAB8C4-4C93-BAD2-9BD3-C6BA1FE53925";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 0.4908716113923236 4 0.4908716113923236
-		 7 -5.4204197734012816 10 -5.4204197734012816 13 -5.4204197734012816 16 -5.4204197734012816
-		 19 -5.4204197734012816 22 0.4908716113923236 25 0.4908716113923236 28 0.4908716113923236;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 12 ".ktv[0:11]"  1 0.4908716113923236 4 0.4908716113923236
+		 5 0 7 -3.3717149199592504 10 -5.4204197734012816 13 -6.1301571765902771 16 -5.4204197734012816
+		 19 -5.4204197734012816 20 0.4908716113923236 22 0.4908716113923236 25 0.4908716113923236
+		 28 0.4908716113923236;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Leg_01_IK_Handle_Ctrl_rotateZ";
 	rename -uid "A28F6CD5-4746-6D68-25AB-04A5B3368CC5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 0.36441214664629801 4 0.36441214664629801
-		 7 26.096238200389163 10 26.096238200389163 13 26.096238200389163 16 26.096238200389163
-		 19 26.096238200389163 22 0.36441214664629801 25 0.36441214664629801 28 0.36441214664629801;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 12 ".ktv[0:11]"  1 0.36441214664629801 4 0.36441214664629801
+		 5 0 7 44.805623657929054 10 26.096238200389163 13 18.092223046357645 16 26.096238200389163
+		 19 26.096238200389163 20 0.36441214664629801 22 0.36441214664629801 25 0.36441214664629801
+		 28 0.36441214664629801;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Leg_01_IK_Handle_Ctrl_Translate";
 	rename -uid "E32BCCD0-438D-81DB-CC02-0E8FB85BD736";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 1 4 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
+	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 10 1 13 1 16 1 19 1 20 1 22 1 25 1
+		 28 1;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Leg_01_IK_Handle_Ctrl_Rotate";
 	rename -uid "3AEEC5AC-46BC-EC8B-3FBC-0B9F52D13682";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 1 4 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
+	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 10 1 13 1 16 1 19 1 20 1 22 1 25 1
+		 28 1;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Leg_01_IK_Base_Ctrl_visibility";
 	rename -uid "3D223738-4FE5-A978-F0D4-1A82CF33E98C";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Leg_01_IK_Base_Ctrl_rotateX";
 	rename -uid "909B7342-4E70-0490-E3F0-F9BCAB9B01C5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Leg_01_IK_Base_Ctrl_rotateY";
 	rename -uid "1B1C6BF3-4504-9826-1B63-7BBE701DB1FD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Leg_01_IK_Base_Ctrl_rotateZ";
 	rename -uid "FBE84712-42F9-BACE-5D02-AA8B43996EC9";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Leg_01_IK_Base_Ctrl_Translate";
 	rename -uid "8ECB86E7-40A5-C70D-C2F9-5CBBFCE91608";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Leg_01_IK_Base_Ctrl_Rotate";
 	rename -uid "8F019B85-4F9A-1B31-D254-B287683E7357";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Leg_01_IK_PV_Ctrl_visibility";
 	rename -uid "668B4C7E-42E7-E41A-3035-D889C54286E0";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
+	setAttr -s 9 ".ktv[0:8]"  1 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
+	setAttr -s 9 ".kit[1:8]"  9 18 18 18 18 18 18 18;
+	setAttr -s 9 ".kot[1:8]"  5 18 18 18 18 18 18 18;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Leg_01_IK_PV_Ctrl_rotateX";
 	rename -uid "700C10DB-4863-72E4-694B-E58AF35DC4EA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
+	setAttr -s 9 ".ktv[0:8]"  1 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Leg_01_IK_PV_Ctrl_rotateY";
 	rename -uid "59D6FA7A-4BE4-AB5A-1359-FABD2E137EEB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
+	setAttr -s 9 ".ktv[0:8]"  1 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Leg_01_IK_PV_Ctrl_rotateZ";
 	rename -uid "E03FAC16-4E27-BB3B-4251-1CA7E2A30F1F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
+	setAttr -s 9 ".ktv[0:8]"  1 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Foot_Reverse_IK_ToeTap_01_Ctrl_visibility";
 	rename -uid "B406C7F7-4DD1-BD75-D876-C1BB523739D0";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_ToeTap_01_Ctrl_rotateX";
 	rename -uid "3A259C53-44DD-0CE7-B63E-6294BCD0815D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_ToeTap_01_Ctrl_rotateY";
 	rename -uid "628802EF-4420-E98D-C358-5C8640117417";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_ToeTap_01_Ctrl_rotateZ";
 	rename -uid "B311FB88-455D-8E2C-AF76-2BA71D3ED4AC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Foot_Reverse_IK_Ball_Ctrl_visibility";
 	rename -uid "6E0A48D0-48B3-3C3D-FC01-75A39399B645";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_Ball_Ctrl_rotateX";
 	rename -uid "C1E16614-4C08-C2D0-74DB-979769168279";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 0 4 25.019566886838714 7 25.019566886838714
-		 10 0 13 0 16 0 19 0 22 25.019566886838714 25 0 28 0;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
+	setAttr -s 11 ".ktv[0:10]"  1 0 4 25.019566886838714 7 25.019566886838714
+		 10 0 13 0 16 0 19 0 22 25.019566886838714 23 0 25 0 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_Ball_Ctrl_rotateY";
 	rename -uid "6D27E734-47AD-CD76-FB65-61B351EEC395";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_Ball_Ctrl_rotateZ";
 	rename -uid "758764FB-48A2-327B-4DA3-F6B6DB7272AD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 7 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Foot_Reverse_IK_Toe_Ctrl_visibility";
 	rename -uid "056E2BF3-4D4B-2B1B-5D3E-8CAC4100D204";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_Toe_Ctrl_rotateX";
 	rename -uid "8D17AA09-4999-9617-274B-48A672B43EE5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_Toe_Ctrl_rotateY";
 	rename -uid "3255BE2A-4C91-8218-9A10-4E8144BFFE44";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_Toe_Ctrl_rotateZ";
 	rename -uid "7A9F3494-42CA-7ED1-3C79-09BF9071D616";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Leg_01_IK_PV_Ctrl_visibility";
 	rename -uid "E4F7FBF0-44E7-17A7-57F9-5E97F73B573E";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 1 4 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Leg_01_IK_PV_Ctrl_rotateX";
 	rename -uid "D5065B25-403E-C701-D60E-88AFDEC97A68";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 4 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Leg_01_IK_PV_Ctrl_rotateY";
 	rename -uid "ED9B7569-411A-80ED-030B-6094046FECBB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 4 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Leg_01_IK_PV_Ctrl_rotateZ";
 	rename -uid "D1224C64-499B-219B-7AEF-F496549CB7D6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 0 4 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Foot_Reverse_IK_ToeTap_01_Ctrl_visibility";
 	rename -uid "E25FA6AC-4F6C-7905-AED0-B49A816D31F4";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_ToeTap_01_Ctrl_rotateX";
 	rename -uid "14220387-4DC5-6714-4890-3E921E88FA53";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
+	setAttr -s 11 ".ktv[0:10]"  1 0 5 0 6 -22.633402057185968 7 0 10 0 13 0
+		 16 0 19 0 22 0 25 0 28 0;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_ToeTap_01_Ctrl_rotateY";
 	rename -uid "A35C5D6B-48F4-5971-ED17-21B1E96308C6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_ToeTap_01_Ctrl_rotateZ";
 	rename -uid "FCCA1769-4914-AEC7-12EC-899B07582FCE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Foot_Reverse_IK_Ball_Ctrl_visibility";
 	rename -uid "BB27952A-4747-3952-672E-AD954ADC08E9";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_Ball_Ctrl_rotateX";
 	rename -uid "F1470291-47CA-CD0E-68C9-CAA3811BC9CC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_Ball_Ctrl_rotateY";
 	rename -uid "091B586A-4757-1C22-2CAC-56A9DD6AC575";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_Ball_Ctrl_rotateZ";
 	rename -uid "41B9D367-4787-124D-17D3-D1957FDCEC71";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Foot_Reverse_IK_Toe_Ctrl_visibility";
 	rename -uid "CE3CEC04-4FC6-E7FF-AC3F-929A99FFB622";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_Toe_Ctrl_rotateX";
 	rename -uid "B22827CB-48FD-5620-1849-84BF4F540560";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_Toe_Ctrl_rotateY";
 	rename -uid "30F16588-4239-721B-3BEA-14A587FE6F0A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_Toe_Ctrl_rotateZ";
 	rename -uid "85EB446E-47CB-DFEA-5164-3097558E9DB1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Foot_Reverse_IK_Heel_Ctrl_visibility";
 	rename -uid "43E96692-405F-7FA0-43FD-04B944EA7EDB";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_Heel_Ctrl_rotateX";
 	rename -uid "912CFF66-40E1-3A83-C846-7AAE8DC1D49F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_Heel_Ctrl_rotateY";
 	rename -uid "57EA537A-49EB-6859-C590-C38724C83DDA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Foot_Reverse_IK_Heel_Ctrl_rotateZ";
 	rename -uid "4F5D009A-4DE6-202C-BA25-B6B56488D3FF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Leg_01_Switch_visibility";
 	rename -uid "773875FC-46B0-E634-FFCA-32A31707522A";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend4_inRotateX1";
 	rename -uid "0438B515-4013-14BA-21F4-3B97E46C811A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 90.292307510212396 10 90.292307510212396
 		 13 90.292307510212396 16 90.292307510212396 19 90.292307510212396 22 90.292307510212396
 		 25 90.292307510212396 28 90.292307510212396;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend4_inRotateY1";
 	rename -uid "3BF869F9-46A6-AC09-CBB1-EB8376DF3469";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -4.2766865291799059 10 -4.2766865291799059
 		 13 -4.2766865291799059 16 -4.2766865291799059 19 -4.2766865291799059 22 -4.2766865291799059
 		 25 -4.2766865291799059 28 -4.2766865291799059;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend4_inRotateZ1";
 	rename -uid "15DFFE04-43DD-C437-ABE3-ABA78C058473";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 86.417774942886766 10 86.417774942886766
 		 13 86.417774942886766 16 86.417774942886766 19 86.417774942886766 22 86.417774942886766
 		 25 86.417774942886766 28 86.417774942886766;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Leg_01_Switch_IKFK_Switch";
 	rename -uid "A3F4FEE6-46E9-F8E1-E8C4-E9871EC41C5C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Leg_01_Switch_blendParent1";
 	rename -uid "C639192F-4B5A-0CF7-AEA0-81AE233E0C54";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Leg_01_Switch_visibility";
 	rename -uid "FD08B631-4E4E-FB33-C805-44BC186D2A0A";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend2_inRotateX1";
 	rename -uid "3F9CE102-4394-DD23-62F2-44BC9176C4A8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -89.707695606301868 10 -89.707695606301868
 		 13 -89.707695606301868 16 -89.707695606301868 19 -89.707695606301868 22 -89.707695606301868
 		 25 -89.707695606301868 28 -89.707695606301868;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend2_inRotateY1";
 	rename -uid "9F25CA6E-4A77-D697-3A75-A6A89EACB8F3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 4.2766865291793987 10 4.2766865291793987
 		 13 4.2766865291793987 16 4.2766865291793987 19 4.2766865291793987 22 4.2766865291793987
 		 25 4.2766865291793987 28 4.2766865291793987;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend2_inRotateZ1";
 	rename -uid "6DAC9014-41E6-51B8-815E-3380C7AF15F7";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -86.41777494288678 10 -86.41777494288678
 		 13 -86.41777494288678 16 -86.41777494288678 19 -86.41777494288678 22 -86.41777494288678
 		 25 -86.41777494288678 28 -86.41777494288678;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Leg_01_Switch_IKFK_Switch";
 	rename -uid "7708562A-4E2C-C89B-F2F4-FF8AC4D23CFD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Leg_01_Switch_blendParent1";
 	rename -uid "0B7DF88F-453C-F044-416E-CEA9BA61846E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_01_Switch_visibility";
 	rename -uid "7C49F5E2-47A1-C6D5-CDD6-5AA5CB5B6F26";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend3_inRotateX1";
 	rename -uid "F8019C3F-4F61-66F9-4BE3-899630C506DB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -96.512757128474689 10 -96.512757128474689
 		 13 -96.512757128474689 16 -96.512757128474689 19 -96.512757128474689 22 -96.512757128474689
 		 25 -96.512757128474689 28 -96.512757128474689;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend3_inRotateY1";
 	rename -uid "07F5CFFB-4C21-D8A5-18C4-F791C7CB1A7A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 7.75770379688554 10 7.75770379688554 13 7.75770379688554
 		 16 7.75770379688554 19 7.75770379688554 22 7.75770379688554 25 7.75770379688554 28 7.75770379688554;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend3_inRotateZ1";
 	rename -uid "00657DA4-47A2-C113-BB31-8F9A2349CB85";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 72.359286331770093 10 72.359286331770093
 		 13 72.359286331770093 16 72.359286331770093 19 72.359286331770093 22 72.359286331770093
 		 25 72.359286331770093 28 72.359286331770093;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_01_Switch_IKFK_Switch";
 	rename -uid "6261489C-4929-60FD-5342-989ACD759768";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Arm_01_Switch_blendParentTranslate";
 	rename -uid "5A251ED4-429F-755F-C6B3-F694F58B5ECF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_01_Switch_visibility";
 	rename -uid "D1241AEF-455D-417D-25B2-D499B7B484A8";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend1_inRotateX1";
 	rename -uid "0B39DA03-4C6B-1FB4-E601-54B5E56B7226";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 83.487237866582248 10 83.487237866582248
 		 13 83.487237866582248 16 83.487237866582248 19 83.487237866582248 22 83.487237866582248
 		 25 83.487237866582248 28 83.487237866582248;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend1_inRotateY1";
 	rename -uid "5A272D80-4E03-4D45-DABC-8C9ACE81DCFB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -7.7577038336948556 10 -7.7577038336948556
 		 13 -7.7577038336948556 16 -7.7577038336948556 19 -7.7577038336948556 22 -7.7577038336948556
 		 25 -7.7577038336948556 28 -7.7577038336948556;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "pairBlend1_inRotateZ1";
 	rename -uid "CCCFA14B-4E8C-671C-C11E-028C259464CB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -71.763939769623292 10 -71.763939769623292
 		 13 -71.763939769623292 16 -71.763939769623292 19 -71.763939769623292 22 -71.763939769623292
 		 25 -71.763939769623292 28 -71.763939769623292;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_01_Switch_IKFK_Switch";
 	rename -uid "A853CDEE-4BCD-E3AB-9ADC-93B9231635C0";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Arm_01_Switch_blendParentTranslate";
 	rename -uid "12DD919E-402C-8A3B-716C-189BDAE93718";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Foot_Reverse_IK_Heel_Ctrl_visibility";
 	rename -uid "D09611DD-4620-5E78-2CF7-E6BCAD90F8C0";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_Heel_Ctrl_rotateX";
 	rename -uid "AB8DEE96-4BD1-6230-A191-13A3EBD84B24";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_Heel_Ctrl_rotateY";
 	rename -uid "30FDD341-45EB-26E1-AA52-ED8417373210";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_Heel_Ctrl_rotateZ";
 	rename -uid "C14F76D1-4012-3BAA-301D-C5905486677C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Foot_Reverse_IK_LSide_Ctrl_visibility";
 	rename -uid "419DC59B-4FDE-80CC-5387-4883A7A0080E";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_LSide_Ctrl_rotateX";
 	rename -uid "E7DAB86A-4461-FFBF-525D-9EB19DF074DC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_LSide_Ctrl_rotateY";
 	rename -uid "7C31E823-4D5C-F289-BD02-0B942F3CA3E8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_LSide_Ctrl_rotateZ";
 	rename -uid "49D9E62A-4761-B60D-6133-5ABEAED08FA3";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Foot_Reverse_IK_RSide_Ctrl_visibility";
 	rename -uid "A7F2EF7D-49CD-9EC6-968A-589016387CFD";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_RSide_Ctrl_rotateX";
 	rename -uid "E25D3225-4AAF-ECD5-9AA0-F7ACF5887FEC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_RSide_Ctrl_rotateY";
 	rename -uid "A08BBEFD-4656-0FED-2500-5BAAC23045CB";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Foot_Reverse_IK_RSide_Ctrl_rotateZ";
 	rename -uid "0D0C565A-4E6F-F7E4-A67F-0F96A1E1F0E6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Leg_01_IK_Handle_Ctrl_visibility";
 	rename -uid "1AF00D2F-4B0C-FB7E-2F62-4486B8E115E7";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Leg_01_IK_Handle_Ctrl_rotateX";
 	rename -uid "C624E5F1-44AB-107F-280C-7682E6093D76";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 -39.352570835016891 4 -39.352570835016891
 		 7 -39.352570835016891 10 -30.017968308339182 13 -30.017968308339182 16 -30.017968308339182
 		 19 -22.656876350263484 22 -39.352570835016891 25 -39.352570835016891 28 -39.352570835016891;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Leg_01_IK_Handle_Ctrl_rotateY";
 	rename -uid "1F1C2A4B-4253-043D-536E-5995FC28B910";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 3.5413880482242082 4 3.5413880482242082
 		 7 3.5413880482242082 10 26.958048272049847 13 26.958048272049847 16 26.958048272049847
 		 19 33.246190972308575 22 3.5413880482242082 25 3.5413880482242082 28 3.5413880482242082;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Leg_01_IK_Handle_Ctrl_rotateZ";
 	rename -uid "3CD1CD2F-4798-832B-F26A-C1B8DC82F18F";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1.2924144950700449 4 1.2924144950700449
 		 7 1.2924144950700449 10 35.103668314700798 13 35.103668314700798 16 35.103668314700798
 		 19 49.699221466451064 22 1.2924144950700449 25 1.2924144950700449 28 1.2924144950700449;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Leg_01_IK_Handle_Ctrl_Translate";
 	rename -uid "5C6BAFB6-4957-8E0F-C4FA-EF90AD925535";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Leg_01_IK_Handle_Ctrl_Rotate";
 	rename -uid "6AF4AA36-4B7E-4D8E-3B7B-0E89466AA332";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1 4 1 7 1 10 1 13 1 16 1 19 1 22 1 25 1
 		 28 1;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Leg_01_IK_Base_Ctrl_visibility";
 	rename -uid "4A21BEEC-4453-168B-C4B6-178F722C438D";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Leg_01_IK_Base_Ctrl_rotateX";
 	rename -uid "DA371AB8-4F67-BA2B-63A6-BC80CA8F3433";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Leg_01_IK_Base_Ctrl_rotateY";
 	rename -uid "D8F6962D-4045-38AA-0B4F-A7AE979ECCEE";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "R_Leg_01_IK_Base_Ctrl_rotateZ";
 	rename -uid "C0985014-47EA-4B4F-1BB0-CBA7D1237749";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Leg_01_IK_Base_Ctrl_Translate";
 	rename -uid "24CE3F1B-4335-4F63-293C-1E97F6F00C15";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "R_Leg_01_IK_Base_Ctrl_Rotate";
 	rename -uid "B6D7D934-488C-3BE2-6050-B1A8D952DE08";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Scalar_visibility";
 	rename -uid "56E95CE7-486B-BF32-DF44-80BE2EE7D1E4";
@@ -11569,391 +12510,333 @@ createNode animCurveTA -n "Scalar_rotateZ";
 	setAttr ".kot[0]"  5;
 createNode animCurveTA -n "Spine_04_RK_Ctrl_rotateX";
 	rename -uid "9FDDD8E7-4A35-2BEC-C5A1-D5AFA490ADAC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 8.4910391822511198 4 8.4656123863001369
-		 7 8.4198938047935847 10 8.4327122780046224 13 8.4910391822511198 16 8.4910391822511198
+	setAttr -s 10 ".ktv[0:9]"  1 8.4910391822511198 4 8.4656123863001387
+		 7 8.4198938047935847 10 8.4327122780046224 13 8.4910391822511198 16 8.4839623659157031
 		 19 8.4652269052740046 22 8.4852088475476091 25 8.4887368575320128 28 8.4910391822511198;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_04_RK_Ctrl_rotateZ";
 	rename -uid "B950DF0C-4ED9-0883-F0D8-E28B30225E5C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 1.8953324578305897 4 6.3142915425064263
-		 7 9.2906061657298054 10 8.5904370867800193 13 1.8953324578305897 16 1.8953324578305897
+		 7 9.2906061657298054 10 8.5904370867800193 13 1.8953324578305897 16 4.2261605426881381
 		 19 -2.5570151285064218 22 4.0109267946714038 25 3.2247243103371126 28 1.8953324578305897;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_04_RK_Ctrl_visibility";
 	rename -uid "8FAC4BDF-4FC6-EDC9-66CA-8AA9E90AF7CB";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_04_RK_Ctrl_Translate";
 	rename -uid "9C24138E-44BC-5FEF-D41F-8A943B7427FA";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_04_RK_Ctrl_Rotate";
 	rename -uid "EE1042A5-4CB4-37FB-99AD-A48131262581";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_04_RK_Ctrl_Breathe";
 	rename -uid "EBDCDD8E-4495-19BF-35BB-D2A2D58518C8";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_05_RK_Ctrl_rotateX";
 	rename -uid "DD3D6EC3-4908-5D5D-33EE-768D318C812A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_05_RK_Ctrl_rotateY";
 	rename -uid "F6418B78-4C0A-2C8A-51F5-1498F23CA397";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_05_RK_Ctrl_rotateZ";
 	rename -uid "C4E17B19-400D-EF53-E65A-228358B4D9B1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 4.38365709720187 4 6.24423504183655 7 10.479704375903426
-		 10 7.836448799305666 13 4.38365709720187 16 4.38365709720187 19 -1.3676224062865669
+		 10 7.836448799305666 13 4.38365709720187 16 -1.3896105896138808 19 -1.3676224062865669
 		 22 6.8609430850076247 25 6.2126569177893263 28 4.38365709720187;
-	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
-		5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_05_RK_Ctrl_visibility";
 	rename -uid "01D5A935-4886-9CF6-48F2-51A914F73F69";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_05_RK_Ctrl_translateX";
 	rename -uid "1B0594F1-45E6-A106-AF9B-DF8712551CDD";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_05_RK_Ctrl_translateY";
 	rename -uid "392D428D-4F02-0017-10A5-4DA7E2132969";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_05_RK_Ctrl_translateZ";
 	rename -uid "3F9C3C6A-4543-9BA2-ED33-329FB79793A5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_05_RK_Ctrl_Translate";
 	rename -uid "1C87F034-4010-B131-2854-4EA4EF8A0090";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_05_RK_Ctrl_Rotate";
 	rename -uid "5A41F302-453C-4F14-8433-D89CE7028938";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Clavicle_RK_Ctrl_translateX";
 	rename -uid "A1CA5F1C-4AE9-2BC5-F201-0EBF8BA616F1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Clavicle_RK_Ctrl_translateY";
 	rename -uid "65BE8AE3-467E-83DB-8400-4C987C0085DF";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "L_Clavicle_RK_Ctrl_translateZ";
 	rename -uid "CF2B898A-4C0C-3E40-972A-C08C30A14C6C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Clavicle_RK_Ctrl_rotateX";
 	rename -uid "FB5DFCFF-4699-4BCA-D8D3-978A97F1FA97";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Clavicle_RK_Ctrl_rotateY";
 	rename -uid "4DACE424-47B6-97A8-3588-81918D31F4F6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 0 10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "L_Clavicle_RK_Ctrl_rotateZ";
 	rename -uid "8DFAD87E-4652-96FF-AB76-9EB4D9E6DDA4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 -6.3725114674295193 10 -6.3725114674295193
 		 13 -6.3725114674295193 16 -6.3725114674295193 19 -6.3725114674295193 22 -6.3725114674295193
 		 25 -6.3725114674295193 28 -6.3725114674295193;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Clavicle_RK_Ctrl_Translate";
 	rename -uid "0C562A02-4C7C-C012-E416-EEA3F349B67D";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Clavicle_RK_Ctrl_Rotate";
 	rename -uid "BFBDF354-4B84-B63B-D17C-298F9223DB0E";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "L_Clavicle_RK_Ctrl_visibility";
 	rename -uid "CE975F2F-45A4-1195-66E3-BF8F6D95B797";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 1 10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_03_RK_Ctrl_translateX";
 	rename -uid "80B3AC70-4497-4A0C-C39C-258E867ADA8B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_03_RK_Ctrl_translateY";
 	rename -uid "CEE93643-4B5B-F8F7-3547-07BF6C9311F2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_03_RK_Ctrl_translateZ";
 	rename -uid "51D20A05-46EE-1096-0802-008F2DF3ED24";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_04_RK_Ctrl_translateX";
 	rename -uid "EDA377E6-4360-7C6E-9EB0-88B5E56CF0B5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_04_RK_Ctrl_translateY";
 	rename -uid "F7E1AC8D-4F4F-3027-7021-B990B2810350";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Spine_04_RK_Ctrl_translateZ";
 	rename -uid "9DD65C2C-4C87-C956-0299-EAAE39CFE397";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Transform_Ctrl_translateX";
 	rename -uid "7DAE4EC3-4A3C-4B34-78E7-DC835F4FEE2B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Transform_Ctrl_translateY";
 	rename -uid "A2CB739B-486B-416D-3AE8-8CBB6366A8E1";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Transform_Ctrl_translateZ";
 	rename -uid "DD45B0DC-46D6-6E4D-4F50-998AA2DF11DC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Scale_Ctrl_translateX";
 	rename -uid "1D6D3169-41B0-14A6-2EE4-BC905E7A1F63";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Scale_Ctrl_translateY";
 	rename -uid "3408DA58-4BC2-C62D-5480-6584BAE3E56A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "Scale_Ctrl_translateZ";
 	rename -uid "E60E37E2-4ACA-88E6-5180-F38B6C7DB02B";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Scale_Ctrl_visibility";
 	rename -uid "FC6C75AF-4487-091B-2D34-70B8B038D689";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Scale_Ctrl_rotateX";
 	rename -uid "22B42CBC-4933-C228-95AB-61B6AEEF823A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Scale_Ctrl_rotateY";
 	rename -uid "253189C8-4EEA-BAAE-E07E-B58231A833C5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Scale_Ctrl_rotateZ";
 	rename -uid "569EBEA3-4C95-A8FE-9601-2C86D398808C";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Scale_Ctrl_scaleX";
 	rename -uid "8A57C722-4909-957E-9068-4BAE6997444A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Scale_Ctrl_scaleY";
 	rename -uid "C3B18695-4E13-88C5-3621-E08FED3969EC";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Scale_Ctrl_scaleZ";
 	rename -uid "4D1CD69B-4B27-0A6A-C608-7B831F982BC5";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Transform_Ctrl_visibility";
 	rename -uid "9DF3E332-4FC8-1170-18DA-25BA7B023553";
-	setAttr ".tan" 9;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Transform_Ctrl_rotateX";
 	rename -uid "570059EC-4BA2-264B-F88E-85BE23864500";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Transform_Ctrl_rotateY";
 	rename -uid "DEC7D9F4-44AA-8AB8-656B-E8A8ED70880A";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Transform_Ctrl_rotateZ";
 	rename -uid "BDF22668-41DB-8F1F-B561-909ADE63B213";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 0 13 0 16 0 19 0 22 0 25 0 28 0;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_04_RK_Ctrl_rotateY";
 	rename -uid "E7A55BCC-4FDD-4058-2835-C5857365A0F6";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  4 -0.65902843383529364 7 -1.1008502439504053
-		 10 -0.99714588691765971 13 0 16 0 19 0.66399744821264872 22 -0.31576447916832673
+		 10 -0.99714588691765971 13 0 16 -0.34787168237004878 19 0.66399744821264872 22 -0.31576447916832673
 		 25 -0.19844779311283989 28 -0.65902843383529364;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_03_RK_Ctrl_rotateX";
 	rename -uid "F5410946-4C94-FE61-35CF-FDBD43A2DE48";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  4 -4.1215051651174264 7 -4.0731280083899071
-		 10 -4.1515138483413452 13 -4.1401864781598618 16 -4.1470394310698628 19 -4.1443862700349179
+		 10 -4.1515138483413452 13 -4.1401864781598618 16 -4.1470394310698637 19 -4.1443862700349179
 		 22 -4.1166342327910534 25 -4.143031122625378 28 -4.1215051651174264;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "Spine_03_RK_Ctrl_rotateY";
 	rename -uid "03C0C67C-458C-858D-DBD9-E5B4032339A4";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  4 0.49868978990476559 7 0.80360668887031961
 		 10 0 13 -0.3067360012723962 16 -0.19286307884515319 19 -0.24337834342311687 22 0.53748218876934539
 		 25 0.26548679335331327 28 0.49868978990476559;
-	setAttr -s 9 ".kot[0:8]"  5 5 5 5 5 5 5 5 
-		5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_03_RK_Ctrl_Translate";
 	rename -uid "761AD945-4333-3AEA-C704-AFA552F089D2";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 createNode animCurveTU -n "Spine_03_RK_Ctrl_Rotate";
 	rename -uid "DE291A94-4DA3-3B5B-127E-3A9F43DDC244";
-	setAttr ".tan" 10;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  10 1 13 1 16 1 19 1 22 1 25 1 28 1;
-	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 	setAttr ".pst" 3;
 select -ne :time1;
-	setAttr ".o" 190;
-	setAttr ".unw" 190;
+	setAttr ".o" 26;
+	setAttr ".unw" 26;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
