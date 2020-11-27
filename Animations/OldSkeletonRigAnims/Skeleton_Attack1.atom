@@ -1,0 +1,4495 @@
+atomVersion 1.0;
+mayaVersion 2020;
+mayaSceneFile E:/Brodinjer/Animations/OldSkeletonRigAnims/KH_Skeleton_Attack1.ma;
+timeUnit film;
+linearUnit cm;
+angularUnit deg;
+startTime 1;
+endTime 49;
+startUnitless 3.4028235e+38;
+endUnitless -3.4028235e+38;
+dagNode {
+  Scalar 2 4;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+  cached scale.sx scaleX 0;
+  { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1  }
+  cached scale.sy scaleY 1;
+  { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1  }
+  cached scale.sz scaleZ 2;
+  { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1  }
+}
+dagNode {
+  R_Arm_01_IK_Base_Ctrl 7 1;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  R_Arm_01_IK_Handle_Ctrl 7 2;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 1.3 auto auto 1 0 0;
+      17 3.0539208 auto auto 1 0 0;
+      22 3.0539208 fixed fixed 1 0 0 0 1 0 1;
+      29 5.9320056 auto auto 1 0 0;
+      49 1.3 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -2.5 auto auto 1 0 0;
+      17 -2.7637272 auto auto 1 0 0;
+      22 -2.7637272 fixed fixed 1 0 0 0 1 0 1;
+      29 -4.4795748 auto auto 1 0 0;
+      49 -2.5 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -1 auto auto 1 0 0;
+      17 2.8077763 auto auto 1 0 0;
+      22 2.8077763 fixed fixed 1 0 0 0 1 0 1;
+      29 3.6690567 auto auto 1 0 0;
+      49 -1 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  L_Arm_01_IK_Base_Ctrl 7 1;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  L_Arm_01_IK_Handle_Ctrl 7 2;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -3 auto auto 1 0 0;
+      9 -7.2982805 auto auto 1 0 0;
+      17 -9.7605294 auto auto 1 0 0;
+      22 -9.7605294 fixed fixed 1 0 0 0 1 0 1;
+      25 -7.0722333 auto auto 1 0 0;
+      29 -4.4374784 auto auto 1 0 0;
+      49 -3 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 3 auto auto 1 0 0;
+      9 3.6075654 auto auto 1 0 0;
+      17 1.6101182 auto auto 1 0 0;
+      22 1.6101182 fixed fixed 1 0 0 0 1 0 1;
+      25 5.5010562 auto auto 1 0 0;
+      29 4.2795022 auto auto 1 0 0;
+      49 3 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -1.5 auto auto 1 0 0;
+      9 1.0254687 auto auto 1 0 0;
+      17 2.2863857 auto auto 1 0 0;
+      22 2.2863857 fixed fixed 1 0 0 0 1 0 1;
+      25 -1.7700311 auto auto 1 0 0;
+      29 -3.8838678 auto auto 1 0 0;
+      49 -1.5 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  L_Arm_01_IK_PV_Ctrl 8 1;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      17 -2.6893643 auto auto 1 0 0;
+      24 -2.6893643 fixed fixed 1 0 0 0 1 0 1;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      17 7.1239679 auto auto 1 0 0;
+      24 7.1239679 fixed fixed 1 0 0 0 1 0 1;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      17 -0.23097069 auto auto 1 0 0;
+      24 -0.23097069 fixed fixed 1 0 0 0 1 0 1;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  Spine_Spline_01_IK_Ctrl 7 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 10 auto auto 1 0 0;
+      20 -3.9848951 auto auto 1 0 0;
+      25 -3.9848951 auto auto 1 0 0;
+      29 9.1989545 auto auto 1 0 0;
+      49 10 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -2 auto auto 1 0 0;
+      49 -2 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -1 auto auto 1 0 0;
+      49 -1 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  Spine_Spline_02_IK_Ctrl 7 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 10 auto auto 1 0 0;
+      20 -3.9848951 auto auto 1 0 0;
+      25 -3.9848951 auto auto 1 0 0;
+      29 9.1989545 auto auto 1 0 0;
+      49 10 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  Spine_Spline_03_IK_Ctrl 7 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 10 auto auto 1 0 0;
+      20 -4.5134664 auto auto 1 0 0;
+      25 -3.9848951 auto auto 1 0 0;
+      29 8.9545937 auto auto 1 0 0;
+      49 10 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      20 -27.982418 auto auto 1 0 0;
+      29 17.22838 auto auto 1 0 0;
+      49 0 auto auto 1 0 0;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      20 2.1211429 auto auto 1 0 0;
+      29 7.7143239 auto auto 1 0 0;
+      49 0 auto auto 1 0 0;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  Spine_Spline_04_IK_Ctrl 7 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 10 auto auto 1 0 0;
+      20 -3.9848951 auto auto 1 0 0;
+      25 -3.9848951 auto auto 1 0 0;
+      29 9.1989545 auto auto 1 0 0;
+      49 10 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  Spine_Spline_05_IK_Ctrl 7 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_Leg_01_IK_Base_Ctrl 7 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_Leg_01_IK_Handle_Ctrl 7 2;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      20 -0.019636342 auto auto 1 0 0;
+      32 0.00017405379 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -1 auto auto 1 0 0;
+      20 0.03808985 auto auto 1 0 0;
+      32 -1.6774402 auto auto 1 0 0;
+      49 -1 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      20 0 auto auto 1 0 0;
+      32 -5.152923e-06 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 3;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 10 auto auto 1 0 0;
+      49 10 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 4;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      20 34.430489 auto auto 1 0 0;
+      24 34.430489 fixed fixed 1 0 0 0 1 0 1;
+      32 -17.024328 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 5;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      20 0 auto auto 1 0 0;
+      24 0 fixed fixed 1 0 0 0 1 0 1;
+      32 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_Foot_Reverse_IK_RSide_Ctrl 9 2;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  R_Foot_Reverse_IK_LSide_Ctrl 11 2;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  R_Foot_Reverse_IK_Heel_Ctrl 13 2;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  R_Foot_Reverse_IK_Toe_Ctrl 15 3;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  R_Foot_Reverse_IK_Ball_Ctrl 17 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 10 auto auto 1 0 0;
+      18 38.155322 auto auto 1 0 0;
+      32 -0.039641447 auto auto 1 0 0;
+      49 10 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  R_Foot_Reverse_IK_ToeTap_01_Ctrl 17 1;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  R_Leg_01_IK_PV_Ctrl 8 1;
+  anim translate.translateZ translateZ 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -1 auto auto 1 0 0;
+      17 -2.3001274 auto auto 1 0 0;
+      24 -2.207398 fixed fixed 1 0 0 0 1 0 1;
+      30 2.8672616 auto auto 1 0 0;
+      49 -1 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateX translateX 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      17 0.039040212 auto auto 1 0 0;
+      27 0.039040212 fixed fixed 1 0 0 0 1 0 1;
+      30 -0.094885607 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 3.6232331e-05 auto auto 1 0 0;
+      17 3.6232331e-05 auto auto 1 0 0;
+      27 0.00011818463 fixed fixed 1 0 0 0 1 0 1;
+      30 -8.8061169e-05 auto auto 1 0 0;
+      49 -4.641014e-05 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  L_Leg_01_IK_Base_Ctrl 7 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_Leg_01_IK_Handle_Ctrl 7 2;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      13 0.028380821 auto auto 1 0 0;
+      31 -0.015186717 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -1 auto auto 1 0 0;
+      13 -0.74562524 auto auto 1 0 0;
+      31 -1.2699044 auto auto 1 0 0;
+      49 -1 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      13 0.94730449 auto auto 1 0 0;
+      31 -0.50805184 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 3;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 4;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      13 -35.013034 auto auto 1 0 0;
+      31 43.593803 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 5;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_Foot_Reverse_IK_RSide_Ctrl 9 2;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  L_Foot_Reverse_IK_LSide_Ctrl 11 2;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  L_Foot_Reverse_IK_Heel_Ctrl 13 2;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  L_Foot_Reverse_IK_Toe_Ctrl 15 3;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  L_Foot_Reverse_IK_Ball_Ctrl 17 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 25 auto auto 1 0 0;
+      49 25 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  L_Foot_Reverse_IK_ToeTap_01_Ctrl 17 1;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  L_Leg_01_IK_PV_Ctrl 8 1;
+  anim translate.translateZ translateZ 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 1 auto auto 1 0 0;
+      22 -1.6351168 auto auto 1 0 0;
+      25 2.6012238 auto auto 1 0 0;
+      49 1 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0.10528677 }
+  static translate.ty translateY 4;
+  { 5.2862586e-05 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  R_Arm_01_Switch 5 2;
+  static IKFK_Switch IKFK_Switch 0;
+  { 1 }
+  static v visibility 7;
+  { 1 }
+  cached rotate.rx rotateX 0;
+  { -78.604858 -80.492427 -85.797198 -94.000836 -104.49341 -116.49119 -129.0874 -141.4069 27.271511 17.515404 9.8228428 4.7058379 1.2780871 -1.7132696 -4.2642991 -6.3697154 -8.0237099 -9.220495 -9.9548816 -10.223114 -8.5926192 -4.1909166 2.1195393 -170.52742 -162.68555 -138.17887 -93.579951 -48.808281 -28.155574 -27.713918 -28.486918 -29.932127 -31.967386 -34.510633 -37.480388 -40.796003 -44.377646 -48.146035 -52.021971 -55.925773 -59.776741 -63.49279 -66.990345 -70.184534 -72.989631 -75.319623 -77.088749 -78.211908 -78.604858  }
+  cached rotate.ry rotateY 1;
+  { -30.523788 -30.931945 -31.912235 -32.996856 -33.698251 -33.656535 -32.755948 -31.150192 -150.81971 -152.76151 -154.35504 -155.46645 -156.26166 -156.89967 -157.40943 -157.81776 -158.14646 -158.41065 -158.61794 -158.76864 -159.07201 -159.76228 -160.94368 -17.350308 -16.007861 -14.589771 -16.891127 -18.545096 -16.904137 -17.780995 -18.274504 -18.854706 -19.521601 -20.271827 -21.097814 -21.987418 -22.9241 -23.887616 -24.855148 -25.802759 -26.706972 -27.546275 -28.302338 -28.960763 -29.511224 -29.946953 -30.263596 -30.457526 -30.523788  }
+  cached rotate.rz rotateZ 2;
+  { 63.660399 64.452323 66.696653 70.186033 74.589068 79.383926 83.935462 87.681978 -89.712891 -88.343923 -88.153286 -89.178181 -90.904202 -92.649428 -94.323645 -95.844075 -97.133968 -98.121116 -98.736211 -98.911017 -99.429381 -100.90133 -103.15058 74.084091 71.001782 69.235772 66.475037 55.931696 48.72349 47.876534 47.599868 47.509498 47.606981 47.895299 48.377105 49.052858 49.918935 50.965803 52.176443 53.525155 54.97693 56.487478 58.003974 59.466502 60.810074 61.967074 62.869946 63.45401 63.660399  }
+  cached translate.tx translateX 3;
+  { -3.8669045 -3.8943833 -3.9695233 -4.0754648 -4.184478 -4.2572197 -4.2494667 -4.1270716 -3.8838232 -3.553733 -3.21217 -2.9679821 -2.796571 -2.6033918 -2.4076871 -2.2297749 -2.0886856 -1.9904351 -1.9298242 -1.9059887 -2.0902425 -2.5837775 -3.3269745 -4.2192552 -5.0789837 -6.5921683 -6.1232726 -2.4162084 -0.26399802 -0.34865232 -0.53736056 -0.81674501 -1.1649352 -1.5586065 -1.9741338 -2.388758 -2.7817555 -3.1355493 -3.436666 -3.6764416 -3.8513893 -3.9631814 -4.0182364 -4.026948 -4.0026198 -3.9601813 -3.9147522 -3.880089 -3.8669045  }
+  cached translate.ty translateY 4;
+  { 7.8307413 7.8723822 7.9916011 8.1821012 8.438147 8.7517506 9.1109518 9.4999966 9.9015602 10.306278 10.708877 11.10494 11.475533 11.793201 12.044493 12.2192 12.309745 12.34589 12.361292 12.354786 12.285455 12.157479 12.225877 12.680052 13.056073 12.620326 10.589414 7.5890597 6.0103581 5.9239601 5.9855329 6.109943 6.2833397 6.4902074 6.7145903 6.9412632 7.1567958 7.350422 7.5146269 7.6453849 7.7420344 7.8068262 7.8442343 7.8601463 7.8610555 7.8533575 7.8428064 7.8341307 7.8307413  }
+  cached translate.tz translateZ 5;
+  { 0.27915928 0.22026549 0.049735992 -0.23444464 -0.64095799 -1.1731683 -1.8166581 -2.5334128 -3.2666713 -3.9539805 -4.5425021 -4.9958246 -5.3513854 -5.6557553 -5.8975386 -6.0671749 -6.1563219 -6.1924014 -6.2086647 -6.2055478 -6.1182255 -5.88109 -5.4711894 -4.8583839 -4.0225261 -1.0103789 4.8718528 8.6812549 9.2258797 9.1297858 8.9594902 8.6988746 8.3516306 7.921735 7.414917 6.8396675 6.207703 5.5338711 4.8355635 4.1317689 3.4419398 2.7848686 2.1777507 1.6355752 1.1709264 0.79422148 0.51435364 0.33966755 0.27915928  }
+}
+dagNode {
+  Spine_01_Switch 5 2;
+  static IKFK_Switch IKFK_Switch 0;
+  { 1 }
+  static v visibility 7;
+  { 1 }
+  cached rotate.rx rotateX 0;
+  { 0.011584769 -1.4284308 -5.3920137 -11.344153 -18.748978 -27.069747 -35.769667 -44.313206 -52.167122 -58.800619 -63.684661 -66.293442 -67.428013 -68.270259 -68.865704 -69.259873 -69.498298 -69.626518 -69.690088 -69.734574 -69.775349 -69.800101 -69.810698 -69.810283 -69.772345 -53.502147 -17.471998 18.912396 35.71534 35.706405 34.967813 33.752335 32.124157 30.149207 27.89404 25.424858 22.806658 20.102527 17.373078 14.676059 12.066138 9.5948657 7.3108363 5.2600241 3.4863128 2.0322032 0.93969959 0.25137078 0.011584769  }
+  cached rotate.ry rotateY 1;
+  { -2.4401438 -2.4534959 -2.47796 -2.478007 -2.4154675 -2.2642439 -2.0211505 -1.7108134 -1.383594 -1.1077562 -0.95897033 -0.98004439 -1.1033717 -1.2480108 -1.4082096 -1.5779346 -1.750969 -1.920986 -2.0816 -2.2263991 -2.3350703 -2.3989268 -2.3892529 -2.2918536 -2.9254139 -5.7327188 -9.2332636 -10.893383 -11.801348 -12.524829 -12.481041 -12.298918 -11.991384 -11.570747 -11.049336 -10.440037 -9.7567062 -9.0144488 -8.2297555 -7.4205145 -6.6059079 -5.80622 -5.042586 -4.336712 -3.7105943 -3.1862603 -2.7855417 -2.52988 -2.4401438  }
+  cached rotate.rz rotateZ 2;
+  { 89.456054 89.443173 89.414235 89.383074 89.35679 89.333109 89.304267 89.265788 89.226102 89.212442 89.269847 89.316322 89.293047 89.262648 89.227523 89.189696 89.150936 89.112847 89.07695 89.044724 89.020921 89.00731 88.822645 88.350993 87.510628 85.410565 81.29921 77.061665 74.993749 74.609038 74.753434 75.115014 75.668218 76.38712 77.245555 78.21725 79.275947 80.395518 81.550044 82.71386 83.86156 84.96796 86.008032 86.956826 87.789395 88.480735 89.005752 89.33927 89.456054  }
+  cached translate.tx translateX 3;
+  { -0.018138144 -0.016301394 -0.011309376 -0.0039765557 0.0048058518 0.014078082 0.023039412 0.031071529 0.037633397 0.042367224 0.045115257 0.046302079 0.046846976 0.047232161 0.047495171 0.047668989 0.047783482 0.047866557 0.047945051 0.048045312 0.048316369 0.048692953 0.049452674 0.05065998 0.056820298 0.17485045 0.41094265 0.63913186 0.74490973 0.74082103 0.72540255 0.70066332 0.66777565 0.62791218 0.58224412 0.53193982 0.47816391 0.4220769 0.3648352 0.30759162 0.25149615 0.19769697 0.14734146 0.10157713 0.061552382 0.028416883 0.0033216915 -0.012580974 -0.018138144  }
+  cached translate.ty translateY 4;
+  { 11.938277 11.944574 11.961867 11.987737 12.01977 12.055585 12.09288 12.129412 12.162942 12.197569 12.237724 12.281498 12.326933 12.372209 12.415509 12.455015 12.48891 12.515374 12.53259 12.538739 12.479959 12.35062 12.221034 12.161578 11.731756 10.717064 9.5181953 8.5185316 8.0994879 8.1274636 8.2072422 8.333149 8.4994021 8.7002158 8.9298054 9.1823896 9.4521929 9.7334466 10.020389 10.307265 10.588325 10.857823 11.110017 11.339166 11.539528 11.705363 11.830929 11.910482 11.938277  }
+  cached translate.tz translateZ 5;
+  { 0.88575835 0.8862363 0.88753629 0.88958197 0.89230801 0.89550061 0.89941405 0.90438048 0.90995501 0.91529827 0.91952401 0.92194777 0.92306202 0.92385977 0.92441052 0.9247858 0.92505836 0.92530173 0.92558978 0.92599656 0.92717945 0.92885475 0.92955372 0.92785617 0.94548863 1.1510958 1.5670433 1.9937545 2.1952813 2.1885314 2.1616344 2.1187869 2.0619972 1.9932757 1.9146333 1.8280795 1.7356201 1.6392555 1.540979 1.4427757 1.3466216 1.2544834 1.1683194 1.0900801 1.0217106 0.96515191 0.92234445 0.89523061 0.88575835  }
+}
+dagNode {
+  R_Leg_01_Switch 5 2;
+  static IKFK_Switch IKFK_Switch 0;
+  { 1 }
+  static v visibility 7;
+  { 1 }
+  cached rotate.rx rotateX 0;
+  { -90.000444 -89.724357 -88.936256 -87.696377 -86.064957 -84.102233 -81.868443 -79.423823 -76.828611 -74.143043 -71.427356 -68.741788 -66.146576 -63.701956 -61.468166 -59.505442 -57.874022 -56.634143 -55.846042 -55.569956 -55.569956 -55.569956 -55.569956 -55.569956 -57.780905 -63.60977 -71.85058 -81.297363 -90.744146 -98.984956 -104.81382 -107.02477 -106.85498 -106.37332 -105.62138 -104.64074 -103.47298 -102.15969 -100.74244 -99.262814 -97.7624 -96.282777 -94.865527 -93.552232 -92.384473 -91.403833 -90.651893 -90.170236 -90.000444  }
+  cached rotate.ry rotateY 1;
+  { 9.9852736 9.9852734 9.985273 9.9852723 9.9852715 9.9852704 9.9852693 9.985268 9.9852667 9.9852654 9.9852641 9.9852628 9.9852616 9.9852605 9.9852596 9.9852587 9.9852581 9.9852576 9.9852573 9.9852572 9.9852572 9.9852572 9.9852572 9.9852572 9.985258 9.9852605 9.9852643 9.985269 9.985274 9.9852784 9.9852816 9.9852828 9.9852827 9.9852824 9.985282 9.9852815 9.9852809 9.9852802 9.9852794 9.9852786 9.9852778 9.985277 9.9852762 9.9852755 9.9852748 9.9852743 9.9852739 9.9852736 9.9852736  }
+  cached rotate.rz rotateZ 2;
+  { -88.280085 -88.280085 -88.280085 -88.280085 -88.280085 -88.280085 -88.280086 -88.280086 -88.280087 -88.280087 -88.280088 -88.280089 -88.28009 -88.28009 -88.280091 -88.280092 -88.280092 -88.280093 -88.280093 -88.280093 -88.280093 -88.280093 -88.280093 -88.280093 -88.280092 -88.28009 -88.280088 -88.280086 -88.280085 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280084 -88.280085 -88.280085 -88.280085 -88.280085  }
+  cached translate.tx translateX 3;
+  { -1.3927985 -1.3928032 -1.3928167 -1.3928379 -1.3928658 -1.3928994 -1.3929376 -1.3929795 -1.3930239 -1.3930698 -1.3931163 -1.3931622 -1.3932067 -1.3932485 -1.3932867 -1.3933203 -1.3933482 -1.3933694 -1.3933829 -1.3933876 -1.393376 -1.393344 -1.3932955 -1.3932348 -1.393166 -1.393093 -1.3930201 -1.3929512 -1.3928905 -1.3928421 -1.3928101 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985 -1.3927985  }
+  cached translate.ty translateY 4;
+  { 1.4120598 1.4122151 1.4126582 1.4133554 1.4142728 1.4153765 1.4166326 1.4180072 1.4194665 1.4209767 1.4225037 1.4240139 1.4254732 1.4268478 1.4281039 1.4292076 1.4301249 1.4308221 1.4312653 1.4314205 1.4310396 1.4299864 1.4283954 1.4264011 1.4241379 1.4217402 1.4193425 1.4170793 1.4150849 1.413494 1.4124408 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598 1.4120598  }
+  cached translate.tz translateZ 5;
+  { 1.6399171 1.631593 1.6078313 1.5704484 1.5212604 1.4620833 1.3947335 1.3210271 1.2427803 1.1618092 1.07993 0.99895884 0.92071199 0.84700558 0.77965577 0.72047876 0.6712907 0.63390778 0.61014616 0.60182203 0.63557677 0.7288987 0.86987439 1.0465904 1.2471333 1.4595896 1.672046 1.8725889 2.049305 2.1902807 2.2836027 2.3173575 2.310601 2.2914346 2.2615131 2.222491 2.176023 2.1237637 2.0673678 2.0084899 1.9487847 1.8899068 1.8335109 1.7812516 1.7347836 1.6957614 1.6658399 1.6466736 1.6399171  }
+}
+dagNode {
+  L_Leg_01_Switch 5 2;
+  static IKFK_Switch IKFK_Switch 0;
+  { 1 }
+  static v visibility 7;
+  { 1 }
+  cached rotate.rx rotateX 0;
+  { 89.999558 89.310644 87.406 84.528771 80.922104 76.829146 72.493041 68.156936 64.063977 60.45731 57.580082 55.675437 54.986524 55.687408 57.682231 60.809252 64.906728 69.812916 75.366074 81.404459 87.766329 94.289942 100.81355 107.17543 113.21381 118.76697 123.67316 127.77063 130.89765 132.89248 133.59336 133.20466 132.09837 130.36419 128.09181 125.37094 122.29126 118.94249 115.41433 111.79646 108.17859 104.65042 101.30165 98.221983 95.501108 93.228728 91.494544 90.388254 89.999558  }
+  cached rotate.ry rotateY 1;
+  { 0.014726443 0.014726441 0.014726422 0.014726349 0.014726184 0.014725899 0.014725486 0.014724959 0.014724362 0.014723757 0.014723223 0.014722845 0.014722703 0.014722847 0.014723242 0.014723819 0.014724493 0.014725174 0.014725772 0.014726211 0.014726427 0.014726385 0.014726076 0.014725521 0.01472477 0.014723893 0.014722976 0.014722114 0.014721399 0.014720919 0.014720745 0.014720842 0.014721112 0.014721524 0.014722042 0.014722629 0.014723247 0.014723862 0.014724443 0.014724966 0.014725411 0.014725771 0.014726042 0.01472623 0.014726348 0.01472641 0.014726436 0.014726442 0.014726443  }
+  cached rotate.rz rotateZ 2;
+  { 88.280008 88.280008 88.280007 88.280006 88.280005 88.280004 88.280002 88.280001 88.279999 88.279998 88.279997 88.279997 88.279996 88.279997 88.279997 88.279998 88.28 88.280001 88.280003 88.280005 88.280008 88.28001 88.280012 88.280014 88.280016 88.280018 88.28002 88.280021 88.280022 88.280022 88.280023 88.280022 88.280022 88.280022 88.280021 88.28002 88.280019 88.280018 88.280017 88.280016 88.280015 88.280014 88.280012 88.280011 88.28001 88.280009 88.280009 88.280008 88.280008  }
+  cached translate.tx translateX 3;
+  { 1.3938242 1.4124717 1.4640264 1.541907 1.6395319 1.7503198 1.8676891 1.9850584 2.0958462 2.1934711 2.2713517 2.3229064 2.3415539 2.3285716 2.2916222 2.2337014 2.1578052 2.0669295 1.9640702 1.8522231 1.7343843 1.6135496 1.4927148 1.374876 1.263029 1.1601697 1.0692939 0.99339775 0.93547697 0.89852751 0.88554527 0.89007725 0.90297596 0.92319556 0.94969021 0.98141406 1.0173213 1.056366 1.0975025 1.1396847 1.181867 1.2230034 1.2620482 1.2979554 1.3296793 1.3561739 1.3763935 1.3892922 1.3938242  }
+  cached translate.ty translateY 4;
+  { 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827 1.4455827  }
+  cached translate.tz translateZ 5;
+  { -0.48127577 -0.47627071 -0.4624332 -0.44152971 -0.41532675 -0.38559081 -0.35408837 -0.32258593 -0.29284998 -0.26664702 -0.24574353 -0.23190601 -0.22690095 -0.23157559 -0.24488035 -0.26573646 -0.29306515 -0.32578766 -0.36282523 -0.40309908 -0.44553046 -0.4890406 -0.53255074 -0.57498211 -0.61525595 -0.6522935 -0.68501599 -0.71234466 -0.73320075 -0.7465055 -0.75118014 -0.74877359 -0.74192416 -0.73118723 -0.71711814 -0.70027226 -0.68120495 -0.66047156 -0.63862744 -0.61622797 -0.5938285 -0.57198439 -0.55125099 -0.53218367 -0.51533779 -0.50126869 -0.49053176 -0.48368233 -0.48127577  }
+}
+dagNode {
+  L_Wrist_01_RK_Ctrl 7 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 70 auto auto 1 0 0;
+      6 24.055807 auto auto 1 0 0;
+      17 -12.983387 auto auto 1 0 0;
+      24 34.455013 fixed fixed 1 0 0 0 1 0 1;
+      25 115.49244 auto auto 1 0 0;
+      29 124.67207 auto auto 1 0 0;
+      38 132.18186 auto auto 1 0 0;
+      49 70 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 2.5011969 auto auto 1 0 0;
+      17 -16.756218 auto auto 1 0 0;
+      24 -16.118853 fixed fixed 1 0 0 0 1 0 1;
+      25 4.0590218 auto auto 1 0 0;
+      29 60.577419 auto auto 1 0 0;
+      38 53.6268 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 100 auto auto 1 0 0;
+      6 133.90174 auto auto 1 0 0;
+      17 186.13554 auto auto 1 0 0;
+      24 168.90562 fixed fixed 1 0 0 0 1 0 1;
+      25 128.29791 auto auto 1 0 0;
+      29 30.581294 auto auto 1 0 0;
+      38 121.21194 auto auto 1 0 0;
+      49 100 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Follow_Rotate Follow_Rotate 0;
+  { 1 }
+  static Follow_Translate Follow_Translate 1;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_FInger_03_01_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_FInger_03_02_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_03_03_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_03_04_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_01_01_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 145 auto auto 1 0 0;
+      49 145 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -6 auto auto 1 0 0;
+      49 -6 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 80 auto auto 1 0 0;
+      49 80 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_FInger_01_02_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -80 auto auto 1 0 0;
+      49 -80 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 45 auto auto 1 0 0;
+      49 45 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_01_03_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_02_01_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_FInger_02_02_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_02_03_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_02_04_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_04_01_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_FInger_04_02_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_04_03_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_04_04_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_05_01_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_FInger_05_02_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_05_03_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 90 auto auto 1 0 0;
+      49 90 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_FInger_05_04_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_Wrist_01_RK_Ctrl 7 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 100 auto auto 1 0 0;
+      17 142.07136 auto auto 1 0 0;
+      24 148.57537 fixed fixed 1 0 0 83.959483 1 83.959483 1;
+      29 102.18782 auto auto 1 0 0;
+      38 89.494887 auto auto 1 0 0;
+      49 100 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -15 auto auto 1 0 0;
+      17 64.25353 auto auto 1 0 0;
+      24 68.500681 fixed fixed 1 0 0 0 1 0 1;
+      29 56.938545 auto auto 1 0 0;
+      38 19.468577 auto auto 1 0 0;
+      49 -15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 50 auto auto 1 0 0;
+      17 88.747288 auto auto 1 0 0;
+      24 151.80654 fixed fixed 1 0 0 0 1 0 1;
+      29 103.66167 auto auto 1 0 0;
+      38 94.493095 auto auto 1 0 0;
+      49 50 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Follow_Rotate Follow_Rotate 0;
+  { 1 }
+  static Follow_Translate Follow_Translate 1;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_FInger_05_04_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_05_03_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_05_02_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.32767509 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 -15.619179 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_05_01_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.048951 auto auto 1 0 0;
+      34 50 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_04_04_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_04_03_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_04_02_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.17574873 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 -8.3773559 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_04_01_RK_Ctrl 8 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.048951 auto auto 1 0 0;
+      34 50 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_02_04_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_02_03_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_02_02_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.21441629 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 10.22051 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_02_01_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.048951 auto auto 1 0 0;
+      34 50 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_01_03_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_01_02_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_01_01_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.398066 auto auto 1 0 0;
+      34 66.641132 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.60105744 auto auto 1 0 0;
+      34 28.650405 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.36848924 auto auto 1 0 0;
+      34 17.564654 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_03_04_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_03_03_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_03_02_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.363636 auto auto 1 0 0;
+      34 80 auto auto 1 0 0;
+      41 20 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  R_FInger_03_01_RK_Ctrl 8 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      6 16.048951 auto auto 1 0 0;
+      34 50 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      6 0.0001638961 auto auto 1 0 0;
+      34 0 auto auto 1 0 0;
+      41 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_Hip_01_RK_Ctrl 6 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_Hip_01_RK_Ctrl 6 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_Clavicle_RK_Ctrl 6 1;
+  anim rotate.rotateY rotateY 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      17 0 auto auto 1 0 0;
+      29 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      17 13.15562 auto auto 1 0 0;
+      29 -31.628295 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      17 0 auto auto 1 0 0;
+      29 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Follow_Rotate Follow_Rotate 0;
+  { 1 }
+  static Follow_Translate Follow_Translate 1;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_Clavicle_RK_Ctrl 6 1;
+  anim rotate.rotateY rotateY 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Follow_Rotate Follow_Rotate 0;
+  { 1 }
+  static Follow_Translate Follow_Translate 1;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  Jaw_01_RK_Ctrl 6 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 8 auto auto 1 0 0;
+      17 30 auto auto 1 0 0;
+      49 8 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  Neck_01_RK_Ctrl 6 1;
+  static Follow_Rotate Follow_Rotate 0;
+  { 1 }
+  static Follow_Translate Follow_Translate 1;
+  { 1 }
+  static rotate.rx rotateX 2;
+  { 0 }
+  static rotate.ry rotateY 3;
+  { 0 }
+  static rotate.rz rotateZ 4;
+  { 0 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  Root_RK_Ctrl 6 1;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -0.8 auto auto 1 0 0;
+      9 -0.57328266 auto auto 1 0 0;
+      20 -0.19715534 auto auto 1 0 0;
+      24 -0.57328266 fixed fixed 1 0 0 0 1 0 1;
+      29 -4.7012497 auto auto 1 0 0;
+      49 -0.8 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 1 auto auto 1 0 0;
+      6 1.0093053 auto auto 1 0 0;
+      20 1.024743 auto auto 1 0 0;
+      25 1.0093053 fixed fixed 1 0 0 0 1 0 1;
+      29 2.2385575 auto auto 1 0 0;
+      49 1 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 -0.25 auto auto 1 0 0;
+      9 -0.25 auto auto 1 0 0;
+      20 -0.25 auto auto 1 0 0;
+      25 -0.25 fixed fixed 1 0 0 0 1 0 1;
+      29 0.20943076 auto auto 1 0 0;
+      49 -0.25 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 3;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      12 -66.212402 auto auto 1 0 0;
+      20 -69.682453 auto auto 1 0 0;
+      25 -69.77005 fixed fixed 1 0 0 0 1 0 1;
+      29 33.347044 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 4;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      11 -4.8507481 auto auto 1 0 0;
+      20 -4.997714 auto auto 1 0 0;
+      22 -4.9986027 fixed fixed 1 0 0 0 1 0 1;
+      30 -9.2491239 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 5;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      20 3.0487823 auto auto 1 0 0;
+      24 3.2705498 fixed fixed 1 0 0 0 1 0 1;
+      30 14.094559 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  Spine_Base_RK_Ctrl 6 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 2.5 auto auto 1 0 0;
+      49 2.5 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  Waist_RK_Ctrl 6 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      11 0 auto auto 1 0 0;
+      14 -8.8659798 auto auto 1 0 0;
+      24 -7.1082929 auto auto 1 0 0;
+      30 30.940812 auto auto 1 0 0;
+      49 0 auto auto 1 0 0;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_Toe_Base_RK_Ctrl 7 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_Toe_Base_RK_Ctrl 7 1;
+  anim rotate.rotateZ rotateZ 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  Head_Rotate_Ctrl 6 1;
+  anim rotate.rotateY rotateY 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      17 -20.985674 auto auto 1 0 0;
+      25 -20.985674 fixed fixed 1 0 0 0 1 0 1;
+      29 -40.844462 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateX rotateX 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      17 26.404367 auto auto 1 0 0;
+      25 6.3102447 fixed fixed 1 0 0 0 1 0 1;
+      29 7.2802736 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      17 9.3759738 auto auto 1 0 0;
+      25 9.3759738 fixed fixed 1 0 0 0 1 0 1;
+      29 2.4164431 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  Transform_Ctrl 6 1;
+  static rotate.rx rotateX 0;
+  { 0 }
+  static rotate.ry rotateY 1;
+  { 0 }
+  static rotate.rz rotateZ 2;
+  { 0 }
+  static translate.tx translateX 3;
+  { 0 }
+  static translate.ty translateY 4;
+  { 0 }
+  static translate.tz translateZ 5;
+  { 0 }
+  static v visibility 6;
+  { 1 }
+}
+dagNode {
+  R_Brow_Lower_Mid_RK_Ctrl 8 1;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 0.009439091 auto auto 1 0 0;
+      29 0.0052580945 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 -0.01130076 auto auto 1 0 0;
+      29 -0.0047808447 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 -0.035515541 auto auto 1 0 0;
+      29 0.010200915 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_Brow_Lower_Left_RK_Ctrl 8 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_Brow_Lower_Right_RK_Ctrl 8 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_Brow_Upper_Mid_RK_Ctrl 8 1;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 -0.012979453 auto auto 1 0 0;
+      29 -0.0055037835 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 -0.006315664 auto auto 1 0 0;
+      29 -0.0054004751 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 0.081770443 auto auto 1 0 0;
+      29 -0.032277664 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_Brow_Upper_Left_RK_Ctrl 8 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static translate.tx translateX 5;
+  { 0 }
+  static translate.ty translateY 6;
+  { 0 }
+  static translate.tz translateZ 7;
+  { 0 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  R_Brow_Upper_Right_RK_Ctrl 8 1;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      29 -0.0069283771 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      29 0.00050680845 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      29 0.10221694 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_Brow_Lower_Mid_RK_Ctrl 8 1;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 0.009439091 auto auto 1 0 0;
+      29 0.0052580945 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 0.01130076 auto auto 1 0 0;
+      29 0.0047808447 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 -0.035515541 auto auto 1 0 0;
+      29 0.010200915 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_Brow_Lower_Left_RK_Ctrl 8 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_Brow_Lower_Right_RK_Ctrl 8 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_Brow_Upper_Mid_RK_Ctrl 8 1;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 -0.012979453 auto auto 1 0 0;
+      29 -0.0055037835 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 0.006315664 auto auto 1 0 0;
+      29 0.0054004751 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      22 0.081770443 auto auto 1 0 0;
+      29 -0.032277664 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Translate Translate 4;
+  { 1 }
+  static v visibility 8;
+  { 1 }
+}
+dagNode {
+  L_Brow_Upper_Left_RK_Ctrl 8 1;
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static translate.tx translateX 6;
+  { 0 }
+  static translate.ty translateY 7;
+  { 0 }
+  static translate.tz translateZ 8;
+  { 0 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_Brow_Upper_Right_RK_Ctrl 8 1;
+  anim translate.translateX translateX 0;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      29 -0.0069283771 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateY translateY 1;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      29 -0.00050680845 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim translate.translateZ translateZ 2;
+  animData {
+    input time;
+    output linear;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      29 0.10221694 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static rotate.rx rotateX 1;
+  { 0 }
+  static rotate.ry rotateY 2;
+  { 0 }
+  static rotate.rz rotateZ 3;
+  { 0 }
+  static Scale Scale 4;
+  { 1 }
+  static Translate Translate 5;
+  { 1 }
+  static v visibility 9;
+  { 1 }
+}
+dagNode {
+  L_Hand_Location 5 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static scale.sx scaleX 4;
+  { 1 }
+  static scale.sy scaleY 5;
+  { 1 }
+  static scale.sz scaleZ 6;
+  { 1 }
+  static Translate Translate 7;
+  { 1 }
+  static translate.tx translateX 8;
+  { 0 }
+  static translate.ty translateY 9;
+  { 0 }
+  static translate.tz translateZ 10;
+  { 0 }
+  static v visibility 11;
+  { 1 }
+}
+dagNode {
+  R_Hand_Location 5 1;
+  anim rotate.rotateX rotateX 0;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      21 0 auto auto 1 0 0;
+      22 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateY rotateY 1;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      21 0 auto auto 1 0 0;
+      22 0 auto auto 1 0 0;
+      49 0 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  anim rotate.rotateZ rotateZ 2;
+  animData {
+    input time;
+    output angular;
+    weighted 0;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      21 15 auto auto 1 0 0;
+      22 80 auto auto 1 0 0;
+      49 15 fixed fixed 1 0 0 0 1 0 1;
+    }
+  }
+  static Rotate Rotate 0;
+  { 1 }
+  static scale.sx scaleX 4;
+  { 1 }
+  static scale.sy scaleY 5;
+  { 1 }
+  static scale.sz scaleZ 6;
+  { 1 }
+  static Translate Translate 7;
+  { 1 }
+  static translate.tx translateX 8;
+  { 0 }
+  static translate.ty translateY 9;
+  { 0 }
+  static translate.tz translateZ 10;
+  { 0 }
+  static v visibility 11;
+  { 1 }
+}
+dagNode {
+  Scalar_Ctrl 3 1;
+  static scale.sx scaleX 0;
+  { 1 }
+  static scale.sy scaleY 1;
+  { 1 }
+  static scale.sz scaleZ 2;
+  { 1 }
+  static v visibility 3;
+  { 1 }
+}
+dagNode {
+  L_Arm_01_Switch 2 2;
+  static IKFK_Switch IKFK_Switch 0;
+  { 1 }
+  static v visibility 7;
+  { 1 }
+  cached rotate.rx rotateX 0;
+  { 97.702346 99.24694 103.46323 109.71436 117.42897 126.15344 135.52957 145.20973 154.75126 163.54831 -9.1523788 -4.1604423 -0.82675031 1.9970046 4.2770774 5.985126 7.0965366 6.8135386 4.5872687 0.7717341 -5.0107836 -12.88397 157.9233 148.20579 138.85285 115.82978 80.694364 41.833193 18.099707 18.48487 20.544389 23.855596 28.20303 33.351649 39.060939 45.10142 51.2695 57.396638 63.351126 69.033574 74.368812 79.296916 83.765191 87.721998 91.112549 93.876461 95.946635 97.248976 97.702346  }
+  cached rotate.ry rotateY 1;
+  { 15.603946 14.797667 12.519807 8.9846343 4.4771874 -0.60959229 -5.7971979 -10.589091 -14.564413 -17.473196 -160.70521 -159.74868 -159.20808 -158.8324 -158.57392 -158.39304 -158.26033 -158.12214 -157.96832 -157.88343 -157.85276 -157.98748 -21.506132 -20.536751 -18.354166 -8.2426919 16.249036 39.110442 45.776131 46.606536 46.535353 46.173684 45.496546 44.478216 43.104304 41.379978 39.333373 37.014456 34.490693 31.841225 29.151064 26.506188 23.989942 21.680788 19.65129 17.968211 16.693516 15.886105 15.603946  }
+  cached rotate.rz rotateZ 2;
+  { -67.584871 -67.332445 -66.776928 -66.327995 -66.414457 -67.370528 -69.370619 -72.394021 -76.205582 -80.367875 95.687834 92.409956 89.672237 87.193227 85.034985 83.251595 81.891289 81.288784 81.686229 82.989282 85.222751 88.262475 -88.440833 -85.403568 -83.10151 -75.607789 -72.252193 -87.262133 -102.81895 -103.17948 -102.21644 -100.4705 -98.093684 -95.25831 -92.144223 -88.922996 -85.74313 -82.720302 -79.934502 -77.433088 -75.237263 -73.349479 -71.760151 -70.45306 -69.409496 -68.611532 -68.044899 -67.701914 -67.584871  }
+  cached translate.tx translateX 3;
+  { 5.3083623 5.103535 4.5093158 3.5468676 2.2778077 0.83825962 -0.57614867 -1.7663394 -2.5966104 -3.0152065 -3.0485997 -2.80093 -2.4046959 -1.9584867 -1.5374736 -1.2141345 -1.0562392 -1.0311381 -1.0587651 -1.1290049 -1.2295553 -1.3350404 -2.0138048 -2.4528614 -1.4820034 2.4964489 7.8784434 8.8655518 7.6985003 7.6158042 7.5819712 7.5906713 7.626714 7.6723613 7.7092613 7.7202681 7.6911119 7.6118032 7.4776216 7.2895654 7.0542081 6.7830011 6.4911536 6.1962863 5.917073 5.672053 5.4787251 5.3529242 5.3083623  }
+  cached translate.ty translateY 4;
+  { 9.9449624 10.033314 10.281087 10.668534 11.176919 11.779066 12.432106 13.076535 13.642818 14.157157 14.662544 15.132751 15.550612 15.896957 16.160937 16.338029 16.427572 16.468868 16.499918 16.517411 16.466843 16.343607 16.14434 15.856385 14.953509 12.683906 10.075481 9.1598599 9.2775872 9.222061 9.1241237 9.0154524 8.9043016 8.8009668 8.7162506 8.6600187 8.6399264 8.6604474 8.7223274 8.8225289 8.9546462 9.1096827 9.2770215 9.4454009 9.6037343 9.7416724 9.8498819 9.9200841 9.9449624  }
+  cached translate.tz translateZ 5;
+  { 3.1623692 3.3747188 3.903097 4.5362826 5.0440436 5.2389968 5.0352071 4.4778982 3.7277737 2.9003352 2.0951463 1.4491317 0.95508366 0.56618106 0.28681718 0.11349704 0.040559798 0.043886534 0.097601631 0.19740469 0.36149544 0.6012165 2.1783156 5.2924295 7.7727134 8.6641047 5.3448622 -0.45910106 -2.8890005 -2.9610198 -2.9383117 -2.8165994 -2.6021739 -2.3012788 -1.9221483 -1.4762891 -0.97886104 -0.44817438 0.095532076 0.63175166 1.1414713 1.6087028 2.0215199 2.3724463 2.6581556 2.8785432 3.0352885 3.1300437 3.1623692  }
+}
